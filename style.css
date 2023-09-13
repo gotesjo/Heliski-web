@@ -1,0 +1,101 @@
+/* Återställning av standardmarginaler och fyllnad */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Grundstilar */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Ljusgrå bakgrundsfärg */
+}
+
+header {
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    padding: 10px 0;
+}
+
+nav li {
+    margin: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.full-height {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav img {
+    height: 50px;
+}
+
+.content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.scroll-button {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-button:hover {
+    background-color: #555;
+}
+
+/* Avsnitt 2 */
+#section2 {
+    background-color: #f8e7da; /* Beige bakgrundsfärg */
+}
+
+/* Avsnitt 3 */
+#section3 {
+    background-color: #6ea7f4; /* Blå bakgrundsfärg */
+}
+
+/* Avsnitt 4 */
+#section4 {
+    background-color: #3ca370; /* Grön bakgrundsfärg */
+    color: white; /* Vit textfärg */
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footerCont {
+    text-align: center;
+}
