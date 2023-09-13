@@ -39,10 +39,10 @@ nav a {
 
 .full-height {
     height: 100vh;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 }
 
 nav img {
@@ -85,7 +85,7 @@ nav img {
     grid-row: 1;
 }
 
-item1 .item-text {
+.item1 .item-text {
     grid-column: 2 / span 2;
     grid-row: 1;
 }
