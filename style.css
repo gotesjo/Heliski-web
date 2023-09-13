@@ -68,11 +68,17 @@ nav img {
 /* Avsnitt 2 */
 #section2 {
     background-color: #f8e7da; /* Beige bakgrundsfärg */
+    font-size: 1em;
 }
 
 .grid-container{
     display: grid;
-   
+    grid-template-rows: auto;
+    grid-template-columns: 33% 33% 33%;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
       
 }
 
@@ -82,41 +88,59 @@ nav img {
 }
 
 .grid-item img{
-    width: 60%;
+    width: 50%;
+    margin: 10%;
 }
 
 .item1{
     grid-column: 1;
     grid-row: 1;
+    text-align: right;
+    
 }
 
 .item2{
     grid-column: 2/ span 2;
     grid-row: 1;
+    text-align: left;
+    margin-right: 10%;
 }
 .item3{
     grid-column: 3;
     grid-row: 2;
+    text-align: left;
+    margin: auto;
 }
 .item4{
     grid-column: 1 / span 2;
     grid-row: 2;
+    text-align: right;
+    margin-left: 10%;
 }
 .item5{
     grid-column: 1;
     grid-row: 3;
+    text-align: right;
+    margin: auto;
 }
 .item6{
     grid-column: 2/ span 2;
     grid-row: 3;
+    text-align: left;
+    margin-right: 10%;
+
 }
 .item7{
     grid-column: 3;
     grid-row: 4;
+    text-align: left;
+    margin: auto;
 }
 .item8{
     grid-column: 1/ span 2;
     grid-row: 4;
+    text-align: right;
+    margin-left: 10%;
 }
 
 /* Avsnitt 3 */
