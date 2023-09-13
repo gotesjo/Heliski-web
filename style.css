@@ -75,6 +75,10 @@ nav img {
     background-color: #f8e7da; /* Beige bakgrundsfärg */
 }
 
+.activity img {
+    height: 200px;
+}
+
 /* Avsnitt 3 */
 #section3 {
     background-color: #6ea7f4; /* Blå bakgrundsfärg */
