@@ -49,12 +49,6 @@ nav img {
     height: 50px;
 }
 
-.content {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
 .scroll-button {
     display: inline-block;
     background-color: #333;
@@ -73,6 +67,41 @@ nav img {
 /* Avsnitt 2 */
 #section2 {
     background-color: #f8e7da; /* Beige bakgrundsfärg */
+    display: block;
+    contain: content;
+}
+
+.content {
+    display: grid;
+}
+
+.activity {
+    width: 90%;
+    margin: 2em 2em;
+}
+
+.item1 img{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+item1 .item-text {
+    grid-column: 2 / span 2;
+    grid-row: 1;
+}
+
+.item2 {
+    
+}
+.item3 {
+
+}
+.item4 {
+
+}
+
+.item-text {
+    align-self: center;
 }
 
 .activity img {
