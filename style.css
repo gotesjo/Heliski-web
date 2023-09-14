@@ -7,7 +7,7 @@ body, h1, h2, h3, p, ul, li {
 /* Grundstilar */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* Ljusgrå bakgrundsfärg */
+    background-color: white; /* Ljusgrå bakgrundsfärg */
 }
 
 header {
@@ -28,7 +28,7 @@ nav ul {
 }
 
 nav li {
-    margin: 0 20px;
+    margin: 1em 20px;
 }
 
 nav a {
@@ -39,11 +39,6 @@ nav a {
 
 .full-height {
     height: 100vh;
-/*   height: 100vh;
-     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;  */
 }
 
 nav img {
@@ -65,94 +60,94 @@ nav img {
     background-color: #555;
 }
 
-/* Avsnitt 2 */
-#section2 {
-    background-color: #f8e7da; /* Beige bakgrundsfärg */
-    font-size: 1em;
-}
-
-.grid-container{
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: 33% 33% 33%;
-    justify-content: space-evenly;
-    justify-items: center;
-    align-content: space-evenly;
+#section1 {
+    background: url(bakgrund.jpg);
+    background-size: cover;
+    height: 100vh;
+    margin-top: 70px;  /* Marginal för att undvika överlappning med fast header */
+    height: calc(100vh - 70px);  /* Höjden justerad för headern */
+    display: flex;
     align-items: center;
-      
+    justify-content: center;
 }
 
-.grid-item{
-    margin: 0,5em;
-    box-sizing: border-box;  
+.content {
+    display: flex;
+    flex-direction: column;  /* Ändra tillbaka till column så att h1 och knapp staplas vertikalt */
+    align-items: center;  /* Centrerar elementen horisontellt */
+    justify-content: center;  /* Centrerar elementen vertikalt */
+    gap: 20px;  /* Skapar utrymme mellan h1 och knapp */
 }
 
-.grid-item img{
-    width: 50%;
-    margin: 10%;
+
+.bakgrundsBild{
+    color: white;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px black;
 }
 
-.item1{
-    grid-column: 1;
-    grid-row: 1;
-    text-align: right;
-    
+.bakgrundsBild h1{
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 60px 0 30px;
 }
 
-.item2{
-    grid-column: 2/ span 2;
-    grid-row: 1;
-    text-align: left;
-    margin-right: 10%;
-}
-.item3{
-    grid-column: 3;
-    grid-row: 2;
-    text-align: left;
-    margin: auto;
-}
-.item4{
-    grid-column: 1 / span 2;
-    grid-row: 2;
-    text-align: right;
-    margin-left: 10%;
-}
-.item5{
-    grid-column: 1;
-    grid-row: 3;
-    text-align: right;
-    margin: auto;
-}
-.item6{
-    grid-column: 2/ span 2;
-    grid-row: 3;
-    text-align: left;
-    margin-right: 10%;
 
-}
-.item7{
-    grid-column: 3;
-    grid-row: 4;
-    text-align: left;
-    margin: auto;
-}
-.item8{
-    grid-column: 1/ span 2;
-    grid-row: 4;
-    text-align: right;
-    margin-left: 10%;
+
+.smaller-image {
+    width: 300px;  /* eller den bredd du föredrar */
+    height: auto; /* behåll bildens proportioner */
 }
 
-/* Avsnitt 3 */
-#section3 {
-    background-color: #6ea7f4; /* Blå bakgrundsfärg */
+/* Gemensamma stilar för alla avsnitt */
+.full-height-section {
+    background-color: white;
+    font-size: 1em;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Avsnitt 4 */
-#section4 {
-    background-color: #3ca370; /* Grön bakgrundsfärg */
-    color: white; /* Vit textfärg */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* skapar två kolumner */
+    gap: 20px; /* ger ett utrymme av 20px mellan kolumnerna */
 }
+
+.grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.grid-item img {
+    max-width: 100%; /* Gör bilden responsiv */
+    height: fit-content;
+    border-radius: 15px 20px 25px 30px;  /* Övre vänster, övre höger, nedre höger, nedre vänster */
+}
+
+.text-container {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    margin: 0 30px 0 30px;
+}
+
+.text-container h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+}
+
+.guidePic{
+    width: 300px; 
+    height: auto;
+}
+
+
 
 footer {
     display: flex;
