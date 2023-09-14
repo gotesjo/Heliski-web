@@ -61,7 +61,7 @@ nav img {
 }
 
 #section1 {
-    background: url(bakgrund.jpg);
+    background: url(pictures/bakgrund.jpg);
     background-size: cover;
     height: 100vh;
     margin-top: 70px;  /* Marginal för att undvika överlappning med fast header */
@@ -148,6 +148,72 @@ nav img {
 }
 
 
+.slideShow {
+    width: 700px;
+    height: 400px;
+    overflow: hidden;
+
+}
+.navigation{
+   position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    display: flex;
+}
+.bar{
+    width: 50px;
+    height: 10px;
+    border: 2px solid #d24545;
+    margin: 6px;
+    transition: 0,4s;
+}
+.bar:hover{
+    background: #fff;
+}
+.input[name="r"]
+{
+
+    position: absolute;
+    visibility: hidden;
+}
+.slides{
+    width: 500%;
+    height: 100%;
+    display: flex;
+}
+.slide{
+    width: 20%;
+    transition: 0,6s;
+
+}
+.slide img{
+    width: 100%;
+    height: 100%;
+}
+#r1:checked~ .s1{
+    margin-left: 0;
+}
+#r2:checked~ .s1{
+    margin-left: 20%;
+}
+#r3:checked~ .s1{
+    margin-left: 40%;
+}
+#r4:checked~ .s1{
+    margin-left: 60%;
+}
+#r5:checked~ .s1{
+    margin-left: 80%;
+}
+
+
+/* .middle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */
 
 footer {
     display: flex;
