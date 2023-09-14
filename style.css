@@ -166,6 +166,10 @@ nav img {
     height: 100%;
     overflow: hidden;
     position: relative;
+    border-radius: 20px;
+    
+    
+    
 
 }
 .navigation{
@@ -220,7 +224,7 @@ input[name="r"]
 }
 .slide-text {
     position: absolute;
-    bottom: 10%; /* Du kan justera detta värde */
+    bottom: 75%; /* Du kan justera detta värde */
     left: 50%;
     transform: translate(-50%, -50%);
     color: white; /* eller vilken färg du föredrar */
@@ -240,13 +244,37 @@ input[name="r"]
   
   
 
+#section7{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(pictures/winterlandscape.jpg);
+    background-position: center;
+    background-size: cover;
 
-/* .middle{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-} */
+}
+.row{
+    display: flex;
+    height: 88%;
+    align-items:center;
+
+}
+.col{
+    flex-basis: 50%;
+    
+
+}
+.col h1{
+    color: rgb(221, 221, 221);
+    font-size: 100px;
+
+
+}
+.col p{
+
+    font-size: 11px;
+    line-height: 15px;
+}
+
 
 footer {
     display: flex;
@@ -257,7 +285,65 @@ footer {
     text-align: center;
     padding: 10px 0;
 }
+.col button{
+    width: 180px;
+    color: aquamarine;
+    font-size: 12px;
+    padding: 12px;
+    background: #fff;
+    border: 0;
+    border-radius: 20px;
+    outline: none;
+    margin-top: 30px;
+
+}
+.card{
+    width: 250px;
+    height: 280px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 40px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 25px 15px;
+  
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.5s;
+    font-size: 20px;
+    
+   
+
+
+
+}
+
+.card1{
+    background-image: url(pictures/profilbild1.jpg);
+}
+.card2{
+    background-image: url(pictures/profilbild2.jpg);
+}
+.card3{
+    background-image: url(pictures/profilbild3.jpg);
+}
+.card4{
+    background-image: url(pictures/profilbild4.jpg);
+}
+.card:hover{
+    transform: translateY(-30px);
+   
+}
 
 .footerCont {
     text-align: center;
+}
+.card h5{
+    color: black;
+    
+    text-shadow: 0 0 5px #999;
+}
+.card p{
+
+    font-size: 12px;
 }
