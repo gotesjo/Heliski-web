@@ -223,14 +223,16 @@ input[name="r"]
     margin-left: -80%;
 }
 .slide-text {
+    /* font-family: 'Futura', sans-serif; */
     position: absolute;
     bottom: 75%; /* Du kan justera detta värde */
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white; /* eller vilken färg du föredrar */
-    font-size: 24px; /* eller vilken storlek du föredrar */
+    color: rgba(221, 221, 221, 0.835); /* eller vilken färg du föredrar */
+    
+    font-size: 70px; /* eller vilken storlek du föredrar */
     font-weight: bold;
-    text-shadow: 2px 2px 4px black; /* för läsbarhet */
+    text-shadow: 0 0 5px #999;/
 
   }
 
@@ -259,20 +261,25 @@ input[name="r"]
 
 }
 .col{
-    flex-basis: 50%;
+    flex-basis: 75%;
     
 
 }
 .col h1{
     color: rgb(221, 221, 221);
     font-size: 100px;
+    margin-left: 20%;
+
 
 
 }
 .col p{
-
-    font-size: 11px;
-    line-height: 15px;
+    color: rgb(221, 221, 221);
+    font-size: 20px;
+    line-height: 20px;
+    margin-left: 20%;
+   
+   
 }
 
 
@@ -285,7 +292,7 @@ footer {
     text-align: center;
     padding: 10px 0;
 }
-.col button{
+/* .col button{
     width: 180px;
     color: aquamarine;
     font-size: 12px;
@@ -295,8 +302,9 @@ footer {
     border-radius: 20px;
     outline: none;
     margin-top: 30px;
+    margin-left:30%;
 
-}
+} */
 .card{
     width: 250px;
     height: 280px;
@@ -317,9 +325,11 @@ footer {
 
 
 }
+    
 
 .card1{
     background-image: url(pictures/profilbild1.jpg);
+    
 }
 .card2{
     background-image: url(pictures/profilbild2.jpg);
@@ -342,8 +352,4 @@ footer {
     color: black;
     
     text-shadow: 0 0 5px #999;
-}
-.card p{
-
-    font-size: 12px;
 }
