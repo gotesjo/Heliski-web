@@ -60,23 +60,23 @@ nav img {
     background-color: #555;
 }
 
+/* Avsnitt 1: Hem  */
+
 #section1 {
     background: url(pictures/bakgrund.jpg);
     background-size: cover;
     height: 100vh;
-    margin-top: 70px;  /* Marginal för att undvika överlappning med fast header */
-    height: calc(100vh - 70px);  /* Höjden justerad för headern */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.content {
+.s1content {
     display: flex;
-    flex-direction: column;  /* Ändra tillbaka till column så att h1 och knapp staplas vertikalt */
-    align-items: center;  /* Centrerar elementen horisontellt */
-    justify-content: center;  /* Centrerar elementen vertikalt */
-    gap: 20px;  /* Skapar utrymme mellan h1 och knapp */
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    gap: 20px;
 }
 
 
@@ -98,12 +98,12 @@ nav img {
 
 
 .smaller-image {
-    width: 300px;  /* eller den bredd du föredrar */
-    height: auto; /* behåll bildens proportioner */
+    width: 300px;
+    height: auto;
 }
 
-/* Gemensamma stilar för alla avsnitt */
-.full-height-section {
+/* Avsnitt 2 - Avsnitt 5  */
+#section2,#section3,#section4,#section5 {
     background-color: white;
     font-size: 1em;
     height: 100vh;
@@ -114,8 +114,8 @@ nav img {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* skapar två kolumner */
-    gap: 20px; /* ger ett utrymme av 20px mellan kolumnerna */
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
 .grid-item {
@@ -126,9 +126,9 @@ nav img {
 }
 
 .grid-item img {
-    max-width: 100%; /* Gör bilden responsiv */
+    max-width: 100%;
     height: fit-content;
-    border-radius: 15px 20px 25px 30px;  /* Övre vänster, övre höger, nedre höger, nedre vänster */
+    border-radius: 15px 20px 25px 30px;
 }
 
 .text-container {
@@ -142,21 +142,20 @@ nav img {
     font-size: 24px;
 }
 
-.guidePic{
-    width: 300px; 
-    height: auto;
-}
+/* Avsnitt 6:Bildspel */
+
 .slideShow-container{
     display: flex;
     flex-direction: column;
     align-items: center;
    
 }
-.skidOrter{
+
+.skiResorts{
     display: flex;
-    flex-direction: column;  /* Ändra tillbaka till column så att h1 och knapp staplas vertikalt */
-    align-items: center;  /* Centrerar elementen horisontellt */
-    justify-content: center;  /* Centrerar elementen vertikalt */
+    flex-direction: column;  
+    align-items: center;
+    justify-content: center;
     gap: 20px;
     
 }
@@ -167,46 +166,49 @@ nav img {
     overflow: hidden;
     position: relative;
     border-radius: 20px;
-    
-    
-    
-
 }
+
 .navigation{
     display: flex;
-  justify-content: center;
+    justify-content: center;
 }
+
 .bar{
     width: 50px;
     height: 10px;
     border: 2px solid #000000;
     margin: 6px;
-    transition: 0.4s;
+    transition: 1s;
 }
+
 .bar:hover{
     background: #000000;
 }
+
 input[name="r"]
 {
-
     position: absolute;
     visibility: hidden;
 }
+
 .slides{
     width: 500%;
     height: 100%;
     display: flex;
 }
+
 .slide{
     width: 20%;
-    transition: 0.6s;
+    transition: 0,7s;
     position: relative;
 
 }
+
 .slide img{
     width: 100%;
     height: 100%;
 }
+
 #r1:checked ~ .s1{
     margin-left: 0;
 }
@@ -222,19 +224,6 @@ input[name="r"]
 #r5:checked ~ .s1{
     margin-left: -80%;
 }
-.slide-text {
-    /* font-family: 'Futura', sans-serif; */
-    position: absolute;
-    bottom: 75%; /* Du kan justera detta värde */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: rgba(221, 221, 221, 0.835); /* eller vilken färg du föredrar */
-    
-    font-size: 70px; /* eller vilken storlek du föredrar */
-    font-weight: bold;
-    text-shadow: 0 0 5px #999;/
-
-  }
 
 #r1:checked ~ .s1 .text1,
 #r2:checked ~ .s2 .text2,
@@ -244,44 +233,90 @@ input[name="r"]
     display: block;
 }
   
+.slide-text {
+    position: absolute;
+    bottom: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(221, 221, 221, 0.835);
+    font-size: 70px;
+    font-weight: bold;
+    text-shadow: 0 0 5px #999;
+}
   
-
+/* Avsnitt 7:Guide Presentation */
 #section7{
     width: 100%;
     height: 100vh;
     background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(pictures/winterlandscape.jpg);
     background-position: center;
     background-size: cover;
-
 }
-.row{
+
+.guidePresentation{
     display: flex;
     height: 88%;
     align-items:center;
+    margin-top: 5em;
 
 }
-.col{
+.guideDescription{
     flex-basis: 75%;
-    
-
 }
-.col h1{
+
+.guideDescription h1{
     color: rgb(221, 221, 221);
     font-size: 100px;
     margin-left: 20%;
-
-
-
 }
-.col p{
+
+.guideDescription p{
     color: rgb(221, 221, 221);
     font-size: 20px;
     line-height: 20px;
     margin-left: 20%;
-   
-   
 }
 
+.card{
+    width: 250px;
+    height: 280px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 40px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 25px 15px;
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.5s;
+    font-size: 20px;
+} 
+
+.card1{
+    background-image: url(pictures/profilbild1.jpg);
+}
+
+.card2{
+    background-image: url(pictures/profilbild2.jpg);
+}
+
+.card3{
+    background-image: url(pictures/profilbild3.jpg);
+}
+
+.card4{
+    background-image: url(pictures/profilbild4.jpg);
+}
+.card h5{
+    color: black;
+    text-shadow: 0 0 5px #999;
+}
+
+.card:hover{
+    transform: translateY(-30px);  
+}
+
+/* Avsnitt 8: footer */
 
 footer {
     display: flex;
@@ -292,64 +327,9 @@ footer {
     text-align: center;
     padding: 10px 0;
 }
-/* .col button{
-    width: 180px;
-    color: aquamarine;
-    font-size: 12px;
-    padding: 12px;
-    background: #fff;
-    border: 0;
-    border-radius: 20px;
-    outline: none;
-    margin-top: 30px;
-    margin-left:30%;
-
-} */
-.card{
-    width: 250px;
-    height: 280px;
-    display: inline-block;
-    border-radius: 10px;
-    padding: 40px;
-    box-sizing: border-box;
-    cursor: pointer;
-    margin: 25px 15px;
-  
-    background-position: center;
-    background-size: cover;
-    transition: transform 0.5s;
-    font-size: 20px;
-    
-   
-
-
-
-}
-    
-
-.card1{
-    background-image: url(pictures/profilbild1.jpg);
-    
-}
-.card2{
-    background-image: url(pictures/profilbild2.jpg);
-}
-.card3{
-    background-image: url(pictures/profilbild3.jpg);
-}
-.card4{
-    background-image: url(pictures/profilbild4.jpg);
-}
-.card:hover{
-    transform: translateY(-30px);
-   
-}
 
 .footerCont {
     text-align: center;
 }
-.card h5{
-    color: black;
-    
-    text-shadow: 0 0 5px #999;
-}
+
+
