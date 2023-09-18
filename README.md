@@ -33,6 +33,11 @@
 # Information:
 
 # Färgpalette
+mörkblå = #0C1C3C
+bakgrund ljus = #F0EFF4
+Gul = #FCFF4B
+orange = #FF570A
+Grå = #577371
 
 # Fonts
 
