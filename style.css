@@ -6,43 +6,55 @@ body, h1, h2, h3, p, ul, li {
 
 /* Grundstilar */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     background-color: white; /* Ljusgrå bakgrundsfärg */
 }
 
 header {
-    background-color: #333;
+    background-color: #0C1C3C;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 100;
+    padding: 1em;
+    text-align: right;
+    display: block;
+    
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    background-color: #333;
-    padding: 10px 0;
+nav {
+    margin: 0.2em 4em 0 4em;
 }
 
 nav li {
-    margin: 1em 20px;
+    display: inline;
 }
 
 nav a {
     text-decoration: none;
     color: white;
-    font-weight: bold;
+    font-weight: 700;
+    padding: 0.1em 2em;
+}
+
+ nav a:hover {
+    border-bottom: 2px solid #FF570A;
+} 
+
+nav h6 {
+    font-size: 1.3em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    color: white;
+    display: inline;
+    float: left;
+    margin: 0;
+    border-bottom: 2px solid #FF570A;
 }
 
 .full-height {
     height: 100vh;
-}
-
-nav img {
-    height: 50px;
 }
 
 .scroll-button {
@@ -63,7 +75,8 @@ nav img {
 /* Avsnitt 1: Hem  */
 
 #section1 {
-    background: url(pictures/bakgrund.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(pictures/bakgrund.jpg);
+    background-position: center;
     background-size: cover;
     height: 100vh;
     display: flex;
@@ -89,23 +102,24 @@ nav img {
 .bakgrundsBild h1{
 
     font-family: 'Montserrat', sans-serif;
-    font-size: 36px;
+    font-size: 1.5em;
     font-weight: bold;
     text-transform: uppercase;
-    margin: 0 60px 0 30px;
+    margin: 0 0 0 30px;
+    text-align: right;
 }
 
 
 
 .smaller-image {
-    width: 300px;
+    width: 30vw;
     height: auto;
 }
 
 /* Avsnitt 2 - Avsnitt 5  */
 #section2,#section3,#section4,#section5 {
     background-color: white;
-    font-size: 1em;
+    font-size: 1.5em;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -132,8 +146,7 @@ nav img {
 }
 
 .text-container {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
+    font-size: ;
     margin: 0 30px 0 30px;
 }
 
@@ -268,16 +281,18 @@ input[name="r"]
 }
 .guideDescription{
     flex-basis: 75%;
+    color: #fff;
 }
 
 .guideDescription h1{
-    color: rgb(221, 221, 221);
-    font-size: 100px;
     margin-left: 20%;
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    color: #fff;
 }
 
 .guideDescription p{
-    color: rgb(221, 221, 221);
     font-size: 20px;
     line-height: 20px;
     margin-left: 20%;
