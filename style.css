@@ -76,7 +76,7 @@ nav h6 a{
 /* Avsnitt 1: Hem  */
 
 #section1 {
-    /* background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(pictures/bakgrund.jpg); */
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(pictures/bakgrund.jpg);
     background-position: center;
     background-size: cover;
     height: 100vh;
@@ -98,18 +98,6 @@ nav h6 a{
     color: white;
     font-size: 3em;
     text-shadow: 2px 2px 4px black;
-
-}
-#bakgrundsVideo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%; /* Ändra storleken här */
-    height: 50%; /* Ändra storleken här */
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -2;
-    object-fit: cover;
 }
 
 .bakgrundsBild h1{
@@ -118,8 +106,8 @@ nav h6 a{
     font-size: 1.5em;
     font-weight: bold;
     text-transform: uppercase;
-    margin: 0 0 0 -30px;
-    text-align: left;
+    margin: 0 0 0 30px;
+    text-align: right;
 }
 
 
