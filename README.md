@@ -46,5 +46,5 @@ Grå = #577371
 # småfix
 
 - ev ta bort hem länk i top-bar samt koppla "snowhite heli" till hem länken ist
-
-- bakgrund på startsidan till video - https://alvarotrigo.com/blog/background-video-css/
+https://alvarotrigo.com/blog/background-video-css/
+- bakgrund på startsidan till video - 
