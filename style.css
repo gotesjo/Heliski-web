@@ -76,7 +76,7 @@ nav h6 a{
 /* Avsnitt 1: Hem  */
 
 #section1 {
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(pictures/bakgrund.jpg);
+    /* background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(pictures/bakgrund.jpg); */
     background-position: center;
     background-size: cover;
     height: 100vh;
@@ -118,8 +118,8 @@ nav h6 a{
     font-size: 1.5em;
     font-weight: bold;
     text-transform: uppercase;
-    margin: 0 0 0 30px;
-    text-align: right;
+    margin: 0 0 0 -30px;
+    text-align: left;
 }
 
 
