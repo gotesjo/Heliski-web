@@ -98,6 +98,18 @@ nav h6 a{
     color: white;
     font-size: 3em;
     text-shadow: 2px 2px 4px black;
+
+}
+#bakgrundsVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%; /* Ändra storleken här */
+    height: 50%; /* Ändra storleken här */
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -2;
+    object-fit: cover;
 }
 
 .bakgrundsBild h1{
