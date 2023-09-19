@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snowwhite Heli</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="stylecontact.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,600&family=Quicksand:wght@300&display=swap" rel="stylesheet">
@@ -28,16 +29,39 @@
       </nav>
     </header>
 
+    <!-- Formulär för kontakt-->
     <button class="material-icons" id="support-button">contact_support</button>
     <!-- The Modal -->
-    <div id="myModal" class="modal">
+      <div id="contact-wrapper" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <h2 class="contacthead">Kontaktformulär</h2>
+          <h5>Undrar du något eller vill komma i kontakt med oss är det bara att skriva här så kontaktar vi dig med ett svar på dina frågor.</h5>
+          <form id="contactform">
+              <div class="input-group" id="name-div">
+                  <input type="text" id="name" placeholder="Ditt namn" onkeyup="validateName()">
+                  <span id="name-error"></span>
+              </div>
 
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>Här ska vi öppna textformulär</p>
+              <div class="input-group" id="tele-div">
+                  <input type="text" id="tele" placeholder="Telefonnummer" onkeyup="validatePhone()">
+                  <span id="tele-error"></span>
+              </div>
+
+              <div class="input-group" id="email-div">
+                  <input type="text" id="email" placeholder="Email" onkeyup="validateEmail()">
+                  <span id="email-error"></span>
+              </div>
+
+              <div class="input-group" id="message-div">
+                  <textarea id="message" rows="4" placeholder="Skriv ditt meddelande här" onkeyup="validateMessage()"></textarea>
+                  <span id="message-error"></span>
+              </div>
+              <button onclick="return validateForm()" type="submit">Skicka meddelande</button>
+          </form> 
+          <span class="close">&times;</span>
       </div>
-    </div>
+     </div>
 
     <!-- Avsnitt 1: Hem -->
     <section id="section1" class="full-height">
