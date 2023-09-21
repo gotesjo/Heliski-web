@@ -27,9 +27,28 @@ header {
     margin: 0 4em 0 4em;
 }
 
-.myLinks:after {
+.myLinks li a {
+    display: inline-block;
+    position: relative;
+}
+
+.myLinks li a:after {
     content: '';
+    position: absolute;
+    width: 40%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    right: 0;
+    border-bottom: 2px solid #FF570A;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
     
+}
+
+.myLinks li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 nav {
@@ -47,9 +66,9 @@ nav li a {
     padding: 01em 2em;
 }
 
- nav li a:hover {
+ /* nav li a:hover {
     border-bottom: 2px solid #FF570A;
-} 
+}  */
 
 nav h6 a {
     font-size: 1.3rem;
