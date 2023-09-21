@@ -35,7 +35,7 @@ header {
 .myLinks li a:after {
     content: '';
     position: absolute;
-    width: 40%;
+    width: 100%;
     transform: scaleX(0);
     height: 2px;
     bottom: 0;
@@ -565,6 +565,30 @@ input[name="r"]
         text-align: right;
         margin: 0;
         
+    }
+    
+    .myLinks li a {
+        display: inline-block;
+        position: relative;
+    }
+    
+    .myLinks li a:after {
+        content: '';
+        position: absolute;
+        width: 50%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        right: 0;
+        border-bottom: 2px solid #FF570A;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+        
+    }
+    
+    .myLinks li a:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
     }
 
 

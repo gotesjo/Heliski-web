@@ -230,11 +230,11 @@ hr {
 }
 
 .cart-item-count {
-    font-size: 14px; /* Eller vilken storlek du föredrar */
-    color: white; /* Eller vilken färg du föredrar */
-    font-weight: bold; /* Om du vill ha siffran i fetstil */
-    background-color:#FF570A; /* Eller vilken bakgrundsfärg du föredrar */
-    border-radius: 50%; /* Om du vill ha en cirkel runt siffran */
-    padding: 2px 6px; /* Lägg till lite padding */
+    font-size: 14px;
+    color: white; 
+    font-weight: bold; 
+    background-color:#FF570A; 
+    border-radius: 50%;
+    padding: 0px 6px; 
     padding-right: 6.5px;
 }
