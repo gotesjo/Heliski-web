@@ -18,13 +18,17 @@ header {
     width: 100%;
     z-index: 100;
     padding: 1em;
+    display:  block;
+    text-align: center;
+}
+
+.myLinks {
     text-align: right;
-    display: block;
-    
+    margin: 0 4em 0 4em;
 }
 
 nav {
-    margin: 0.2em 4em 0 4em;
+    text-align: center;
 }
 
 nav li {
@@ -42,17 +46,24 @@ nav li a {
     border-bottom: 2px solid #FF570A;
 } 
 
-nav h6 a{
+nav h6 a {
     font-size: 1.3rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     color: white;
     display: inline;
     float: left;
-    margin-top: -10px;
+    margin-left: 40px;
     border-bottom: 2px solid #FF570A;
     text-decoration: none;
 }
+
+#menuIcon, #menu-toggle {
+    display: none;
+    font-size: 3rem;
+    color: #fff;
+}
+
 
 .full-height {
     height: 100vh;
@@ -404,21 +415,29 @@ footer {
         display: block;
     }
     
-    nav li {
-        display: block; 
-    }
-    
-    nav li a {
-        display: none;
+    .myLinks {
         text-decoration: none;
         color: white;
         font-weight: 700;
         padding: 0.1em 2em;
     }
-    
-     nav li a:hover {
+
+    .myLinks li a:hover {
         border-bottom: 2px solid #FF570A;
     } 
+
+    #menuIcon {
+        display: block;
+        right: 10px;
+    }
+
+    .myLinks li a {
+        display: none;
+    }
+
+    #menu-toggle:checked ~ .myLinks li a {
+        display: block;
+    }
     
     nav h6 a{
         font-size: 1.3rem;
@@ -431,6 +450,8 @@ footer {
         border-bottom: 2px solid #FF570A;
         text-decoration: none;
     }
+
+
 
 
     .grid-container {
