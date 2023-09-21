@@ -1,0 +1,240 @@
+/* .cart-dropDown {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    max-height: 500px;
+    overflow-y: auto;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 0px 25px 40px #1687d933;
+    width: 300px;
+    position: absolute;
+    z-index: 10;
+    top: 75px;
+    right: 100px;
+}
+
+.cart-dropDown li {
+    padding: 10px;
+    margin: 0;
+}
+
+.varukorgRubrik {
+    margin: 0;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.VarukorgVaror {
+    font-size: 20px;
+    font-family: 'quicksand', sans-serif;
+    font-weight: 700;
+}
+
+.VarukorgTaBort {
+    color: #E44C4C;
+    cursor: pointer;
+    border-bottom: 1px solid #E44C4C;
+    font-weight: 1000;
+}
+
+.image-box img {
+    width: auto;
+    height: 120px;
+}
+
+.image-box {
+    width: 15%;
+    text-align: center;
+}
+
+.varukorgInfo {
+    height: 100%;
+}
+
+.varukorgTitel {
+    padding-top: 5px;
+    line-height: 10px;
+    font-size: 32px;
+    color: #202020;
+}
+.cartItems{
+    display: flex;
+} */
+
+
+.cart-dropDown {
+    margin: auto;
+    padding: 0;
+    height: auto;
+    max-height: 500px;
+    overflow-y: auto;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 0px 25px 40px #1687d933;
+    width: 30%;
+    position: absolute;
+    z-index: 10;
+    top: 75px;
+    right: 35px;
+}
+
+.cart-dropDown li {
+    padding: 10px;
+    margin: 0;
+    display: flex; /* Sätter flex på li element */
+    align-items: center; /* Centrerar flex-items vertikalt */
+}
+
+.cartItems {
+    padding-left: 1em;
+}
+
+.varukorgRubrik {
+    margin: 0;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1em;
+}
+
+.VarukorgVaror {
+    font-size: 20px;
+    font-family: 'quicksand', sans-serif;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.image-box img {
+    width: auto;
+    height: 70px;
+}
+
+.image-box img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+}
+
+
+.varukorgInfo {
+    flex: 1; /* Tar upp kvarvarande utrymme efter andra flex-items har tagit sitt utrymme */
+    display: flex;
+    flex-direction: column; /* Arrangerar barn-element (h1, h3) vertikalt */
+    justify-content: center; /* Centrerar barn-element vertikalt */
+    align-items: center;
+    gap: 10px;
+}
+
+.varukorgTitel {
+    padding-top: 5px;
+    line-height: 10px;
+    font-size: 20px;
+    font-family: 'Open Sans';
+    font-weight: 800;
+    color: #202020;
+    margin-bottom: 10px;
+    margin-right: 2em;
+    margin-left: 20px;
+}
+
+.produktPlats {
+    line-height: 10px;
+    font-size: 18px;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    color: #909090;
+}
+
+.priser {
+    flex: 0 0 auto; /* Sätter flex-grow till 0, flex-shrink till 0 och flex-basis till auto */
+    text-align: right;
+}
+
+.produktPris {
+    padding-top: 20px;
+    font-size: 20px;
+    font-family: 'Open Sans';
+    font-weight: 700;
+}
+
+.taBortProdukter {
+    padding-top: 5px;
+    font-size: 14px;
+    font-family: 'Open Sans';
+    color: #E44C4C;
+    cursor: pointer;
+    border-bottom: 1px solid #1111113c;
+}
+
+hr {
+    width: 62%;
+    margin-right: 1em;
+}
+
+.checkOut {
+    float: right;
+    margin-right: 25%;
+    width: 28%;
+}
+
+.total {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subTotal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 20px; /* Lägger till lite margin till höger om subTotal-container */
+}
+
+.subTotal, .items {
+    white-space: nowrap; /* Förhindra radbrott */
+}
+
+.subTotal {
+    font-size: 20px;
+   
+}
+
+.items {
+    font-size: 10px;
+    line-height: 10px;
+}
+
+.totalAmount {
+    font-size: 30px;
+}
+
+.checkOutButton {
+    margin-top: 5px;
+    width: 100%;
+    height: 40px;
+    border: none;
+    background-color: #0C1C3C;
+    border-radius: 20px;
+    cursor: pointer;
+    color: white;
+    margin-bottom: 1em;
+}
+
+.cart-item-count {
+    font-size: 14px; /* Eller vilken storlek du föredrar */
+    color: white; /* Eller vilken färg du föredrar */
+    font-weight: bold; /* Om du vill ha siffran i fetstil */
+    background-color:#FF570A; /* Eller vilken bakgrundsfärg du föredrar */
+    border-radius: 50%; /* Om du vill ha en cirkel runt siffran */
+    padding: 2px 6px; /* Lägg till lite padding */
+    padding-right: 6.5px;
+}
