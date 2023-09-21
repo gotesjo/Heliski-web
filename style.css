@@ -27,6 +27,11 @@ header {
     margin: 0 4em 0 4em;
 }
 
+.myLinks:after {
+    content: '';
+    
+}
+
 nav {
     text-align: center;
 }
@@ -39,7 +44,7 @@ nav li a {
     text-decoration: none;
     color: white;
     font-weight: 700;
-    padding: 0.1em 2em;
+    padding: 01em 2em;
 }
 
  nav li a:hover {
@@ -401,7 +406,7 @@ footer {
 
 
 /* För mobilskärmar */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 905px) {
     
     header {
         background-color: #0C1C3C;
@@ -410,36 +415,53 @@ footer {
         left: 0;
         width: 100%;
         z-index: 100;
-        padding: 1em;
+        padding: 1em; 
         text-align: right;
         display: block;
     }
+
     
     .myLinks {
         text-decoration: none;
         color: white;
         font-weight: 700;
-        padding: 0.1em 2em;
+        padding: 0.01em 2em;
+        display: block;
+        text-align: right;
+        margin: 0;
+        
     }
 
-    .myLinks li a:hover {
+
+    /* .myLinks li a:hover {
         border-bottom: 2px solid #FF570A;
-    } 
+    }  */
 
     #menuIcon {
         display: block;
-        right: 10px;
+        position: relative;
+        margin: 0 1.5em 0 1em;
     }
 
     .myLinks li a {
         display: none;
+        margin: 0.5em;
     }
 
     #menu-toggle:checked ~ .myLinks li a {
         display: block;
     }
-    
-    nav h6 a{
+
+    #menu-toggle:checked ~ #menuIcon {
+        color: #FF570A;
+    }
+
+    nav {
+        text-align: right;
+        position: relative;
+    }
+
+    nav h6 a {
         font-size: 1.3rem;
         font-family: 'Montserrat', sans-serif;
         font-weight: 900;
@@ -450,9 +472,6 @@ footer {
         border-bottom: 2px solid #FF570A;
         text-decoration: none;
     }
-
-
-
 
     .grid-container {
         display: grid;
@@ -483,8 +502,9 @@ footer {
         background-color: white;
         font-size: 1.5em;
         display: inline;
-
     }
 
-
+    #huvudTitel a {
+        margin-top: -0.1em;
+    }
   }
