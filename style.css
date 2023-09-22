@@ -146,30 +146,74 @@ nav h6 a {
 }
 
 /* Avsnitt 2 - Avsnitt 5  */
-#section2,#section3,#section4,#section5 {
+/* #section2,#section3,#section4,#section5 {
     background-color: white;
     font-size: 1.5em;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
-.grid-container {
+#info-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100vh 100vh 100vh 100vh;
+    gap: 30px;
+    place-items: center;
 }
 
-.grid-itemAbout {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+#grid-pic1 {
+    grid-row: 1 / 1;
+    grid-column: 2 / 2;
 }
+
+#grid-text1 {
+    grid-row: 1 / 1;
+    grid-column: 1 /1;
+}
+
+#grid-pic2 {
+    grid-row: 2 / 2;
+    grid-column: 1 / 1;
+}
+
+#grid-text2 {
+    grid-row: 2 / 2;
+    grid-column: 2 / 2;
+}
+
+#grid-pic3 {
+    grid-row: 3 / 3;
+    grid-column: 2 / 2;
+}
+
+#grid-text3 {
+    grid-row: 3 / 3;
+    grid-column: 1 / 1;
+}
+
+#grid-pic4 {
+    grid-row: 4 / 4;
+    grid-column: 1 / 1;
+}
+
+#grid-text4{
+    grid-row: 4 / 4;
+    grid-column: 2 / 2;
+}
+
+.info-grid-pic img { 
+    height: 100%;
+    width: 50vw;
+    object-fit:cover;
+}
+
+
 
 .grid-itemAbout img {
-    max-width: 100%;
+    width: 20vw;
     height: fit-content;
     border-radius: 15px 20px 25px 30px;
 }
