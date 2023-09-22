@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="varukorg.css" />
     <link rel="stylesheet" href="style1.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="stylecontact.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -127,7 +128,7 @@
               :src="item.image"
               alt="enBild"
               class="product-image"
-              @click=" handleClickLocation(item)"
+              @click="openModal(item)"
             />
 
             <div>{{ item.price }} SEK</div>
@@ -173,7 +174,7 @@
               :src="item.image"
               alt="enBild"
               class="product-image"
-              @click="handleClickLocation(item)"
+              @click="openModal(item)"
             />
             <div>{{ item.price }} SEK</div>
           </div>
@@ -218,7 +219,7 @@
               :src="item.image"
               alt="enBild"
               class="product-image"
-              @click=" handleClickLocation(item)"
+              @click="openModal(item)"
             />
             <div>{{ item.price }} SEK</div>
           </div>
@@ -263,12 +264,38 @@
               :src="item.image"
               alt="enBild"
               class="product-image"
-              @click=" handleClickLocation(item)"
+              @click="openModal(item)"
             />
             <div>{{ item.price }} SEK</div>
           </div>
         </div>
       </section>
+
+      <!-- Modal för att visa info om produkterna -->
+      <div id="productModalId" class="product-modal" v-if="showModal">
+        <div class="product-modal-content">
+          <p class="productInfoTitel">Bokning</p>
+          <h1>{{valdProdukt.name}}</h1>
+          <p>{{ valdProdukt.description }}</p>
+          <p>{{ valdProdukt.availability }}</p>
+          <br />
+          <p>
+            För att boka din plats, klicka på "Köp Nu"-knappen nedan. Vi
+            erbjuder flera betalningsalternativ för din bekvämlighet.
+          </p>
+          <p class="productInfoTitel">Boknings Information</p>
+          <p>
+            Vänligen notera att bokningar enbart är möjliga för grupper om
+            antingen 2 eller 4 personer. Detta för att säkerställa den högsta
+            kvaliteten och upplevelsen av vår service.
+          </p>
+          <button class="productBuyButton" @click="buyProduct(valdProdukt)">Köp Nu</button>
+          <span class="close" @click="closeModal">&times;</span>
+        </div>
+      </div>
+
+
+
     </div>
 
     <footer>
