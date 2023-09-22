@@ -300,6 +300,24 @@ const app = Vue.createApp({
             this.totalPrice = this.cart.reduce((sum, product) => sum + (product.price * product.quantity))
         },
 
+        showAlert(){
+            alert("Din order har skickats!");
+           },
+    
+        checkout() {
+    
+                console.log('Checkout button clicked!'); // loggar när knappen klickas
+                console.log('Current cart:', this.cart); // loggar nuvarande varukorg
+                this.cart = [];
+                console.log('Cart after emptying:', this.cart); // loggar varukorgen efter tömning
+                localStorage.setItem('varukorg', JSON.stringify(this.cart));
+            },
+
+        handleCheckOut(){
+                this.showAlert();
+                this.checkout();
+         },
+
         openModal(product) {
             this.valdProdukt = product;
             this.showModal = true;
