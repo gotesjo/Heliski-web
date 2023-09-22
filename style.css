@@ -358,7 +358,7 @@ input[name="r"]
     padding: 40px;
     box-sizing: border-box;
     cursor: pointer;
-    margin: 10px
+    margin: 10px;
     background-position: center;
     background-size: cover;
     transition: transform 0.5s;
