@@ -351,14 +351,14 @@ input[name="r"]
 }
 
 .card{
-    width: 18vw;
-    height: 18vw;
+    width: 17vw;
+    height: 17vw;
 
     border-radius: 10px;
     padding: 40px;
     box-sizing: border-box;
     cursor: pointer;
-    margin: 25px 15px;
+    margin: 10px;
     background-position: center;
     background-size: cover;
     transition: transform 0.5s;
@@ -368,6 +368,7 @@ input[name="r"]
 .card1{
     background-image: url(pictures/profilbild1.jpg);
     grid-area: 1 / 2 /1 / 2;
+    justify-self: end;
 }
 
 .card2{
@@ -378,11 +379,15 @@ input[name="r"]
 .card3{
     background-image: url(pictures/profilbild3.jpg);
     grid-area: 2 / 2 /2 / 2;
+    justify-self: end;
+    align-self: baseline;
+
 }
 
 .card4{
     background-image: url(pictures/profilbild4.jpg);
     grid-area: 2 / 3 /2 / 3;
+    align-self: baseline;
 }
 .card h5{
     color: black;
