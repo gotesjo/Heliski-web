@@ -1,357 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="varukorg.css" />
-    <link rel="stylesheet" href="style1.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="stylecontact.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,600&family=Quicksand:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script defer src="app.js"></script>
-  </head>
 
-  <body>
-    <div id="app">
-      <header>
-        <nav>
-          <!-- Logotyp -->
-          <h6 id="huvudTitel">
-            <a href="index.html#section1">SnowWhite Heli</a>
-          </h6>
-          <input type="checkbox" id="menu-toggle" />
-          <label for="menu-toggle" id="menuIcon">&#9776;</label>
-          <!-- Navigationslänkar -->
-          <div class="myLinks">
-            <ul>
-              <li><a href="index.html#section2">Skidaktiviteter</a></li>
-              <!-- <li><a href="#section6">Bildspel</a></li> -->
-              <li><a href="#section1varor">Boka Resa</a></li>
-              <li><a href="index.html#section7">Våra Guider</a></li>
-              <li>
-                <a href="#" @click.prevent="openCart">
-                  Varukorg
-                  <span v-if="totalItemsCart > 0" class="cart-item-count">
-                    {{totalItemsCart}}
-                  </span>
-                </a>
-                <div v-if="showCart" class="cart-dropDown">
-                  <div class="varukorgRubrik">
-                    <h3 class="VarukorgVaror">Varor</h3>
-                  </div>
-                  <div class="cartItems">
-                    <ul>
-                      <li v-for="product in cart" :key="product.id">
-                        <div class="image-box">
-                          <img :src="product.image" alt="varukorgImages" />
-                        </div>
-                        <div class="varukorgInfo">
-                          <h1 class="varukorgTitel">{{product.name}}</h1>
-                          <h3 class="produktPlats">{{product.location}}</h3>
-                        </div>
-                        <div class="priser">
-                          <div class="produktPris">{{product.price}} kr</div>
-                          <div
-                            class="taBortProdukter"
-                            @click="removeProductCart(product)"
-                          >
-                            Remove
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                  <hr />
-                  <div class="checkOut">
-                    <div class="total">
-                      <div class="subTotal-container">
-                        <div class="subTotal">Sub-total</div>
-                        <div class="items">{{totalItemsCart}} Items</div>
-                      </div>
-                      <div class="totalAmount">
-                        {{ cart.reduce((acc, product) => acc + product.price, 0)
-                        }} kr
-                      </div>
-                    </div>
-                    <button class="checkOutButton" @click="handleCheckOut">Check out</button>
-                  </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="varukorg.css" />
+  <link rel="stylesheet" href="style1.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="stylecontact.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,600&family=Quicksand:wght@300&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script defer src="app.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <nav>
+        <!-- Logotyp -->
+        <h6 id="huvudTitel">
+          <a href="index.html#section1">SnowWhite Heli</a>
+        </h6>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" id="menuIcon">&#9776;</label>
+        <!-- Navigationslänkar -->
+        <div class="myLinks">
+          <ul>
+            <li><a href="index.html#section2">Skidaktiviteter</a></li>
+            <!-- <li><a href="#section6">Bildspel</a></li> -->
+            <li><a href="#section1varor">Boka Resa</a></li>
+            <li><a href="index.html#section7">Våra Guider</a></li>
+            <li>
+              <a href="#" @click.prevent="openCart">
+                Varukorg
+                <span v-if="totalItemsCart > 0" class="cart-item-count">
+                  {{totalItemsCart}}
+                </span>
+              </a>
+              <div v-if="showCart" class="cart-dropDown">
+                <div class="varukorgRubrik">
+                  <h3 class="VarukorgVaror">Varor</h3>
                 </div>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
-
-      <section id="section1Varor">
-        <div class="bakgrundsBildVaror">
-          <h1>Zermatt</h1>
-          <p>
-            Upplev skidåkning som aldrig förr med SnowWhile Heli! Är du redo att
-            ta ditt skidäventyr till nästa nivå? Med en exklusiv helikopterdrop
-            i det spektakulära Val Thorens får du chansen att känna en
-            adrenalinkick som få annars upplever. Vi flyger dig upp till
-            avlägsna och orörda bergstoppar för en oförglömlig skidupplevelse.
-            <br />
-            Vår erfarna guide känner till det bästa pudret och de mest utmanande
-            pisterna och ger dig en kort säkerhetsgenomgång innan äventyret
-            börjar. Vi erbjuder även möjlighet till video- och fotodokumentation
-            av ditt äventyr. Boka ditt äventyr idag och förbered dig på att
-            utforska Val Thorens som du aldrig gjort förut!
-          </p>
+                <div class="cartItems">
+                  <ul>
+                    <li v-for="product in cart" :key="product.id">
+                      <div class="image-box">
+                        <img :src="product.image" alt="varukorgImages" />
+                      </div>
+                      <div class="varukorgInfo">
+                        <h1 class="varukorgTitel">{{product.name}}</h1>
+                        <h3 class="produktPlats">{{product.location}}</h3>
+                      </div>
+                      <div class="priser">
+                        <div class="produktPris">{{product.price}} kr</div>
+                        <div class="taBortProdukter" @click="removeProductCart(product)">
+                          Remove
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <hr />
+                <div class="checkOut">
+                  <div class="total">
+                    <div class="subTotal-container">
+                      <div class="subTotal">Sub-total</div>
+                      <div class="items">{{totalItemsCart}} Items</div>
+                    </div>
+                    <div class="totalAmount">
+                      {{ cart.reduce((acc, product) => acc + product.price, 0)
+                      }} kr
+                    </div>
+                  </div>
+                  <button class="checkOutButton" @click="handleCheckOut">Check out</button>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
-      </section>
+      </nav>
+    </header>
 
-      <div class="overlap-container">
-        <img
-          src="pictures/InfoZermat.jpg"
-          alt="Informationsbild"
-          class="overlap-image"
-        />
-      </div>
-
-      <section id="section2Varor">
-        <div class="productCard">
-          <div class="cardVaror" v-for="item in ZermattItems">
-            <h5>{{ item.name }}</h5>
-            <img
-              :src="item.image"
-              alt="enBild"
-              class="product-image"
-              @click="openModal(item)"
-            />
-
-            <div>{{ item.price }} SEK</div>
-          </div>
-        </div>
-      </section>
-
-      <section id="section3Varor">
-        <div class="bakgrundsBildVaror">
-          <h1>Madesimo</h1>
-          <p>
-            Madesimo är en charmig skidort belägen i de italienska Alperna, i
-            regionen Lombardiet. Känd för sin intima atmosfär och fantastiska
-            natursköna skönhet, erbjuder Madesimo en unik och personlig
-            skidupplevelse. Orten har ett brett utbud av pister som passar alla
-            nivåer, från gröna och blåa pister för nybörjare till utmanande
-            svarta pister och offpistområden för mer erfarna skidåkare. <br />
-            Madesimo är särskilt populär bland familjer och de som söker en mer
-            avkopplande vintersemester utan de stora folkmassorna. Orten
-            erbjuder också andra vinteraktiviteter som snöskovandring,
-            isklättring och hundspann, vilket gör det till en mångsidig
-            destination för alla typer av vinteräventyr. Trots sin mindre
-            storlek jämfört med andra europeiska skidorter, levererar Madesimo
-            en oförglömlig upplevelse med sina mysiga bygator, lokala italienska
-            köket och vänliga lokalbefolkning.
-          </p>
-        </div>
-      </section>
-
-      <div class="overlap-container">
-        <img
-          src="pictures/InfoMadesimo.jpg"
-          alt="Informationsbild"
-          class="overlap-image"
-        />
-      </div>
-
-      <section id="section4Varor">
-        <div class="productCard">
-          <div class="cardVaror" v-for="item in MadesimoItems">
-            <h5>{{ item.name }}</h5>
-            <img
-              :src="item.image"
-              alt="enBild"
-              class="product-image"
-              @click="openModal(item)"
-            />
-            <div>{{ item.price }} SEK</div>
-          </div>
-        </div>
-      </section>
-
-      <section id="section5Varor">
-        <div class="bakgrundsBildVaror">
-          <h1>st. moritz</h1>
-          <p>
-            Madesimo är en charmig skidort belägen i de italienska Alperna, i
-            regionen Lombardiet. Känd för sin intima atmosfär och fantastiska
-            natursköna skönhet, erbjuder Madesimo en unik och personlig
-            skidupplevelse. Orten har ett brett utbud av pister som passar alla
-            nivåer, från gröna och blåa pister för nybörjare till utmanande
-            svarta pister och offpistområden för mer erfarna skidåkare. <br />
-            Madesimo är särskilt populär bland familjer och de som söker en mer
-            avkopplande vintersemester utan de stora folkmassorna. Orten
-            erbjuder också andra vinteraktiviteter som snöskovandring,
-            isklättring och hundspann, vilket gör det till en mångsidig
-            destination för alla typer av vinteräventyr. Trots sin mindre
-            storlek jämfört med andra europeiska skidorter, levererar Madesimo
-            en oförglömlig upplevelse med sina mysiga bygator, lokala italienska
-            köket och vänliga lokalbefolkning.
-          </p>
-        </div>
-      </section>
-
-      <div class="overlap-container">
-        <img
-          src="pictures/InfoStMoritz.jpg"
-          alt="Informationsbild"
-          class="overlap-image"
-        />
-      </div>
-
-      <section id="section6Varor">
-        <div class="productCard">
-          <div class="cardVaror" v-for="item in StMoritzItems">
-            <h5>{{ item.name }}</h5>
-            <img
-              :src="item.image"
-              alt="enBild"
-              class="product-image"
-              @click="openModal(item)"
-            />
-            <div>{{ item.price }} SEK</div>
-          </div>
-        </div>
-      </section>
-
-      <section id="section7Varor">
-        <div class="bakgrundsBildVaror">
-          <h1>Val Thorens</h1>
-          <p>
-            Madesimo är en charmig skidort belägen i de italienska Alperna, i
-            regionen Lombardiet. Känd för sin intima atmosfär och fantastiska
-            natursköna skönhet, erbjuder Madesimo en unik och personlig
-            skidupplevelse. Orten har ett brett utbud av pister som passar alla
-            nivåer, från gröna och blåa pister för nybörjare till utmanande
-            svarta pister och offpistområden för mer erfarna skidåkare. <br />
-            Madesimo är särskilt populär bland familjer och de som söker en mer
-            avkopplande vintersemester utan de stora folkmassorna. Orten
-            erbjuder också andra vinteraktiviteter som snöskovandring,
-            isklättring och hundspann, vilket gör det till en mångsidig
-            destination för alla typer av vinteräventyr. Trots sin mindre
-            storlek jämfört med andra europeiska skidorter, levererar Madesimo
-            en oförglömlig upplevelse med sina mysiga bygator, lokala italienska
-            köket och vänliga lokalbefolkning.
-          </p>
-        </div>
-      </section>
-
-      <div class="overlap-container">
-        <img
-          src="pictures/InfoValThorens.jpg"
-          alt="Informationsbild"
-          class="overlap-image"
-        />
-      </div>
-
-      <section id="section8Varor">
-        <div class="productCard">
-          <div class="cardVaror" v-for="item in ValThorensItems">
-            <h5>{{ item.name }}</h5>
-            <img
-              :src="item.image"
-              alt="enBild"
-              class="product-image"
-              @click="openModal(item)"
-            />
-            <div>{{ item.price }} SEK</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Modal för att visa info om produkterna -->
-      <div id="productModalId" class="product-modal" v-if="showModal">
-        <div class="product-modal-content">
-          <p class="productInfoTitel">Bokning</p>
-          <h1>{{valdProdukt.name}}</h1>
-          <p>{{ valdProdukt.description }}</p>
-          <p>{{ valdProdukt.availability }}</p>
+    <section id="section1Varor">
+      <div class="bakgrundsBildVaror">
+        <h1>Zermatt</h1>
+        <p>
+          Upplev skidåkning som aldrig förr med SnowWhile Heli! Är du redo att
+          ta ditt skidäventyr till nästa nivå? Med en exklusiv helikopterdrop
+          i det spektakulära Val Thorens får du chansen att känna en
+          adrenalinkick som få annars upplever. Vi flyger dig upp till
+          avlägsna och orörda bergstoppar för en oförglömlig skidupplevelse.
           <br />
-          <p>
-            För att boka din plats, klicka på "Köp Nu"-knappen nedan. Vi
-            erbjuder flera betalningsalternativ för din bekvämlighet.
-          </p>
-          <p class="productInfoTitel">Boknings Information</p>
-          <p>
-            Vänligen notera att bokningar enbart är möjliga för grupper om
-            antingen 2 eller 4 personer. Detta för att säkerställa den högsta
-            kvaliteten och upplevelsen av vår service.
-          </p>
-          <button class="productBuyButton" @click="buyProduct(valdProdukt)">Köp Nu</button>
-          <span class="close" @click="closeModal">&times;</span>
-        </div>
+          Vår erfarna guide känner till det bästa pudret och de mest utmanande
+          pisterna och ger dig en kort säkerhetsgenomgång innan äventyret
+          börjar. Vi erbjuder även möjlighet till video- och fotodokumentation
+          av ditt äventyr. Boka ditt äventyr idag och förbered dig på att
+          utforska Val Thorens som du aldrig gjort förut!
+        </p>
       </div>
+    </section>
 
-
-
+    <div class="overlap-container">
+      <img src="pictures/InfoZermat.jpg" alt="Informationsbild" class="overlap-image" />
     </div>
 
-    <footer>
-      <div class="grid-Cont">
-        <div class="grid-Item item1">
-          <h10>SnowWhite Heli</h10>
-        </div>
+    <section id="section2Varor">
+      <div class="productCard">
+        <div class="cardVaror" v-for="item in ZermattItems">
+          <h5>{{ item.name }}</h5>
+          <img :src="item.image" alt="enBild" class="product-image" @click="openModal(item)" />
 
-        <div class="grid-Item item2">
-          <div class="footerCont">
-            <h4>Snabb Länk</h4>
-            <ul class="footList">
-              <li><a href="#section1" class="hLink">Hem</a></li>
-              <li>Om oss</li>
-              <li>FAQ</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="grid-Item item3">
-          <div class="footerCont">
-            <h4>Kontakta oss</h4>
-            <ul class="footList">
-              <li>Tel: 0760506043</li>
-              <li>Email: snow@WhiteHeli.com</li>
-              <li>Fax: +44-20-1224-3456</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="grid-Item item4">
-          <div class="footerCont">
-            <h4>Sociala medier</h4>
-            <ul class="footList">
-              <li>Instagram</li>
-              <li>Facebook</li>
-              <li>Tiktok</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="grid-Item item5">
-          <p id="footText">All rights reserved. SnowWhite-Heli</p>
-        </div>
-
-        <div class="grid-Item item6">
-          <div class="footerCont">
-            <h4>Om oss</h4>
-            <p id="footP">
-              Vi är ett företag som tar din skidåkning till nya höjder. Med
-              topklassig säkerhet och professionell personal så kan vi garantera
-              en nöjesvärd upplevelse
-            </p>
-          </div>
+          <div>{{ item.price }} SEK</div>
         </div>
       </div>
-    </footer>
-  </body>
+    </section>
+
+    <section id="section3Varor">
+      <div class="bakgrundsBildVaror">
+        <h1>Madesimo</h1>
+        <p>
+          Madesimo är en charmig skidort belägen i de italienska Alperna, i
+          regionen Lombardiet. Känd för sin intima atmosfär och fantastiska
+          natursköna skönhet, erbjuder Madesimo en unik och personlig
+          skidupplevelse. Orten har ett brett utbud av pister som passar alla
+          nivåer, från gröna och blåa pister för nybörjare till utmanande
+          svarta pister och offpistområden för mer erfarna skidåkare. <br />
+          Madesimo är särskilt populär bland familjer och de som söker en mer
+          avkopplande vintersemester utan de stora folkmassorna. Orten
+          erbjuder också andra vinteraktiviteter som snöskovandring,
+          isklättring och hundspann, vilket gör det till en mångsidig
+          destination för alla typer av vinteräventyr. Trots sin mindre
+          storlek jämfört med andra europeiska skidorter, levererar Madesimo
+          en oförglömlig upplevelse med sina mysiga bygator, lokala italienska
+          köket och vänliga lokalbefolkning.
+        </p>
+      </div>
+    </section>
+
+    <div class="overlap-container">
+      <img src="pictures/InfoMadesimo.jpg" alt="Informationsbild" class="overlap-image" />
+    </div>
+
+    <section id="section4Varor">
+      <div class="productCard">
+        <div class="cardVaror" v-for="item in MadesimoItems">
+          <h5>{{ item.name }}</h5>
+          <img :src="item.image" alt="enBild" class="product-image" @click="openModal(item)" />
+          <div>{{ item.price }} SEK</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section5Varor">
+      <div class="bakgrundsBildVaror">
+        <h1>st. Moritz</h1>
+        <p>
+          Madesimo är en charmig skidort belägen i de italienska Alperna, i
+          regionen Lombardiet. Känd för sin intima atmosfär och fantastiska
+          natursköna skönhet, erbjuder Madesimo en unik och personlig
+          skidupplevelse. Orten har ett brett utbud av pister som passar alla
+          nivåer, från gröna och blåa pister för nybörjare till utmanande
+          svarta pister och offpistområden för mer erfarna skidåkare. <br />
+          Madesimo är särskilt populär bland familjer och de som söker en mer
+          avkopplande vintersemester utan de stora folkmassorna. Orten
+          erbjuder också andra vinteraktiviteter som snöskovandring,
+          isklättring och hundspann, vilket gör det till en mångsidig
+          destination för alla typer av vinteräventyr. Trots sin mindre
+          storlek jämfört med andra europeiska skidorter, levererar Madesimo
+          en oförglömlig upplevelse med sina mysiga bygator, lokala italienska
+          köket och vänliga lokalbefolkning.
+        </p>
+      </div>
+    </section>
+
+    <div class="overlap-container">
+      <img src="pictures/InfoStMoritz.jpg" alt="Informationsbild" class="overlap-image" />
+    </div>
+
+    <section id="section6Varor">
+      <div class="productCard">
+        <div class="cardVaror" v-for="item in StMoritzItems">
+          <h5>{{ item.name }}</h5>
+          <img :src="item.image" alt="enBild" class="product-image" @click="openModal(item)" />
+          <div>{{ item.price }} SEK</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section7Varor">
+      <div class="bakgrundsBildVaror">
+        <h1>Val Thorens</h1>
+        <p>
+          Madesimo är en charmig skidort belägen i de italienska Alperna, i
+          regionen Lombardiet. Känd för sin intima atmosfär och fantastiska
+          natursköna skönhet, erbjuder Madesimo en unik och personlig
+          skidupplevelse. Orten har ett brett utbud av pister som passar alla
+          nivåer, från gröna och blåa pister för nybörjare till utmanande
+          svarta pister och offpistområden för mer erfarna skidåkare. <br />
+          Madesimo är särskilt populär bland familjer och de som söker en mer
+          avkopplande vintersemester utan de stora folkmassorna. Orten
+          erbjuder också andra vinteraktiviteter som snöskovandring,
+          isklättring och hundspann, vilket gör det till en mångsidig
+          destination för alla typer av vinteräventyr. Trots sin mindre
+          storlek jämfört med andra europeiska skidorter, levererar Madesimo
+          en oförglömlig upplevelse med sina mysiga bygator, lokala italienska
+          köket och vänliga lokalbefolkning.
+        </p>
+      </div>
+    </section>
+
+    <div class="overlap-container">
+      <img src="pictures/InfoValThorens.jpg" alt="Informationsbild" class="overlap-image" />
+    </div>
+
+    <section id="section8Varor">
+      <div class="productCard">
+        <div class="cardVaror" v-for="item in ValThorensItems">
+          <h5>{{ item.name }}</h5>
+          <img :src="item.image" alt="enBild" class="product-image" @click="openModal(item)" />
+          <div>{{ item.price }} SEK</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal för att visa info om produkterna -->
+    <div id="productModalId" class="product-modal" v-if="showModal">
+      <div class="product-modal-content">
+        <p class="productInfoTitel">Bokning</p>
+        <h1>{{valdProdukt.name}}</h1>
+        <p>{{ valdProdukt.description }}</p>
+        <p>{{ valdProdukt.availability }}</p>
+        <br />
+        <p>
+          För att boka din plats, klicka på "Köp Nu"-knappen nedan. Vi
+          erbjuder flera betalningsalternativ för din bekvämlighet.
+        </p>
+        <p class="productInfoTitel">Boknings Information</p>
+        <p>
+          Vänligen notera att bokningar enbart är möjliga för grupper om
+          antingen 2 eller 4 personer. Detta för att säkerställa den högsta
+          kvaliteten och upplevelsen av vår service.
+        </p>
+        <button class="productBuyButton" @click="buyProduct(valdProdukt)">Köp Nu</button>
+        <span class="close" @click="closeModal">&times;</span>
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <footer>
+    <div class="grid-Cont">
+      <div class="grid-Item item1">
+        <h10>SnowWhite Heli</h10>
+      </div>
+
+      <div class="grid-Item item2">
+        <div class="footerCont">
+          <h4>Snabb Länk</h4>
+          <ul class="footList">
+            <li><a href="#section1" class="hLink">Hem</a></li>
+            <li>Om oss</li>
+            <li>FAQ</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-Item item3">
+        <div class="footerCont">
+          <h4>Kontakta oss</h4>
+          <ul class="footList">
+            <li>Tel: 0760506043</li>
+            <li>Email: snow@WhiteHeli.com</li>
+            <li>Fax: +44-20-1224-3456</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-Item item4">
+        <div class="footerCont">
+          <h4>Sociala medier</h4>
+          <ul class="footList">
+            <li>Instagram</li>
+            <li>Facebook</li>
+            <li>Tiktok</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-Item item5">
+        <p id="footText">All rights reserved. SnowWhite-Heli</p>
+      </div>
+
+      <div class="grid-Item item6">
+        <div class="footerCont">
+          <h4>Om oss</h4>
+          <p id="footP">
+            Vi är ett företag som tar din skidåkning till nya höjder. Med
+            topklassig säkerhet och professionell personal så kan vi garantera
+            en nöjesvärd upplevelse
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
 </html>
