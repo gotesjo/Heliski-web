@@ -18,6 +18,10 @@ const app = Vue.createApp({
             cartHasItems: false,
             closeMenu:false,
 
+            staff: [],
+            projects: [],
+            selectedStaff: JSON.parse(localStorage.getItem('selectedstaff')) || {},
+
             items:[{
 
                 id: 0,
@@ -346,7 +350,14 @@ const app = Vue.createApp({
         closeModal () {
             this.valdProdukt = '';
             this.showModal = false;
-        }
+        },
+
+        openPersonalPage(astaff) {
+            this.selectedStaff = astaff;
+            localStorage.setItem('selectedstaff', JSON.stringify(this.selectedStaff));
+            window.location.href = 'individuell-sida.html';
+        },
+
          
 
     },
@@ -379,6 +390,18 @@ const app = Vue.createApp({
 
             return this.items.filter(item => item.location === 'ValThorens');
 
+          },
+          staffEmanuel() {
+            return this.staff.filter(astaff => astaff.name === 'Emanuel');
+          },
+          staffAxel() {
+            return this.staff.filter(astaff => astaff.name === 'Axel');
+          },
+          staffJesper() {
+            return this.staff.filter(astaff => astaff.name === 'Jesper');
+          },
+          staffLudvig() {
+            return this.staff.filter(astaff => astaff.name === 'Ludvig');
           }
           
 
@@ -391,8 +414,17 @@ mounted(){
     {
         this.cart= JSON.parse(savedCart);
     }
-}
-     
+},
+created(){ 
+    axios.get('data/staff.json') 
+        .then((response) => {
+            this.staff = response.data.staffMembers; });
+    
+    axios.get('data/projects.json') 
+    .then((response) => {
+        this.projects = response.data.projekt; });
+
+    }
 
 });
 

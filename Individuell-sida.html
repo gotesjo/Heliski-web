@@ -15,6 +15,7 @@
     rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script defer src="app.js"></script>
     <script src="script.js" defer></script>
     <title>Document</title>
@@ -141,45 +142,46 @@
           </div>
         </div>
 
-
         <div class="box-cont">
             <div class="box-part part1">
               <div class="top-left">
-                <h4>Ludvig Landström</h4>
-                <p>Vitt puder expert</p>
-                <img src="pictures/skidor-ludde.jpeg">
+                <h4>{{selectedStaff.name}}</h4>
+                <p>{{selectedStaff.jobtitle}}</p>
+                <img :src=selectedStaff.image>
               </div>
             </div>
             <div class="box-part part2">
               <h4>Presentation</h4>
+              <h5>{{selectedStaff.motto}}</h5>
+              <p>{{selectedStaff.description}}</p>
             </div>
             <div class="box-part part3">
               <h4>SkillBarssssss</h4>
 
                 <div class="skill">
                     <div id="number">
-                      65%
+                      {{selectedStaff.skill1}}
                     </div>
                   <div class="bars p1">
                   </div>
                 </div>
                   <div class="skill">
                     <div id="number">
-                    30%
+                      {{selectedStaff.skill2}}
                     </div>
                   <div class="bars p2">
                   </div>
                 </div>
                 <div class="skill">
                   <div id="number">
-                    90%
+                    {{selectedStaff.skill3}}
                     </div>
                   <div class="bars p3">
                   </div>
                 </div>
                 <div class="skill">
                   <div id="number">
-                    70%
+                    {{selectedStaff.skill4}}
                     </div>
                   <div class="bars p4">
                   </div>
@@ -190,6 +192,7 @@
               <h4>Projekt</h4>
             </div>
         </div>
+      </div> <!-- Avsluta app div-->
 <!-- Avsnitt 8: footer -->
 <footer>
     <div class="grid-Cont">

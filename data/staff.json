@@ -3,6 +3,7 @@
     {
       "id": 1,
       "name": "Emanuel",
+      "image": "./pictures/staff/emanuel.jpeg",
       "email": "emanuel-powder@snowwhite.com",
       "jobtitle": "Skid Guide",
       "motto": "Passionerad Äventyrare och Snöentusiast",
@@ -15,6 +16,7 @@
     {
       "id": 2,
       "name": "Axel",
+      "image": "./pictures/staff/axel.jpg",
       "email": "axel-heli@snowwhite.com",
       "jobtitle": "Helikopterförare",
       "motto": "Den Skyhöga Äventyraren",
@@ -27,6 +29,7 @@
     {
       "id": 3,
       "name": "Jesper",
+      "image": "./pictures/staff/jesper.jpg",
       "email": "jesper-safety@snowwhite.com",
       "jobtitle": "Lavinexpert",
       "motto": "Guardian of the White Realm",
@@ -39,9 +42,10 @@
     {
       "id": 3,
       "name": "Ludvig",
+      "image": "./pictures/staff/ludvig.jpeg",
       "email": "ludvig-coffe@snowwhite.com",
       "jobtitle": "Fikaansvarig",
-      "motto": "Skaparen av Varm Samhörighe",
+      "motto": "Skaparen av Varm Samhörighet",
       "description": "Ludvig, vår omtänksamma fikaansvarige vid skidresor, ser till att dina pauser på berget är lika minnesvärda som din skidåkning. Med sin smittande entusiasm för kaffe och godsaker skapar Ludvig en atmosfär av värme och gemenskap. Han är inte bara den som serverar, utan också den som skapar stunder av avkoppling och samhörighet mellan skidåkare.",
       "skill1": "90",
       "skill2": "98",

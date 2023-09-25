@@ -15,6 +15,7 @@
     rel="stylesheet" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script defer src="app.js"></script>
   <script src="script.js" defer></script>
 </head>
@@ -293,20 +294,18 @@
           </p>
         </div>
         <div class="guideProfileCard">
-          <div class="card card1">
-            <h5>Jesper</h5>
+          <div class="card card1" v-for="personal in staffJesper" @click="openPersonalPage(personal)">
+            <h5>{{personal.name}}</h5>
           </div>
-          <div class="card card2">
-            <h5>Axel</h5>
+          <div class="card card2" v-for="personal in staffAxel" @click="openPersonalPage(personal)">
+            <h5>{{personal.name}}</h5>
           </div>
-          <div class="card card3">
-            <h5>Emanuel</h5>
+          <div class="card card3" v-for="personal in staffEmanuel" @click="openPersonalPage(personal)">
+            <h5>{{personal.name}}</h5>
           </div>
-          <a href="Individuell-sida.html">
-            <div class="card card4">
-              <h5>Ludde</h5>
-            </div>
-          </a>
+          <div class="card card4" v-for="personal in staffLudvig" @click="openPersonalPage(personal)">
+              <h5>{{personal.name}}</h5>
+          </div>
         </div>
       </div>
     </section>
