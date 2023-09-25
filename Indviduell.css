@@ -100,24 +100,24 @@ h4 {
 }
 
 .p1 {
-    width: 65%;
+
     background-color: #FF570A;
     animation: anim 1s linear forwards;
 } 
 
 .p2 {
-    width: 30%;
+
     background-color: #FF570A;
     animation: anim 1s linear forwards;
 }
 .p3 {
-    width: 90%;
+
     background-color: #FF570A;
     animation: anim 1s linear forwards;
 } 
 
 .p4 {
-    width: 70%;
+
     background-color: #FF570A;
     animation: anim 1s linear forwards;
 } 
