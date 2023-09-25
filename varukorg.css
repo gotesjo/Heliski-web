@@ -98,6 +98,7 @@
     font-size: 20px;
     font-family: 'Open Sans';
     font-weight: 700;
+    color: black;
 }
 
 .taBortProdukter {
@@ -174,6 +175,17 @@ hr {
     padding: 0px 6px; 
     padding-right: 6.5px;
 }
+.close-cart {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #FF570A;
+}
+
 
 @media only screen and (max-width: 905px) {
     .cart-dropDown {
@@ -182,7 +194,9 @@ hr {
         top: 120%;
         z-index: 3;
         overflow-y: auto;
-        height: auto;
+        height: auto;  
+        max-height: 70vh; 
+        padding: 10px;
     }
 
     .cart-dropDown li {
@@ -198,9 +212,6 @@ hr {
     .priser {
         width: 50%; 
         text-align: left;
-        margin: 1em;
-       
-        
     }
 
     .image-box {
@@ -227,6 +238,17 @@ hr {
     }
     .produktPris{
         color: black;
-        margin-right: 6em;
-    }
+        
+}
+
+.close-cart {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    color: #FF570A;
+}
 }

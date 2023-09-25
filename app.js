@@ -268,6 +268,9 @@ const app = Vue.createApp({
 
 
           },
+          closeCart(){
+            this.showCart = false;
+          },
 
           onChange(event, productPrice,){
 

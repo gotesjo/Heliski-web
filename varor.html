@@ -44,6 +44,7 @@
                 </span>
               </a>
               <div v-if="showCart" class="cart-dropDown">
+                <button @click="closeCart" class="close-cart">X</button>
                 <div class="varukorgRubrik">
                   <h3 class="VarukorgVaror">Varor</h3>
                 </div>
@@ -89,7 +90,7 @@
 
     <section id="section1Varor">
       <div class="bakgrundsBildVaror">
-        <h1>Zermatt</h1>
+        <h1 class="firstTitle">Zermatt</h1>
         <p>
           Upplev skidåkning som aldrig förr med SnowWhile Heli! Är du redo att
           ta ditt skidäventyr till nästa nivå? Med en exklusiv helikopterdrop
