@@ -418,6 +418,7 @@ input[name="r"]
 }
 
 
+
 /* Avsnitt 8: footer */
 .footerCont {
     text-align: center;
@@ -478,6 +479,8 @@ input[name="r"]
     background-color: #0C1C3C;
     place-items: center;
     font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    bottom: 0;
 }
 
 .grid-Item {
@@ -485,6 +488,7 @@ input[name="r"]
     text-align: right;
     padding: 1em;
     align-items: start;
+    bottom: 0;
 
 }
 
@@ -538,7 +542,53 @@ input[name="r"]
     text-align: center;
 }
 
+.box-cont {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    height: 100%;
+    margin-top: 8em;
+    margin-bottom: 1em;
+    column-gap: 0.5em;
+    padding: 0.5em;
+}
 
+.box-part {
+    border-radius: 10px;
+}
+
+.part1 {
+    object-fit: fill;
+}
+
+.part1 img {
+    border-radius: 10px;
+    max-width:100%;
+    max-height: 100%;
+} 
+
+/* .part1:hover {
+    transform: scale(1.1);
+} */
+
+
+.part2 {
+    background-color: #FF570A;
+    
+}
+
+.part3 {
+    width: 100%;
+    background-color: #0C1C3C;
+}
+
+.skillBar-box {
+    /* display: flex; */
+    align-content: center;
+    background-color: red;
+    height: 50%;
+    width: 50%;
+    padding: -2em;
+}
 
 /* För mobilskärmar */
 @media only screen and (max-width: 905px) {
