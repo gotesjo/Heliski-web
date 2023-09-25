@@ -106,3 +106,12 @@ form textarea {
     text-decoration: none;
     cursor: pointer;
   } 
+
+  /* För mobilskärmar */
+@media only screen and (max-width: 905px) {
+    .modal-content {
+        margin-top: 22%;
+        width: 90vw;
+        height: 67vh;
+    }
+}
