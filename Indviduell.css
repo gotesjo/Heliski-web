@@ -1,7 +1,8 @@
 h4 {
-    color: white;
-    text-align: center;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    color:white;
+    margin: 0;
 }
 
 .box-cont {
@@ -20,26 +21,31 @@ h4 {
 
 .part1 {
     object-fit: fill;
+    position: relative;
 }
 
 .part1 img {
-    position: relative;
     border-radius: 10px;
     max-width:100%;
     max-height: 100%;
 } 
 
-.top-left h4 {
+.firstText {
     position: absolute;
-    z-index: 1;
-    margin-left: 0.5em;
+    top: 2%;
+    left: 3%;
+    font-size: 4rem;
+    border-bottom: 3px solid #FF570A;
+
 }
 
-.top-left p {
-    top: 180px;
+.secondText {
     position: absolute;
-    z-index: 1;
-    margin-left: 0.5em;
+    top: 20%;
+    left: 3%;
+    font-size: 2rem;
+    font-weight: bold;
+
 }
 
 /* .part1:hover {
@@ -48,7 +54,7 @@ h4 {
 
 
 .part2 {
-    background-color: #FF570A;
+    margin: 3% 2% 0 2%;
     
 }
 
@@ -139,6 +145,7 @@ h4 {
 
     .part1 {
         object-fit: fill;
+        margin-top: 6rem;
     }
     /*
     .part2 {
