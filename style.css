@@ -778,8 +778,13 @@ input[name="r"]
 
 
     .grid-Cont{
-        grid-template-columns: 1.5fr 1fr 2fr 1fr;
-        display: grid;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .footerCont {
+        text-align: center;
     }
 
 
