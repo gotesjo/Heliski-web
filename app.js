@@ -15,6 +15,7 @@ const app = Vue.createApp({
             calculatedPrice:0,
 
             showModal: false,
+            cartHasItems: false,
 
             items:[{
 
@@ -257,8 +258,8 @@ const app = Vue.createApp({
             }
         },
 
-        openCart:function(event){
-            event.preventDefault();
+        openCart(){
+           
             this.showCart = !this.showCart;
 
 
@@ -311,12 +312,24 @@ const app = Vue.createApp({
                 this.cart = [];
                 console.log('Cart after emptying:', this.cart); // loggar varukorgen efter tömning
                 localStorage.setItem('varukorg', JSON.stringify(this.cart));
+                
             },
 
         handleCheckOut(){
+            if(this.cart.length > 0){
+
+            
                 this.showAlert();
                 this.checkout();
+            }
+            else{
+                alert("Du måste lägga till varor i varukorgen innan du kan checka ut.");
+
+            }
+               
+               
          },
+         
 
         openModal(product) {
             this.valdProdukt = product;
