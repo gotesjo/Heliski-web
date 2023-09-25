@@ -16,6 +16,7 @@ const app = Vue.createApp({
 
             showModal: false,
             cartHasItems: false,
+            closeMenu:false,
 
             items:[{
 
@@ -263,6 +264,7 @@ const app = Vue.createApp({
         openCart(){
            
             this.showCart = !this.showCart;
+            this.closeMenu=false;
 
 
           },

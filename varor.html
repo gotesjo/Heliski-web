@@ -27,7 +27,7 @@
         <h6 id="huvudTitel">
           <a href="index.html#section1">SnowWhite Heli</a>
         </h6>
-        <input type="checkbox" id="menu-toggle" />
+        <input type="checkbox" id="menu-toggle" v-model="closeMenu" />
         <label for="menu-toggle" id="menuIcon">&#9776;</label>
         <!-- Navigationslänkar -->
         <div class="myLinks">
@@ -247,8 +247,12 @@
           antingen 2 eller 4 personer. Detta för att säkerställa den högsta
           kvaliteten och upplevelsen av vår service.
         </p>
-        <button class="productBuyButton" @click="buyProduct(valdProdukt)">Köp Nu</button>
-        <span class="close" @click="closeModal">&times;</span>
+        <div class="productInfo-item-item3">
+          <p class="productButtonText">{{ valdProdukt.price}} sek</p>
+          <button class="productBuyButton" @click="buyProduct(valdProdukt)">Köp Nu</button>
+          <span class="close" @click="closeModal">&times;</span>
+        </div>
+
       </div>
     </div>
 
