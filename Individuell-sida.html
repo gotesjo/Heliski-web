@@ -190,6 +190,13 @@
             </div>
             <div class="box-part part4">
               <h4>Projekt</h4>
+              <div class="personal-projects">
+                  <div class="project" v-for="project in projectsEmanuel">
+                    <span class="material-icons">{{project.kategori}}</span>
+                  <h3>{{project.projektnamn}}</h3>
+                  <p>{{project.beskrivning}}</p> 
+                </div>
+              </div>
             </div>
         </div>
       </div> <!-- Avsluta app div-->

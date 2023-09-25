@@ -1,4 +1,4 @@
-h4 {
+h3, h4 {
     font-family: 'Montserrat', sans-serif;
     font-size: 3rem;
     color:white;
@@ -79,9 +79,8 @@ h4 {
 .part4 {
     grid-column: 1 / span 3;
     grid-row: 3 / span 3;
-    height: 200px;
     width: 100%;
-    background-color: aquamarine;
+    background-color: #577371;
     margin-top: 0.5em;
 }
 
@@ -93,6 +92,33 @@ h4 {
     width: 50%;
     padding: -2em;
 } */
+
+
+
+
+.personal-projects {
+    display: flex;
+    flex-direction: row;
+    margin: 1em;
+    height: auto;
+}
+
+.project {
+    margin: 1em;
+    padding: 1em;
+    border: 2px solid #FF570A;
+    border-radius: 10px;
+    color: #0C1C3C;
+    width: 1fr;
+}
+.project h3 {
+
+    font-size: 1.5em;
+    font-weight:bold;
+}
+.project p {
+    margin-top: 10px;
+}
 
 
 /*

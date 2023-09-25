@@ -20,6 +20,7 @@ const app = Vue.createApp({
 
             staff: [],
             projects: [],
+            selectedProjects: JSON.parse(localStorage.getItem('selectedprojcts')) || {},
             selectedStaff: JSON.parse(localStorage.getItem('selectedstaff')) || {},
 
             items:[{
@@ -354,9 +355,25 @@ const app = Vue.createApp({
 
         openPersonalPage(astaff) {
             this.selectedStaff = astaff;
+            staffName = this.selectedStaff.name;
             localStorage.setItem('selectedstaff', JSON.stringify(this.selectedStaff));
             window.location.href = 'individuell-sida.html';
+            this.selectedProjects = this.getProject();
         },
+        getProject(name) {
+            if (name === 'Emanuel'){
+                return this.projectsEmanuel();
+        
+            } else if (name === 'Jesper') {
+                return this.projectsJesper();
+
+            } else if (name === 'Axel') {
+                return this.projectsAxel();
+
+            } else if (name === 'Ludvig') {
+                return this.projectsLudvig();
+            }
+        }
 
          
 
@@ -402,6 +419,18 @@ const app = Vue.createApp({
           },
           staffLudvig() {
             return this.staff.filter(astaff => astaff.name === 'Ludvig');
+          },
+          projectsEmanuel() {
+            return this.projects.filter(aproject => aproject.ansvarig === 'Emanuel');
+          },
+          projectsAxel() {
+            return this.projects.filter(aproject => aproject.ansvarig === 'Axel');
+          },
+          projectsJesper() {
+            return this.projects.filter(aproject => aproject.ansvarig === 'Jesper');
+          },
+          projectsLudvig() {
+            return this.projects.filter(aproject => aproject.ansvarig === 'Ludvig');
           }
           
 
