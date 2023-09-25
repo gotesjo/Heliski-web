@@ -16,7 +16,7 @@
     {
       "id": 2,
       "name": "Axel",
-      "image": "./pictures/staff/axel.jpg",
+      "image": "./pictures/staff/axel.jpeg",
       "email": "axel-heli@snowwhite.com",
       "jobtitle": "Helikopterförare",
       "motto": "Den Skyhöga Äventyraren",
@@ -29,7 +29,7 @@
     {
       "id": 3,
       "name": "Jesper",
-      "image": "./pictures/staff/jesper.jpg",
+      "image": "./pictures/staff/jesper1.jpeg",
       "email": "jesper-safety@snowwhite.com",
       "jobtitle": "Lavinexpert",
       "motto": "Guardian of the White Realm",
