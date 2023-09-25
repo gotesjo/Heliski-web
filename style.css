@@ -782,9 +782,10 @@ input[name="r"]
         flex-direction: column;
         width: 100%;
     }
-
-    .footerCont {
+    
+    .footerCont h4 {
         text-align: center;
+
     }
 
 
