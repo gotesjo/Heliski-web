@@ -259,7 +259,7 @@ input[name="r"]
 
 .slide{
     width: 20%;
-    transition: 0,7s;
+    transition: 0.7s;
     position: relative;
 
 }
