@@ -5,6 +5,12 @@ h3, h4 {
     margin: 0;
 }
 
+h2 {
+    color: white;
+    border-left: 4px solid #FF570A;
+    margin-left: 0.5em;
+}
+
 .box-cont {
     display: grid;
     grid-template-columns: repeat(3, 2fr);
@@ -28,7 +34,7 @@ h3, h4 {
     border-radius: 10px;
     max-width:100%;
     max-height: 100%;
-} 
+}
 
 .firstText {
     position: absolute;
@@ -134,9 +140,7 @@ Emanuels kod hamnar här
     height: 23px;
     background-color: white;
     border-radius: 15px;
-    box-shadow: 5px 5px 5px black;
-    border: 1px solid black;
-    margin: 5vh;
+    margin: 2.5vh;
 }
 
 .bars {
@@ -151,35 +155,49 @@ Emanuels kod hamnar här
     0% {
         width: 0%;
     }
+    50% {
+        width: 50%;
+    }
+    70% {
+        width: 20%;
+    }
 }
 
 .p1 {
 
-    background-color: #FF570A;
-    animation: anim 1s linear forwards;
+    /* background-color: #FF570A; */
+    background: linear-gradient(to right,  #FF570A, #577371);
+    animation: anim 2s linear forwards;
 } 
 
 .p2 {
 
-    background-color: #FF570A;
-    animation: anim 1s linear forwards;
+    /* background-color: #FF570A; */
+    background: linear-gradient(to right,  #FF570A, #577371);
+    animation: anim 2s linear forwards;
 }
 .p3 {
 
-    background-color: #FF570A;
-    animation: anim 1s linear forwards;
+    /* background-color: #FF570A; */
+    background: linear-gradient(to right,  #FF570A, #577371);
+    animation: anim 2s linear forwards;
 } 
 
 .p4 {
 
-    background-color: #FF570A;
-    animation: anim 1s linear forwards;
+    /* background-color: #FF570A; */
+    background: linear-gradient(to right,  #FF570A, #577371);
+    animation: anim 2s linear forwards;
 } 
 
 
 
 #number {
     text-align: center;
+}
+
+#number::after {
+    content: '%';
 }
 
 @media only screen and (max-width: 905px) {
