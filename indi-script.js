@@ -1,7 +1,7 @@
 let options = {
     root: null,
-    rootMargin: "16px",
-    threshold: 0,
+    rootMargin: "100px 60px -120px 60px",
+    threshold: 0.7
   };
 
 const observer = new IntersectionObserver( (entries) => {
