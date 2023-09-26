@@ -194,104 +194,86 @@ nav h6 a {
     padding: 2rem 0;
 }
 
-/* Avsnitt 6:Bildspel */
-
-
-.slideShow-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-   
+/* avsnitt6- SlideShow*/
+#section6{
+    box-sizing: border-box;
 }
 
-.slideShow-header{
+.våraPlatserTitel{
+    text-align: center;
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
+    font-size: 3rem;
+    padding: 2rem;
+    margin-bottom: 1rem;
+}
+
+.våraPlatserTitel h3{
+    display: inline-block;
     border-bottom: 5px solid #FF570A;
-    margin-bottom: 1em;
 }
 
-.skiResorts{
-    display: flex;
-    flex-direction: column;  
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    
+.slideShow-container {
+    max-width: 1000px; 
+    margin: auto; 
+    position: relative;
 }
 
-.slideShow {
-    width: 45vw;
-    height: 100%;
+.slide {
+    display: none;
+    height: 550px; 
     overflow: hidden;
-    position: relative;
-    border-radius: 20px;
 }
 
-.navigation{
-    display: flex;
-    justify-content: center;
-}
-
-.bar{
-    width: 50px;
-    height: 10px;
-    border: 2px solid #000000;
-    margin: 6px;
-    transition: 1s;
-}
-
-.bar:hover{
-    background: #000000;
-}
-
-input[name="r"]
-{
-    position: absolute;
-    visibility: hidden;
-}
-
-.slides{
-    width: 500%;
-    height: 100%;
-    display: flex;
-}
-
-.slide{
-    width: 20%;
-    transition: 0.7s;
-    position: relative;
-
-}
-
-.slide img{
+.slide img {
     width: 100%;
     height: 100%;
+    object-fit: cover; 
 }
 
-#r1:checked ~ .s1{
-    margin-left: 0;
-}
-#r2:checked ~ .s1{
-    margin-left: -20%;
-}
-#r3:checked ~ .s1{
-    margin-left: -40%;
-}
-#r4:checked ~ .s1{
-    margin-left: -60%;
-}
-#r5:checked ~ .s1{
-    margin-left: -80%;
+.prev, .next{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
 }
 
-#r1:checked ~ .s1 .text1,
-#r2:checked ~ .s2 .text2,
-#r3:checked ~ .s3 .text3,
-#r4:checked ~ .s4 .text4,
-#r5:checked ~ .s5 .text5 {
-    display: block;
-}
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  .allDots{
+    text-align: center;
+  }
+
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0.3em;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
   
 .slide-text {
     position: relative;
