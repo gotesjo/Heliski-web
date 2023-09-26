@@ -91,6 +91,7 @@ h3, h4 {
 }
 
 .part3 {
+    align-self: center;
     width: 100%;
 }
 
@@ -167,9 +168,10 @@ Emanuels kod hamnar här
 */
 
 .skill {
+    margin: 2em;
     width: 80%;
     height: 23px;
-    background-color: white;
+    background-color: #d5d5dd;
     border-radius: 15px;
     margin: 2.5vh;
     border: 1px #0C1C3C solid;
@@ -193,27 +195,27 @@ Emanuels kod hamnar här
 .p1 {
 
     /* background-color: #FF570A; */
-    background: linear-gradient(to right,  #FF570A, #577371);
+    background: linear-gradient(to right,  #FF570A, #8b4038);
     animation: anim 2s linear forwards;
 } 
 
 .p2 {
 
     /* background-color: #FF570A; */
-    background: linear-gradient(to right,  #FF570A, #577371);
+    background: linear-gradient(to right,  #FF570A, #8b4038);
     animation: anim 2s linear forwards;
 }
 .p3 {
 
     /* background-color: #FF570A; */
-    background: linear-gradient(to right,  #FF570A, #577371);
+    background: linear-gradient(to right,  #FF570A, #8b4038);
     animation: anim 2s linear forwards;
 } 
 
 .p4 {
 
     /* background-color: #FF570A; */
-    background: linear-gradient(to right,  #FF570A, #577371);
+    background: linear-gradient(to right,  #FF570A, #8b4038);
     animation: anim 2s linear forwards;
 } 
 
