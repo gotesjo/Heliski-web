@@ -104,6 +104,7 @@ h3, h4 {
     width: 100%;
     background-color: #577371;
     margin-top: 0.5em;
+    text-align: center;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0,0,0,0.5)), url(pictures/mountainproj.jpg);
     background-size:cover;
     background-position: center;
@@ -145,6 +146,16 @@ h3, h4 {
     font-size: 4em;
     color: #FF570A;
     margin: 0.4em;
+}
+
+.part4 h4 {
+    margin-top: 20px;
+}
+
+.part4 h5 {
+    color: white;
+    font-size: 1em;
+    text-transform: uppercase;
 }
 
 /*

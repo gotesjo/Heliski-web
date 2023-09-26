@@ -18,6 +18,7 @@
     <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script defer src="app.js"></script>
+    <script defer src="script-personal.js"></script>
     <script src="script.js" defer></script>
     <title>Document</title>
 </head>
@@ -195,8 +196,9 @@
             </div>
             <div class="box-part part4">
               <h4>Projekt</h4>
+              <h5>Våra anställda hanterar dessa olika projekt som du kan ta del av</h5>
               <div class="personal-projects">
-                  <div class="project" v-for="project in projectsEmanuel">
+                  <div class="project personal-hidden" v-for="project in projectsEmanuel">
                     <span class="material-symbols-outlined category-icon">{{project.kategori}}</span>
                   <h3>{{project.projektnamn}}</h3>
                   <p>{{project.beskrivning}}</p> 
