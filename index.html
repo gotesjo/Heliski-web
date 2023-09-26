@@ -28,7 +28,7 @@
         <!-- Logotyp -->
         <h6 id="huvudTitel"><a href="#section1">SnowWhite Heli</a></h6>
         <input type="checkbox" id="menu-toggle" v-model="closeMenu" />
-        <label for="menu-toggle" id="menuIcon">
+        <label for="menu-toggle" id="menuIcon" @click="closeCart">
           <span v-if="closeMenu">&#10005; <!-- Detta är Unicode för ett 'X' --></span>
           <span v-else>&#9776; <!-- Detta är Unicode för hamburger ikon --></span>
         </label> <!-- Navigationslänkar --> <!-- Navigationslänkar -->
@@ -264,11 +264,11 @@
           <div class="slide-text">St.Moritz</div>
         </div>
         <div class="slide s5">
-          <img src="pictures/madesimo.jpg" alt="madesimo" />
+          <img src="pictures/varorBilder/madesimo2.jpeg" alt="madesimo" />
           <div class="slide-text">Madesimo</div>
         </div>
-        <a class="prev" onclick="plusSlides(-1)">&#8666;</a>
-        <a class="next" onclick="plusSlides(1)">&#8667;</a>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095; </a>
         <div class="allDots">
           <span class="dot" onclick="currentSlide(1)"></span>
           <span class="dot" onclick="currentSlide(2)"></span>
