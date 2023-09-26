@@ -58,7 +58,7 @@ margin-top: 2.5em;
 #section2Varor,#section4Varor,#section6Varor, #section8Varor{
     height: auto;
     margin-bottom: 3em;
-    background-color: white;
+    background-color: #F0EFF4;
 }
 
 .productCard {
@@ -67,12 +67,12 @@ margin-top: 2.5em;
     flex-wrap: wrap;
     justify-content: center;  /* centrerar korten horisontellt */
     align-items: center;  /* valfritt: centrerar korten vertikalt */
-    width: 100%;  /* valfritt: full bredd på förälderelementet */
+    width: 100%;  /* valfritt: full bredd på förälderelementet */ 
 }
 
 .cardVaror {
     flex: 0 1 calc(25% - 2em);
-    height: 18rem;
+    height: auto;
     border-radius: 1rem;
     padding: 2.5rem;
     box-sizing: border-box;
@@ -81,6 +81,11 @@ margin-top: 2.5em;
     background-position: center;
     background-size: cover;
     transition: transform 0.5s;
+    margin-top: 5%;
+    border-radius: 12px;
+    background-color: #dddddd;
+    transition: 0.5s ease-in-out;
+
 }
 
 .product-image {
@@ -98,7 +103,8 @@ margin-top: 2.5em;
 
 
 .cardVaror:hover {
-    transform: translateY(-30px);
+    transform: translateY(-15px);
+    box-shadow: 0px 0px 100px 0px #d1d1d1;
 }
 
 
@@ -255,5 +261,9 @@ margin-top: 2.5em;
     }
     .overlap-image {
         width: 65%;
+    }
+
+    .productCard{
+        margin-top: 20%;
     }
     }
