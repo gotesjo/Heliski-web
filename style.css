@@ -779,82 +779,26 @@ nav h6 a {
 
   }
 
-  @media only screen and (min-width: 905px) {
-   
-    /* animationer till section 2,3,4,5 */
-    .full-height-section {
-    opacity: 0;
-    transition: 3.5s all ease;
+
+
+    .hidLeft {
+        transform:rotate(-180deg);
+        transition: all 1s;
+
+    }
+    .showLeft {
+        transform: translateX(0);
+
     }
 
-.active-right {
-    animation: active-right 3.5s ease 0s 1 normal forwards;
-    opacity: 1;
-}
+    .hidRight {
+        transform:rotate(-180deg);
+        transition: all 1s;
 
-@keyframes active-right {
-    0% {
-        opacity: 0;
-        transform: rotateY(-100deg);
-        transform-origin: right;
+
+    } 
+
+    .showRight {
+        transform:rotate(0);
+
     }
-
-    100% {
-        opacity: 1;
-        transform: rotateY(0);
-        transform-origin: right;
-    }
-}
-
-.active-left {
-    animation: active-left 3.5s ease 0s 1 normal forwards;
-    opacity: 1;
-}
-
-@keyframes active-left {
-    0% {
-        opacity: 0;
-        transform: rotateY(100deg); 
-        transform-origin: left;   
-    }
-    100% {
-        opacity: 1;
-        transform: rotateY(0);
-        transform-origin: left;  
-}
-} 
-  }
-
-.fade-top{
-    animation: fade 2s ease 0s 1 normal forwards;
-    opacity: 1;
-}
-
-@keyframes fade {
-	0% {
-		opacity: 0;
-		transform: translateY(-50px);
-	}
-
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
-.fade-btm{
-    animation: fade-bottom 2s ease 0s 1 normal forwards;
-    opacity: 1;
-}
-
-@keyframes fade-btm {
-	0% {
-		opacity: 0;
-		transform: translateY(50px);
-	}
-
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
