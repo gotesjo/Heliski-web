@@ -242,11 +242,11 @@ Emanuels kod hamnar här
 
 
 
-#number {
+.number {
     text-align: center;
 }
 
-#number::after {
+.number::after {
     content: '%';
 }
 
