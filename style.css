@@ -7,7 +7,7 @@ body, h1, h2, h3, p, ul, li {
 /* Grundstilar */
 body {
     font-family: 'Quicksand', sans-serif;
-    background-color: white; /* Ljusgrå bakgrundsfärg */
+    background-color: #F0EFF4; /* Ljusgrå bakgrundsfärg */
 }
 
 header {
