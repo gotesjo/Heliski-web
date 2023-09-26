@@ -12,13 +12,13 @@
       "beskrivning": "Jesper, vår lavinexpert, kommer att säkerställa att ditt freeride-äventyr i de majestätiska Alperna är så säkert som det är spännande."
     },
     {
-      "kategori": "skiing",
+      "kategori": "downhill_skiing",
       "projektnamn": "Puderparadiset i Kanadensiska Rockies",
       "ansvarig": "Ludvig",
       "beskrivning": "Utforska de orörda puderbackarna i Kanadensiska Rockies med Ludvig, vår vitt puderexpert, vid din sida för det ultimata puderracet."
     },
     {
-      "kategori": "skiing",
+      "kategori": "downhill_skiing",
       "projektnamn": "Skidresa för Nybörjare i Schweiz",
       "ansvarig": "Ludvig",
       "beskrivning": "Lär dig grunderna i skidåkning på vårt nybörjarvänliga äventyr i de pittoreska alperna i Schweiz."
@@ -54,7 +54,7 @@
       "beskrivning": "Efter en dag med skidåkning, koppla av med Ludvig och njut av Österrikes bästa après-ski-upplevelser."
     },
     {
-      "kategori": "skiing",
+      "kategori": "downhill_skiing",
       "projektnamn": "Skidåkning och Vinteröverlevnadskurs i Kanada",
       "ansvarig": "Emanuel",
       "beskrivning": "Lär dig att överleva och trivas i de tuffaste vintermiljöerna i Kanada med vår erfarna överlevnadsguide."
@@ -66,7 +66,7 @@
       "beskrivning": "Axel leder dig till de majestätiska Himalaya-bergen för ett heliskiingäventyr du aldrig kommer att glömma."
     },
     {
-      "kategori": "skiing",
+      "kategori": "downhill_skiing",
       "projektnamn": "Skidåkning i Japans Pulverparadis",
       "ansvarig": "Ludvig",
       "beskrivning": "Upplev den legendariska japanska pudersnön med Ludvig som din guide och njut av oförglömlig skidåkning."
@@ -100,6 +100,66 @@
       "projektnamn": "Skidåkning och Yoga i Schweiziska Alperna",
       "ansvarig": "Ludvig",
       "beskrivning": "För en balanserad skidupplevelse: skidåkning och yoga i de fridfulla alperna i Schweiz med vår yogaguide."
+    },
+    {
+      "kategori": "helicopter",
+      "projektnamn": "Alpina Heliskiing i Schweiz",
+      "ansvarig": "Axel",
+      "beskrivning": "Njut av alpin heliskiing i de schweiziska Alperna med Axel som din guide till snöäventyr."
+    },
+    {
+      "kategori": "restaurant",
+      "projektnamn": "Skidtur i Chamonix med lunch i naturen, Frankrike",
+      "ansvarig": "Ludvig",
+      "beskrivning": "Upptäck de klassiska skidområdena i Chamonix med Ludvig som din guide till fantastiska pister."
+    },
+    {
+      "kategori": "restaurant",
+      "projektnamn": "Lunch i Sydamerikanska Anderna",
+      "ansvarig": "Emanuel",
+      "beskrivning": "Upptäck Sydamerikas majestätiska Anderna genom skidåkning med Emanuel som din guide."
+    },
+    {
+      "kategori": "helicopter",
+      "projektnamn": "Heliskiing i Kanadas Vildmark",
+      "ansvarig": "Axel",
+      "beskrivning": "Utforska de orörda vildmarksområdena i Kanada med Axel som din helikopterförare och guide."
+    },
+    {
+      "kategori": "downhill_skiing",
+      "projektnamn": "Skidsemester i Italiens Dolomiterna",
+      "ansvarig": "Ludvig",
+      "beskrivning": "Njut av skidåkning i de vackra Dolomiterna i Italien med Ludvig som din guide till fantastiska pistnätverk."
+    },
+    {
+      "kategori": "helicopter",
+      "projektnamn": "Helikopter-Äventyr i Kanadas Klippiga Berg",
+      "ansvarig": "Axel",
+      "beskrivning": "Upplev spännande heliskiing i Kanadas Klippiga Berg med Axel som din erfarna pilot och guide."
+    },
+    {
+      "kategori": "snowmobile",
+      "projektnamn": "Snöskoteräventyr i Lappland",
+      "ansvarig": "Jesper",
+      "beskrivning": "Utforska Lapplands vinterskogar och fjäll på ett actionfyllt snöskoteräventyr med Jesper som din guide."
+    },
+    {
+      "kategori": "downhill_skiing",
+      "projektnamn": "Skidresa till Niseko, Japan",
+      "ansvarig": "Ludvig",
+      "beskrivning": "Upptäck Japans legendariska pudersnö i Niseko med Ludvig som din guide till oförglömlig skidåkning."
+    },
+    {
+      "kategori": "helicopter",
+      "projektnamn": "Heliskiing i Kanadensiska Monashee Mountains",
+      "ansvarig": "Axel",
+      "beskrivning": "Följ med Axel till de majestätiska Monashee Mountains för en episk heliskiingupplevelse."
+    },
+    {
+      "kategori": "downhill_skiing",
+      "projektnamn": "Skidåkning i Andorra's Grandvalira",
+      "ansvarig": "Emanuel",
+      "beskrivning": "Utforska Andorras Grandvalira skidort med Emanuel som din guide till fantastiska skidupplevelser."
     }
 ]
 }

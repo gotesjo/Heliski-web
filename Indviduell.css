@@ -27,14 +27,12 @@ h3, h4 {
     display: grid;
     grid-template-columns: repeat(3, 2fr);
     height: 100%;
-    margin-top: 8em;
-    margin-bottom: 1em;
+    margin: 8em 0 0 0;
     column-gap: 0.5em;
-    padding: 0.5em;
+    padding-top: 0.5em;
 }
 
 .box-part {
-    border-radius: 10px;
 }
 
 .part1 {
@@ -66,6 +64,7 @@ h3, h4 {
     color: #0C1C3C;
     padding-left: 2%;
     border-left: 8px solid #FF570A;
+    background-color: white;
 
 }
 
@@ -100,25 +99,19 @@ h3, h4 {
     width: 100%;
     background-color: #577371;
     margin-top: 0.5em;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0,0,0,0.5)), url(pictures/mountainproj.jpg);
+    background-size:cover;
+    background-position: center;
+
 }
-
-/* .skillBar-box {
-    display: flex; 
-    align-content: center;
-    background-color: orange;
-    height: 50%;
-    width: 50%;
-    padding: -2em;
-} */
-
-
-
 
 .personal-projects {
     display: flex;
     flex-direction: row;
     margin: 1em;
     height: auto;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 .project {
@@ -127,7 +120,9 @@ h3, h4 {
     border: 2px solid #FF570A;
     border-radius: 10px;
     color: #0C1C3C;
-    width: 1fr;
+    min-width: 20vw;
+    height: auto;
+    word-wrap: break-word;
 }
 .project h3 {
 
@@ -136,8 +131,16 @@ h3, h4 {
 }
 .project p {
     margin-top: 10px;
+    color: white;
 }
 
+.project .category-icon {
+    text-align: center;
+    display: block;
+    font-size: 4em;
+    color: #FF570A;
+    margin: 0.4em;
+}
 
 /*
 
@@ -236,4 +239,8 @@ Emanuels kod hamnar här
         background-color: aquamarine;
         margin-top: 0.5em;
     } */
+
+    .project {
+        min-width: 40vw;
+    }
 }
