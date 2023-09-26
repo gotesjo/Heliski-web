@@ -13,6 +13,7 @@
     <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,600&family=Quicksand:wght@300&display=swap"
     rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -26,16 +27,15 @@
         <header>
           <nav>
             <!-- Logotyp -->
-            <h6 id="huvudTitel"><a href="#section1">SnowWhite Heli</a></h6>
+            <h6 id="huvudTitel"><a href="index.html">SnowWhite Heli</a></h6>
             <input type="checkbox" id="menu-toggle">
             <label for="menu-toggle" id="menuIcon">&#9776;</label>
             <!-- Navigationslänkar -->
             <div class="myLinks">
               <ul>
-                <li><a href="#section2">Skidaktiviteter</a></li>
-                <!-- <li><a href="#section6">Bildspel</a></li> -->
+                <li><a href="index.html#section2">Skidaktiviteter</a></li>
                 <li><a href="varor.html">Boka Resa</a></li>
-                <li><a href="#section7">Våra Guider</a></li>
+                <li><a href="index.html#section7">Våra Guider</a></li>
                 <li>
                   <a href="#" @click.prevent="openCart">
                     Varukorg
@@ -197,7 +197,7 @@
               <h4>Projekt</h4>
               <div class="personal-projects">
                   <div class="project" v-for="project in projectsEmanuel">
-                    <span class="material-icons">{{project.kategori}}</span>
+                    <span class="material-symbols-outlined category-icon">{{project.kategori}}</span>
                   <h3>{{project.projektnamn}}</h3>
                   <p>{{project.beskrivning}}</p> 
                 </div>
