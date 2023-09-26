@@ -1,7 +1,7 @@
 h3, h4 {
     font-family: 'Montserrat', sans-serif;
     font-size: 3.2rem;
-    color: white;
+    color: #F0EFF4;
     margin: 0;
 }
 
@@ -62,7 +62,7 @@ h3, h4 {
     color: #0C1C3C;
     padding-left: 2%;
     border-left: 8px solid #FF570A;
-    background-color: white;
+    background-color: #F0EFF4;
 
 }
 

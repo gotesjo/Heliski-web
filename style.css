@@ -604,8 +604,11 @@ nav h6 a {
     #menuIcon {
         display: block;
         position: relative;
-        margin: 0 1.5em 0 1em;
+        top: -20px;
+        right: 70px;
+        width: 60px;
         cursor: pointer;
+        float: right;
        
     }
     .open::before{
@@ -624,6 +627,7 @@ nav h6 a {
     }
 
     #menu-toggle:checked ~ #menuIcon {
+        top:-30px;
         color: #FF570A;
     }
 
