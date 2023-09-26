@@ -1,6 +1,6 @@
 h3, h4 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 3rem;
+    font-size: 3.2rem;
     color: white;
     margin: 0;
 }
@@ -76,18 +76,27 @@ h3, h4 {
 
 
 .part2 {
-    margin: 3% 2% 0 2%;
-    color: #0C1C3C;
+  margin: 3% 2% 0 2%;
+  padding: 50px 0;
+  color: #0C1C3C;
+  vertical-align: middle;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .part2 h4 {
     color: #0C1C3C;
     border-bottom: 8px solid #FF570A;
+    margin: 0.5em 0;
+    padding: 0.3em 0;
+
 }
 
 .part2 h5 {
     font-size: 1.5em;
     margin: 0.2em 0 1em 0;
+
 }
 
 .part3 {

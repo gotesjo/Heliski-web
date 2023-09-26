@@ -20,7 +20,7 @@ const app = Vue.createApp({
 
             staff: [],
             projects: [],
-            selectedProjects: JSON.parse(localStorage.getItem('selectedprojcts')) || {},
+            selectedProjects: JSON.parse(localStorage.getItem('selectedprojects')) || {},
             selectedStaff: JSON.parse(localStorage.getItem('selectedstaff')) || {},
 
             items:[{
@@ -343,7 +343,6 @@ const app = Vue.createApp({
                
          },
          
-
         openModal(product) {
             this.valdProdukt = product;
             this.showModal = true;
@@ -357,24 +356,21 @@ const app = Vue.createApp({
 
         openPersonalPage(astaff) {
             this.selectedStaff = astaff;
-            staffName = this.selectedStaff.name;
+            const staffName = this.selectedStaff.name;
+            console.log(staffName);
+            this.getProjectByName(staffName);
             localStorage.setItem('selectedstaff', JSON.stringify(this.selectedStaff));
             window.location.href = 'individuell-sida.html';
-            this.selectedProjects = this.getProject();
+    
         },
-        getProject(name) {
-            if (name === 'Emanuel'){
-                return this.projectsEmanuel();
-        
-            } else if (name === 'Jesper') {
-                return this.projectsJesper();
-
-            } else if (name === 'Axel') {
-                return this.projectsAxel();
-
-            } else if (name === 'Ludvig') {
-                return this.projectsLudvig();
+        getProjectByName(name) {
+            let array = [];
+            for (let i = 0; i < this.projects.length; i++) {
+                if (this.projects[i].ansvarig === name) {
+                    array.push(this.projects[i]);
+                }
             }
+            localStorage.setItem('selectedprojects', JSON.stringify(array));
         }
 
          
@@ -422,19 +418,6 @@ const app = Vue.createApp({
           staffLudvig() {
             return this.staff.filter(astaff => astaff.name === 'Ludvig');
           },
-          projectsEmanuel() {
-            return this.projects.filter(aproject => aproject.ansvarig === 'Emanuel');
-          },
-          projectsAxel() {
-            return this.projects.filter(aproject => aproject.ansvarig === 'Axel');
-          },
-          projectsJesper() {
-            return this.projects.filter(aproject => aproject.ansvarig === 'Jesper');
-          },
-          projectsLudvig() {
-            return this.projects.filter(aproject => aproject.ansvarig === 'Ludvig');
-          }
-          
 
       },
 

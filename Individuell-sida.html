@@ -155,6 +155,7 @@
               <h4>Presentation</h4>
               <h5>{{selectedStaff.motto}}</h5>
               <p>{{selectedStaff.description}}</p>
+              <p><br>Email: {{selectedStaff.email}}</p>
             </div>
             <div class="box-part part3">
               <!-- <h4>Förmågor</h4> -->
@@ -198,7 +199,7 @@
               <h4 class="dold">Projekt</h4>
               <h5 class="dold">Våra anställda hanterar dessa olika projekt som du kan ta del av</h5>
               <div class="personal-projects">
-                  <div class="project personal-hidden" v-for="project in projectsEmanuel">
+                  <div class="project personal-hidden" v-for="project in selectedProjects">
                     <span class="material-symbols-outlined category-icon">{{project.kategori}}</span>
                   <h3>{{project.projektnamn}}</h3>
                   <p>{{project.beskrivning}}</p> 

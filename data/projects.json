@@ -48,7 +48,7 @@
       "beskrivning": "Gör dig redo för adrenalinfylld skidåkning i de höga alperna i Frankrike med vår erfarna guide."
     },
     {
-      "kategori": "sportsbar",
+      "kategori": "wine_bar",
       "projektnamn": "Après-ski Äventyr i Österrike",
       "ansvarig": "Ludvig",
       "beskrivning": "Efter en dag med skidåkning, koppla av med Ludvig och njut av Österrikes bästa après-ski-upplevelser."
@@ -72,7 +72,7 @@
       "beskrivning": "Upplev den legendariska japanska pudersnön med Ludvig som din guide och njut av oförglömlig skidåkning."
     },
     {
-      "kategori": "skiing",
+      "kategori": "downhill_skiing",
       "projektnamn": "Skidåkning på Södra Halvklotets Toppar",
       "ansvarig": "Jesper",
       "beskrivning": "Följ med vår erfarna guide och utforska de bästa skidplatserna på södra halvklotet."
@@ -84,7 +84,7 @@
       "beskrivning": "Upptäck de mest exklusiva och hemliga skiddestinationerna i Nordamerika med vår lokala guide."
     },
     {
-      "kategori": "wine_bar",
+      "kategori": "local_bar",
       "projektnamn": "Skidåkning och Vinprovning i Italien",
       "ansvarig": "Jesper",
       "beskrivning": "Kombinera skidåkning med vinprovning i de förtrollande alperna i Italien, ledd av vår erfarna vinprovarguide."
