@@ -171,8 +171,6 @@ nav h6 a {
     align-items: center;
 }
 
-
-
 .flexPic {
     max-width: 40vw;
     height: 100%;
@@ -197,23 +195,28 @@ nav h6 a {
 /* avsnitt6- SlideShow*/
 #section6{
     box-sizing: border-box;
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(pictures/winterlandscape.jpg);
+    background-position: center;
+    background-size: cover;
 }
 
 .våraPlatserTitel{
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-size: 3rem;
-    padding: 2rem;
-    margin-bottom: 1rem;
+    padding: 2rem;    
+    margin-bottom: -1rem;
 }
 
 .våraPlatserTitel h3{
     display: inline-block;
     border-bottom: 5px solid #FF570A;
+    color: #fff;
 }
 
 .slideShow-container {
-    max-width: 1000px; 
+    max-width: 1000px;
+    max-height: 500px; 
     margin: auto; 
     position: relative;
 }
@@ -236,7 +239,7 @@ nav h6 a {
     top: 50%;
     width: auto;
     padding: 16px;
-    color: white;
+    color: rgb(86, 86, 86);
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
@@ -249,7 +252,7 @@ nav h6 a {
     border-radius: 3px 0 0 3px;
   }
 
-  .prev:hover, .next:hover {
+.prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.8);
   }
 
@@ -320,12 +323,15 @@ nav h6 a {
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     color: #fff;
+    border-bottom: 5px solid #FF570A;
 }
 
 .guideDescription p{
+    margin-top: 0.2em;
     font-size: 20px;
     line-height: 20px;
     margin-left: 20%;
+    margin-bottom: 0.2em;
 }
 
 .guideProfileCard {
@@ -724,3 +730,83 @@ nav h6 a {
 
 
   }
+
+  @media only screen and (min-width: 905px) {
+   
+    /* animationer till section 2,3,4,5 */
+    .full-height-section {
+    opacity: 0;
+    transition: 3.5s all ease;
+    }
+
+.active-right {
+    animation: active-right 3.5s ease 0s 1 normal forwards;
+    opacity: 1;
+}
+
+@keyframes active-right {
+    0% {
+        opacity: 0;
+        transform: rotateY(-100deg);
+        transform-origin: right;
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateY(0);
+        transform-origin: right;
+    }
+}
+
+.active-left {
+    animation: active-left 3.5s ease 0s 1 normal forwards;
+    opacity: 1;
+}
+
+@keyframes active-left {
+    0% {
+        opacity: 0;
+        transform: rotateY(100deg); 
+        transform-origin: left;   
+    }
+    100% {
+        opacity: 1;
+        transform: rotateY(0);
+        transform-origin: left;  
+}
+} 
+  }
+
+.fade-top{
+    animation: fade 2s ease 0s 1 normal forwards;
+    opacity: 1;
+}
+
+@keyframes fade {
+	0% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.fade-btm{
+    animation: fade-bottom 2s ease 0s 1 normal forwards;
+    opacity: 1;
+}
+
+@keyframes fade-btm {
+	0% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

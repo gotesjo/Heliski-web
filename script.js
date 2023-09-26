@@ -122,3 +122,34 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+
+const visaSection= () =>{
+    const section = document.querySelectorAll(".full-height-section")
+    for(let i = 0; i<section.length; i++){
+        const windowHeight = window.innerHeight;
+        const elementTop = section[i].getBoundingClientRect().top;
+        const elementVisable = 150;
+
+        if(elementTop<windowHeight - elementVisable){
+            if(section[i].classList.contains('left')){
+                section[i].classList.add('active-left');
+            }
+            else if(section[i].classList.contains('right')){
+                section[i].classList.add('active-right');
+            }
+            else if(section[i].classList.contains('fadeTop')){
+                section[i].classList.add('fade-top');
+            }
+            else if(section[i].classList.contains('fadeBtm')){
+                section[i].classList.add('fade-btm');
+            }
+            
+
+        }
+        else{
+            section[i].classList.remove('active-left','active-right','fade-top','fade-btm');
+        }
+    }
+}
+window.addEventListener("scroll",visaSection);
