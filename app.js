@@ -462,14 +462,16 @@ created(){
 app.mount('#app');
 
 
-const textElement = document.getElementById('text-text');
+const textElement = document.querySelectorAll('.text-text');
 
-const textContent = textElement.textContent;
+textElement.forEach((textElement) => {
+    const textContent = textElement.textContent;
+    textElement.textContent = '';
 
-textElement.textContent = '';
 
 for (let i = 0; i < textContent.length; i++) {
     setTimeout(() => {
         textElement.textContent += textContent[i];
     }, i*200);
 }
+})

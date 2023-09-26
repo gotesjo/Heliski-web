@@ -1,13 +1,13 @@
 h3, h4 {
     font-family: 'Montserrat', sans-serif;
     font-size: 3rem;
-    color:white;
+    color: white;
     margin: 0;
 }
 
-.header2 {
-    color: white;
-    border-left: 4px solid #FF570A;
+.text-text{
+    margin-top: 1.5em;
+    color: #0C1C3C;
     margin-left: 0.5em;
     white-space: nowrap;
     overflow: hidden;
@@ -27,12 +27,14 @@ h3, h4 {
     display: grid;
     grid-template-columns: repeat(3, 2fr);
     height: 100%;
-    margin: 8em 0 0 0;
+    margin: 7em 0 0 0;
     column-gap: 0.5em;
     padding-top: 0.5em;
+    background-color: #F0EFF4;
 }
 
 .box-part {
+    
 }
 
 .part1 {
@@ -90,7 +92,10 @@ h3, h4 {
 
 .part3 {
     width: 100%;
-    background-color: #0C1C3C;
+}
+
+.part3 h4 {
+    color: #0C1C3C;
 }
 
 .part4 {
@@ -156,13 +161,15 @@ Emanuels kod hamnar här
     background-color: white;
     border-radius: 15px;
     margin: 2.5vh;
+    border: 1px #0C1C3C solid;
 }
 
 .bars {
     height: 23px;
     border-radius: 15px;
     border: none;
-    margin-top: -20px;
+    /* margin-top: -20px; */
+    margin-top: -1.26em;
     margin-left: 0;
 }
 

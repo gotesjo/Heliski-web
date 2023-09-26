@@ -8,9 +8,9 @@
       "jobtitle": "Skid Guide",
       "motto": "Passionerad Äventyrare och Snöentusiast",
       "description": "Som en dedikerad skidguide på SnowWhite Heli är Emanuel hjärtat av vårt äventyrsteam. Med en djup kärlek till de vackra snötäckta bergstopparna och en osviklig passion för att skapa minnesvärda skidupplevelser, är Emanuel en värdefull resurs för alla som söker det ultimata alpina äventyret.",
-      "skill1": "40",
+      "skill1": "70",
       "skill2": "90",
-      "skill3": "10",
+      "skill3": "65",
       "skill4": "63"
     },
     {
@@ -21,10 +21,10 @@
       "jobtitle": "Helikopterförare",
       "motto": "Den Skyhöga Äventyraren",
       "description": "Axel, vår erfarna helikopterförare för heliskiing, tar dig till de mest otillgängliga och hisnande snötäckta bergstopparna. Med sin passion för heliskiing och en förmåga att navigera i varierande terräng, skapar Axel minnesvärda äventyr som du aldrig kommer att glömma. Hans säkerhetsmedvetenhet och skicklighet gör honom till den ultimata partnern för en oförglömlig skidupplevelse.",
-      "skill1": "100",
+      "skill1": "80",
       "skill2": "90",
-      "skill3": "20",
-      "skill4": "4"
+      "skill3": "60",
+      "skill4": "70"
     },
     {
       "id": 3,
@@ -34,10 +34,10 @@
       "jobtitle": "Lavinexpert",
       "motto": "Guardian of the White Realm",
       "description": "Jesper, vår dedikerade lavinexpert, är din nyckel till säkra skidäventyr. Med omfattande kunskap om snöprognoser, terrängbedömning och lavinsäkerhet, skapar Jesper en trygg miljö för skidåkare. Hans passion för att utbilda och guida gör honom till en ovärderlig resurs för att utforska bergen på ett säkert sätt.",
-      "skill1": "100",
-      "skill2": "10",
+      "skill1": "99",
+      "skill2": "70",
       "skill3": "90",
-      "skill4": "100" 
+      "skill4": "55" 
     },
     {
       "id": 3,
@@ -48,9 +48,9 @@
       "motto": "Skaparen av Varm Samhörighet",
       "description": "Ludvig, vår omtänksamma fikaansvarige vid skidresor, ser till att dina pauser på berget är lika minnesvärda som din skidåkning. Med sin smittande entusiasm för kaffe och godsaker skapar Ludvig en atmosfär av värme och gemenskap. Han är inte bara den som serverar, utan också den som skapar stunder av avkoppling och samhörighet mellan skidåkare.",
       "skill1": "90",
-      "skill2": "98",
-      "skill3": "20",
-      "skill4": "100" 
+      "skill2": "68",
+      "skill3": "70",
+      "skill4": "80" 
     }
   ]
 }
