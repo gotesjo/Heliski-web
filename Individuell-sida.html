@@ -25,86 +25,76 @@
 <body>
 
     <div id="app">
-        <header>
-          <nav>
-            <!-- Logotyp -->
-            <h6 id="huvudTitel"><a href="index.html">SnowWhite Heli</a></h6>
-            <input type="checkbox" id="menu-toggle">
-            <label for="menu-toggle" id="menuIcon">&#9776;</label>
-            <!-- Navigationslänkar -->
-            <div class="myLinks">
-              <ul>
-                <li><a href="index.html#section2">Skidaktiviteter</a></li>
-                <li><a href="varor.html">Boka Resa</a></li>
-                <li><a href="index.html#section7">Våra Guider</a></li>
-                <li>
-                  <a href="#" @click.prevent="openCart">
-                    Varukorg
-                    <span v-if="totalItemsCart > 0" class="cart-item-count">
-                      {{totalItemsCart}}
-                    </span>
-                  </a>
-                  <div v-if="showCart" class="cart-dropDown">
-                    <div class="varukorgRubrik">
-                      <h3 class="VarukorgVaror">Varor</h3>
-    
-                    </div>
-                    <div class="cartItems">
-    
-    
-                      <ul>
-                        <li v-for="product in cart" :key="product.id">
-                          <div class="image-box">
-                            <img :src="product.image" alt="varukorgImages">
-                          </div>
-                          <div class="varukorgInfo">
-                            <h1 class="varukorgTitel">
-                              {{product.name}}
-                            </h1>
-                            <h3 class="produktPlats">
-                              {{product.location}}
-    
-                            </h3>
-                          </div>
-                          <div class="priser">
-                            <div class="produktPris">{{product.price}} kr</div>
-                            <div class="taBortProdukter" @click="removeProductCart(product)">Remove
-                            </div>
-    
-                          </div>
-    
-    
-    
-    
-    
-    
-    
-                        </li>
-                      </ul>
-                    </div>
-                    <hr>
-                    <div class="checkOut">
-                      <div class="total">
-                        <div class="subTotal-container">
-                          <div class="subTotal">Sub-total</div>
-                          <div class="varukorgItems">{{totalItemsCart}} Items</div>
+      <header>
+        <nav>
+          <!-- Logotyp -->
+          <h6 id="huvudTitel"><a href="index.html#section1">SnowWhite Heli</a></h6>
+          <input type="checkbox" id="menu-toggle" v-model="closeMenu" />
+          <label for="menu-toggle" id="menuIcon">
+            <span v-if="closeMenu">&#10005; <!-- Detta är Unicode för ett 'X' --></span>
+            <span v-else>&#9776; <!-- Detta är Unicode för hamburger ikon --></span>
+          </label> <!-- Navigationslänkar --> <!-- Navigationslänkar -->
+          <div class="myLinks">
+            <ul>
+              <li><a href="#section2">Skidaktiviteter</a></li>
+              <!-- <li><a href="#section6">Bildspel</a></li> -->
+              <li><a href="varor.html">Boka Resa</a></li>
+              <li><a href="#section7">Våra Guider</a></li>
+              <li>
+                <a href="#" @click.prevent="openCart">
+                  Varukorg
+                  <span v-if="totalItemsCart > 0" class="cart-item-count">
+                    {{totalItemsCart}}
+                  </span>
+                </a>
+                <div v-if="showCart" class="cart-dropDown">
+                  <button @click="closeCart" class="close-cart">X</button>
+                  <div class="varukorgRubrik">
+                    <h3 class="VarukorgVaror">Varor</h3>
+                  </div>
+                  <div class="cartItems">
+                    <ul>
+                      <li v-for="product in cart" :key="product.id">
+                        <div class="image-box">
+                          <img :src="product.image" alt="varukorgImages" />
                         </div>
-                        <div class="totalAmount">
-                          {{ cart.reduce((acc, product) => acc + product.price, 0) }} kr
+                        <div class="varukorgInfo">
+                          <h1 class="varukorgTitel">{{product.name}}</h1>
+                          <h3 class="produktPlats">{{product.location}}</h3>
+                        </div>
+                        <div class="priser">
+                          <div class="produktPris">{{product.price}} kr</div>
+                          <div class="taBortProdukter" @click="removeProductCart(product)">
+                            Remove
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <hr />
+                  <div class="checkOut">
+                    <div class="total">
+                      <div class="subTotal-container">
+                        <div class="subTotal">Sub-total</div>
+                        <div class="varukorgItems">
+                          {{totalItemsCart}} Items
                         </div>
                       </div>
-                      <button class="checkOutButton">Check out</button>
+                      <div class="totalAmount">
+                        {{ cart.reduce((acc, product) => acc + product.price, 0)
+                        }} kr
+                      </div>
                     </div>
-    
-    
+                    <button class="checkOutButton" @click="handleCheckOut">
+                      Check out
+                    </button>
                   </div>
-                </li>
-    
-    
-              </ul>
-            </div>
-          </nav>
-        </header>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
     
         <!-- Formulär för kontakt-->
         <button class="material-icons" id="support-button">contact_support</button>
