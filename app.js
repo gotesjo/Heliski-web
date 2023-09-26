@@ -333,6 +333,7 @@ const app = Vue.createApp({
             
                 this.showAlert();
                 this.checkout();
+                this.closeCart();
             }
             else{
                 alert("Du måste lägga till varor i varukorgen innan du kan checka ut.");
@@ -347,6 +348,7 @@ const app = Vue.createApp({
             this.valdProdukt = product;
             this.showModal = true;
             console.log(this.valdProdukt);
+            this.closeMenu=false;
         },
         closeModal () {
             this.valdProdukt = '';

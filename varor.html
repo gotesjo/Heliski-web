@@ -29,8 +29,10 @@
           <a href="index.html#section1">SnowWhite Heli</a>
         </h6>
         <input type="checkbox" id="menu-toggle" v-model="closeMenu" />
-        <label for="menu-toggle" id="menuIcon">&#9776;</label>
-        <!-- Navigationslänkar -->
+        <label for="menu-toggle" id="menuIcon">
+          <span v-if="closeMenu">&#10005; <!-- Detta är Unicode för ett 'X' --></span>
+          <span v-else>&#9776; <!-- Detta är Unicode för hamburger ikon --></span>
+        </label> <!-- Navigationslänkar -->
         <div class="myLinks">
           <ul>
             <li><a href="index.html#section2">Skidaktiviteter</a></li>

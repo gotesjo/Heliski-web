@@ -84,8 +84,9 @@ nav h6 a {
 
 #menuIcon, #menu-toggle {
     display: none;
-    font-size: 3rem;
+    font-size: 2rem;
     color: #fff;
+    padding-bottom: 0.5rem;
 }
 
 
@@ -592,10 +593,18 @@ nav h6 a {
         transform-origin: bottom left;
     }
 
+   
     #menuIcon {
         display: block;
         position: relative;
         margin: 0 1.5em 0 1em;
+        cursor: pointer;
+       
+    }
+    .open::before{
+        content: '\2715';
+        font-size: 0.5rem;
+        
     }
 
     .myLinks li a {
