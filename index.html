@@ -1,370 +1,430 @@
 <!DOCTYPE html>
 <html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snowwhite Heli</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="stylecontact.css" />
+    <link rel="stylesheet" href="varukorg.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,600&family=Quicksand:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer src="app.js"></script>
+    <script src="script.js" defer></script>
+    <script src="slideShow.js" defer></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Snowwhite Heli</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="stylecontact.css" />
-  <link rel="stylesheet" href="varukorg.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,600&family=Quicksand:wght@300&display=swap"
-    rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script defer src="app.js"></script>
-  <script src="script.js" defer></script>
-  <script src="slideShow.js" defer></script>
-</head>
-
-<body>
-  <div id="app">
-    <header>
-      <nav>
-        <!-- Logotyp -->
-        <h6 id="huvudTitel"><a href="#section1">SnowWhite Heli</a></h6>
-        <input type="checkbox" id="menu-toggle" v-model="closeMenu" />
-        <label for="menu-toggle" id="menuIcon" @click="closeCart">
-          <span v-if="closeMenu">&#10005; <!-- Detta är Unicode för ett 'X' --></span>
-          <span v-else>&#9776; <!-- Detta är Unicode för hamburger ikon --></span>
-        </label> <!-- Navigationslänkar --> <!-- Navigationslänkar -->
-        <div class="myLinks">
-          <ul>
-            <li><a href="#section2">Skidaktiviteter</a></li>
-            <!-- <li><a href="#section6">Bildspel</a></li> -->
-            <li><a href="varor.html">Boka Resa</a></li>
-            <li><a href="#section7">Våra Guider</a></li>
-            <li>
-              <a href="#" @click.prevent="openCart">
-                Varukorg
-                <span v-if="totalItemsCart > 0" class="cart-item-count">
-                  {{totalItemsCart}}
-                </span>
-              </a>
-              <div v-if="showCart" class="cart-dropDown">
-                <button @click="closeCart" class="close-cart">X</button>
-                <div class="varukorgRubrik">
-                  <h3 class="VarukorgVaror">Varor</h3>
-                </div>
-                <div class="cartItems">
-                  <ul>
-                    <li v-for="product in cart" :key="product.id">
-                      <div class="image-box">
-                        <img :src="product.image" alt="varukorgImages" />
-                      </div>
-                      <div class="varukorgInfo">
-                        <h1 class="varukorgTitel">{{product.name}}</h1>
-                        <h3 class="produktPlats">{{product.location}}</h3>
-                      </div>
-                      <div class="priser">
-                        <div class="produktPris">{{product.price}} kr</div>
-                        <div class="taBortProdukter" @click="removeProductCart(product)">
-                          Remove
+  <body>
+    <div id="app">
+      <header>
+        <nav>
+          <!-- Logotyp -->
+          <h6 id="huvudTitel"><a href="#section1">SnowWhite Heli</a></h6>
+          <input type="checkbox" id="menu-toggle" v-model="closeMenu" />
+          <label for="menu-toggle" id="menuIcon" @click="closeCart">
+            <span v-if="closeMenu"
+              >&#10005;
+              <!-- Detta är Unicode för ett 'X' --></span
+            >
+            <span v-else
+              >&#9776;
+              <!-- Detta är Unicode för hamburger ikon --></span
+            >
+          </label>
+          <!-- Navigationslänkar -->
+          <!-- Navigationslänkar -->
+          <div class="myLinks">
+            <ul>
+              <li><a href="#section2">Skidaktiviteter</a></li>
+              <!-- <li><a href="#section6">Bildspel</a></li> -->
+              <li><a href="varor.html">Boka Resa</a></li>
+              <li><a href="#section7">Våra Guider</a></li>
+              <li>
+                <a href="#" @click.prevent="openCart">
+                  Varukorg
+                  <span v-if="totalItemsCart > 0" class="cart-item-count">
+                    {{totalItemsCart}}
+                  </span>
+                </a>
+                <div v-if="showCart" class="cart-dropDown">
+                  <button @click="closeCart" class="close-cart">X</button>
+                  <div class="varukorgRubrik">
+                    <h3 class="VarukorgVaror">Varor</h3>
+                  </div>
+                  <div class="cartItems">
+                    <ul>
+                      <li v-for="product in cart" :key="product.id">
+                        <div class="image-box">
+                          <img :src="product.image" alt="varukorgImages" />
+                        </div>
+                        <div class="varukorgInfo">
+                          <h1 class="varukorgTitel">{{product.name}}</h1>
+                          <h3 class="produktPlats">{{product.location}}</h3>
+                        </div>
+                        <div class="priser">
+                          <div class="produktPris">{{product.price}} kr</div>
+                          <div
+                            class="taBortProdukter"
+                            @click="removeProductCart(product)"
+                          >
+                            Remove
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <hr />
+                  <div class="checkOut">
+                    <div class="total">
+                      <div class="subTotal-container">
+                        <div class="subTotal">Sub-total</div>
+                        <div class="varukorgItems">
+                          {{totalItemsCart}} Items
                         </div>
                       </div>
-                    </li>
-                  </ul>
-                </div>
-                <hr />
-                <div class="checkOut">
-                  <div class="total">
-                    <div class="subTotal-container">
-                      <div class="subTotal">Sub-total</div>
-                      <div class="varukorgItems">
-                        {{totalItemsCart}} Items
+                      <div class="totalAmount">
+                        {{ cart.reduce((acc, product) => acc + product.price, 0)
+                        }} kr
                       </div>
                     </div>
-                    <div class="totalAmount">
-                      {{ cart.reduce((acc, product) => acc + product.price, 0)
-                      }} kr
-                    </div>
+                    <button class="checkOutButton" @click="handleCheckOut">
+                      Check out
+                    </button>
                   </div>
-                  <button class="checkOutButton" @click="handleCheckOut">
-                    Check out
-                  </button>
                 </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-
-    <!-- Formulär för kontakt-->
-    <button class="material-icons" id="support-button">
-      contact_support
-    </button>
-    <!-- The Modal -->
-    <div id="contact-wrapper" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <h2 class="contacthead">Kontaktformulär</h2>
-        <h5>
-          Undrar du något eller vill komma i kontakt med oss är det bara att
-          skriva här så kontaktar vi dig med ett svar på dina frågor.
-        </h5>
-        <form id="contactform">
-          <div class="input-group" id="name-div">
-            <input type="text" id="name" placeholder="Ditt namn" onkeyup="validateName()" />
-            <span id="name-error"></span>
-          </div>
-
-          <div class="input-group" id="tele-div">
-            <input type="text" id="tele" placeholder="Telefonnummer" onkeyup="validatePhone()" />
-            <span id="tele-error"></span>
-          </div>
-
-          <div class="input-group" id="email-div">
-            <input type="text" id="email" placeholder="Email" onkeyup="validateEmail()" />
-            <span id="email-error"></span>
-          </div>
-
-          <div class="input-group" id="message-div">
-            <textarea id="message" rows="4" placeholder="Skriv ditt meddelande här"
-              onkeyup="validateMessage()"></textarea>
-            <span id="message-error"></span>
-          </div>
-          <button onclick="return validateForm()" type="submit">
-            Skicka meddelande
-          </button>
-        </form>
-        <span class="close">&times;</span>
-      </div>
-    </div>
-
-    <!-- Avsnitt 1: Hem -->
-    <section id="section1" class="full-height">
-      <video id="bakgrundsVideo" autoplay muted loop>
-        <source src="pictures/helicoptervideo.mp4" type="video/mp4" />
-      </video>
-      <div class="front-item">
-        <img src="pictures/snowwhiteLogosmall.png" alt="helikopterlyft" class="smaller-image" />
-      </div>
-      <div class="front-item">
-        <h1>
-          Experience Winter's<br />
-          Magic with<br />
-          SnowWhite Heli
-        </h1>
-      </div>
-    </section>
-
-    <!-- Avsnitt 2: Skidaktiviteter -->
-    <section id="section2" class="full-height-section right">
-      <div id="flex-text1">
-        <div class="text-container">
-          <h3>Upptäck Friheten med Våra Helikopterlyft</h3>
-          <p>
-            Välkommen till det ultimata äventyret och friheten som endast
-            helikopterlyft kan erbjuda! På SnowWhile Heli är vi stolta över
-            att erbjuda skräddarsydda helikopterlyft som tar dig till
-            otillgängliga bergstoppar, orörda puderfält och avlägsna
-            skiddestinationer. Vår passion är att leverera oförglömliga
-            helikopterupplevelser som öppnar upp en helt ny värld av
-            skidåkning och äventyr för dig och dina vänner.
-          </p>
-        </div>
-      </div>
-      <div id="flex-pic1">
-        <img src="pictures/helilift2.jpg" alt="helikopterlyft" class="flexPic" />
-      </div>
-    </section>
-
-    <!-- Avsnitt 3: Bildspel -->
-    <section id="section3" class="full-height-section left">
-      <div id="flex-pic2">
-        <img src="pictures/gudie2.jpg" alt="Guide" class="flexPic" />
-      </div>
-      <div id="flex-text2">
-        <div class="text-container">
-          <h3>Våra Erfarna Guider - Din Nyckel till Oförglömliga Äventyr</h3>
-          <p>
-            Våra erfarna guider är hjärtat av SnowWhite Heli. De utgör kärnan
-            i varje helikopterlyft och är avgörande för att skapa en
-            oförglömlig upplevelse. Genom att förena säkerhet, kunskap och en
-            passion för äventyr blir våra guider din pålitliga följeslagare
-            när du utforskar våra otillgängliga bergslandskap.Våra guider är
-            passionerade om de destinationer de tar dig till. De har djup
-            lokalkännedom om områdets terräng, väderförhållanden och de bästa
-            platserna för skidåkning. Detta säkerställer att du alltid får en
-            enastående upplevelse oavsett om du är nybörjare eller erfaren
-            skidåkare.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Avsnitt 4: Resa och Hotell -->
-    <section id="section4" class="full-height-section right">
-      <div id="flex-text3">
-        <div class="text-container">
-          <h3>Resa och Hotell</h3>
-          <p>
-            På SnowWhite Heli erbjuder vi mer än bara helikopterlyft. Vi vill
-            göra din skidresa till en heltäckande och minnesvärd upplevelse.
-            Därför har vi skapat vårt "Resa och Hotell" -paket som inkluderar
-            allt du behöver för en perfekt vintersemester. Med vårt paket tar
-            vi hand om allt från början till slut. Det inkluderar inte bara
-            flygresan till och från ditt resmål utan även boende på
-            högklassiga hotell nära skidområdet. Så du kan slappna av och
-            njuta av hela resan utan bekymmer.
-          </p>
-        </div>
-      </div>
-      <div id="flex-pic3">
-        <img src="pictures/hotel2.jpg" alt="Hotell" class="flexPic" />
-      </div>
-    </section>
-    <!-- Avsnitt 5: Utrustning och Förberedelse-->
-    <section id="section5" class="full-height-section left">
-      <div id="flex-pic4">
-        <img src="pictures/ski_equipment3.jpg" alt="ski_equipment" class="flexPic" />
-      </div>
-      <div id="flex-text4">
-        <div class="text-container">
-          <h3>Utrustning och Förberedelse</h3>
-          <p>
-            För att göra din skidupplevelse så smidig och bekväm som möjligt
-            erbjuder vi möjligheten att hyra all den utrustning du behöver för
-            ditt äventyr med SnowWhite Heli. Vi har ett brett utbud av
-            skidutrustning tillgänglig för uthyrning, inklusive skidor,
-            snowboards, kläder och mer. Vi välkomnar också gäster som föredrar
-            att använda sin egen skidutrustning. Om du känner dig mer bekväm
-            med dina egna prylar är det självklart tillåtet att ta med dem. Vi
-            finns här för att göra din resa så enkel och problemfri som
-            möjligt.
-          </p>
-        </div>
-      </div>
-    </section>
-    <!-- Avsnitt 6:Bildspel -->
-    <section id="section6" class="full-height-section fadeTop">
-      <div class="våraPlatserTitel">
-        <h3>Våra Platser</h3>
-      </div>
-      <div class="slideShow-container">
-        <div class="slide">
-          <img src="pictures/zermatt.jpg" alt="zermatt" />
-          <div class="slide-text">Zermatt</div>
-        </div>
-        <div class="slide">
-          <img src="pictures/valthorens.jpg" alt="valthorens" />
-          <div class="slide-text">Val-Thorens</div>
-        </div>
-        <div class="slide">
-          <img src="pictures/tignes.jpg" alt="tignes" />
-          <div class="slide-text">Tignes</div>
-        </div>
-        <div class="slide">
-          <img src="pictures/stMorritz.jpg" alt="stMoritz" />
-          <div class="slide-text">St.Moritz</div>
-        </div>
-        <div class="slide s5">
-          <img src="pictures/varorBilder/madesimo2.jpeg" alt="madesimo" />
-          <div class="slide-text">Madesimo</div>
-        </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095; </a>
-        <div class="allDots">
-          <span class="dot" onclick="currentSlide(1)"></span>
-          <span class="dot" onclick="currentSlide(2)"></span>
-          <span class="dot" onclick="currentSlide(3)"></span>
-          <span class="dot" onclick="currentSlide(4)"></span>
-          <span class="dot" onclick="currentSlide(5)"></span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Avsnitt 7:Guide Presentation -->
-    <section id="section7" class="full-height-section fadeBtm">
-      <div class="guidePresentation">
-        <div class="guideDescription">
-          <h1>Guides</h1>
-          <p>
-            Varje guide hos oss är en expert på att navigera i svår terräng
-            och garanterar en oförglömlig och säker heliski-upplevelse. Klicka
-            på deras bilder nedan för att lära känna dem bättre och förstå
-            deras unika färdigheter och erfarenheter.
-          </p>
-        </div>
-        <div class="guideProfileCard">
-          <div class="card card1" v-for="personal in staffJesper" @click="openPersonalPage(personal)">
-            <h5>{{personal.name}}</h5>
-          </div>
-          <div class="card card2" v-for="personal in staffAxel" @click="openPersonalPage(personal)">
-            <h5>{{personal.name}}</h5>
-          </div>
-          <div class="card card3" v-for="personal in staffEmanuel" @click="openPersonalPage(personal)">
-            <h5>{{personal.name}}</h5>
-          </div>
-          <div class="card card4" v-for="personal in staffLudvig" @click="openPersonalPage(personal)">
-            <h5>{{personal.name}}</h5>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Avsnitt 8: footer -->
-    <footer>
-      <div class="grid-Cont">
-        <div class="grid-Item item1">
-          <h6>SnowWhite Heli</h6>
-        </div>
-
-        <div class="grid-Item item2">
-          <div class="footerCont">
-            <h4>Snabb Länk</h4>
-            <ul class="footList">
-              <li><a href="#section1" class="hLink">Hem</a></li>
-              <li>Om oss</li>
-              <li>FAQ</li>
+              </li>
             </ul>
           </div>
-        </div>
+        </nav>
+      </header>
 
-        <div class="grid-Item item3">
-          <div class="footerCont">
-            <h4>Kontakta oss</h4>
-            <ul class="footList">
-              <li>Tel: 0760506043</li>
-              <li>Email: snow@WhiteHeli.com</li>
-              <li>Fax: +44-20-1224-3456</li>
-            </ul>
-          </div>
-        </div>
+      <!-- Formulär för kontakt-->
+      <button class="material-icons" id="support-button">
+        contact_support
+      </button>
+      <!-- The Modal -->
+      <div id="contact-wrapper" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <h2 class="contacthead">Kontaktformulär</h2>
+          <h5>
+            Undrar du något eller vill komma i kontakt med oss är det bara att
+            skriva här så kontaktar vi dig med ett svar på dina frågor.
+          </h5>
+          <form id="contactform">
+            <div class="input-group" id="name-div">
+              <input
+                type="text"
+                id="name"
+                placeholder="Ditt namn"
+                onkeyup="validateName()"
+              />
+              <span id="name-error"></span>
+            </div>
 
-        <div class="grid-Item item4">
-          <div class="footerCont">
-            <h4>Sociala medier</h4>
-            <ul class="footList">
-              <li>Instagram</li>
-              <li>Facebook</li>
-              <li>Tiktok</li>
-            </ul>
-          </div>
-        </div>
+            <div class="input-group" id="tele-div">
+              <input
+                type="text"
+                id="tele"
+                placeholder="Telefonnummer"
+                onkeyup="validatePhone()"
+              />
+              <span id="tele-error"></span>
+            </div>
 
-        <div class="grid-Item item5">
-          <p id="footText">All rights reserved. SnowWhite-Heli</p>
-        </div>
+            <div class="input-group" id="email-div">
+              <input
+                type="text"
+                id="email"
+                placeholder="Email"
+                onkeyup="validateEmail()"
+              />
+              <span id="email-error"></span>
+            </div>
 
-        <div class="grid-Item item6">
-          <div class="footerCont">
-            <h4>Om oss</h4>
-            <p id="footP">
-              Vi är ett företag som tar din skidåkning till nya höjder. Med
-              topklassig säkerhet och professionell personal så kan vi
-              garantera en nöjesvärd upplevelse
+            <div class="input-group" id="message-div">
+              <textarea
+                id="message"
+                rows="4"
+                placeholder="Skriv ditt meddelande här"
+                onkeyup="validateMessage()"
+              ></textarea>
+              <span id="message-error"></span>
+            </div>
+            <button onclick="return validateForm()" type="submit">
+              Skicka meddelande
+            </button>
+          </form>
+          <span class="close">&times;</span>
+        </div>
+      </div>
+
+      <!-- Avsnitt 1: Hem -->
+      <section id="section1" class="full-height">
+        <video id="bakgrundsVideo" autoplay muted loop>
+          <source src="pictures/helicoptervideo.mp4" type="video/mp4" />
+        </video>
+        <div class="front-item">
+          <img
+            src="pictures/snowwhiteLogosmall.png"
+            alt="helikopterlyft"
+            class="smaller-image"
+          />
+        </div>
+        <div class="front-item">
+          <h1>
+            Experience Winter's<br />
+            Magic with<br />
+            SnowWhite Heli
+          </h1>
+        </div>
+      </section>
+
+      <!-- Avsnitt 2: Skidaktiviteter -->
+      <section id="section2" class="full-height-section">
+        <div id="flex-text1">
+          <div class="text-container hidLeft">
+            <h3>Upptäck Friheten med Våra Helikopterlyft</h3>
+            <p>
+              Välkommen till det ultimata äventyret och friheten som endast
+              helikopterlyft kan erbjuda! På SnowWhile Heli är vi stolta över
+              att erbjuda skräddarsydda helikopterlyft som tar dig till
+              otillgängliga bergstoppar, orörda puderfält och avlägsna
+              skiddestinationer. Vår passion är att leverera oförglömliga
+              helikopterupplevelser som öppnar upp en helt ny värld av
+              skidåkning och äventyr för dig och dina vänner.
             </p>
           </div>
         </div>
-      </div>
-    </footer>
-  </div>
-</body>
+        <div id="flex-pic1" class="hidRight">
+          <img
+            src="pictures/helilift2.jpg"
+            alt="helikopterlyft"
+            class="flexPic"
+          />
+        </div>
+      </section>
 
+      <!-- Avsnitt 3: Bildspel -->
+      <section id="section3" class="full-height-section">
+        <div id="flex-pic2" class="hidLeft">
+          <img src="pictures/gudie2.jpg" alt="Guide" class="flexPic" />
+        </div>
+        <div id="flex-text2">
+          <div class="text-container hidRight">
+            <h3>Våra Erfarna Guider - Din Nyckel till Oförglömliga Äventyr</h3>
+            <p>
+              Våra erfarna guider är hjärtat av SnowWhite Heli. De utgör kärnan
+              i varje helikopterlyft och är avgörande för att skapa en
+              oförglömlig upplevelse. Genom att förena säkerhet, kunskap och en
+              passion för äventyr blir våra guider din pålitliga följeslagare
+              när du utforskar våra otillgängliga bergslandskap.Våra guider är
+              passionerade om de destinationer de tar dig till. De har djup
+              lokalkännedom om områdets terräng, väderförhållanden och de bästa
+              platserna för skidåkning. Detta säkerställer att du alltid får en
+              enastående upplevelse oavsett om du är nybörjare eller erfaren
+              skidåkare.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Avsnitt 4: Resa och Hotell -->
+      <section id="section4" class="full-height-section">
+        <div id="flex-text3">
+          <div class="text-container hidLeft">
+            <h3>Resa och Hotell</h3>
+            <p>
+              På SnowWhite Heli erbjuder vi mer än bara helikopterlyft. Vi vill
+              göra din skidresa till en heltäckande och minnesvärd upplevelse.
+              Därför har vi skapat vårt "Resa och Hotell" -paket som inkluderar
+              allt du behöver för en perfekt vintersemester. Med vårt paket tar
+              vi hand om allt från början till slut. Det inkluderar inte bara
+              flygresan till och från ditt resmål utan även boende på
+              högklassiga hotell nära skidområdet. Så du kan slappna av och
+              njuta av hela resan utan bekymmer.
+            </p>
+          </div>
+        </div>
+        <div id="flex-pic3" class="hidRight">
+          <img src="pictures/hotel2.jpg" alt="Hotell" class="flexPic" />
+        </div>
+      </section>
+      <!-- Avsnitt 5: Utrustning och Förberedelse-->
+      <section id="section5" class="full-height-section">
+        <div id="flex-pic4" class="hidLeft">
+          <img
+            src="pictures/ski_equipment3.jpg"
+            alt="ski_equipment"
+            class="flexPic"
+          />
+        </div>
+        <div id="flex-text4">
+          <div class="text-container hidRight">
+            <h3>Utrustning och Förberedelse</h3>
+            <p>
+              För att göra din skidupplevelse så smidig och bekväm som möjligt
+              erbjuder vi möjligheten att hyra all den utrustning du behöver för
+              ditt äventyr med SnowWhite Heli. Vi har ett brett utbud av
+              skidutrustning tillgänglig för uthyrning, inklusive skidor,
+              snowboards, kläder och mer. Vi välkomnar också gäster som föredrar
+              att använda sin egen skidutrustning. Om du känner dig mer bekväm
+              med dina egna prylar är det självklart tillåtet att ta med dem. Vi
+              finns här för att göra din resa så enkel och problemfri som
+              möjligt.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Avsnitt 6:Bildspel -->
+      <section id="section6" class="full-height-section">
+        <div class="våraPlatserTitel">
+          <h3>Våra Platser</h3>
+        </div>
+        <div class="slideShow-container">
+          <div class="slide">
+            <img src="pictures/zermatt.jpg" alt="zermatt" />
+            <div class="slide-text">Zermatt</div>
+          </div>
+          <div class="slide">
+            <img src="pictures/valthorens.jpg" alt="valthorens" />
+            <div class="slide-text">Val-Thorens</div>
+          </div>
+          <div class="slide">
+            <img src="pictures/tignes.jpg" alt="tignes" />
+            <div class="slide-text">Tignes</div>
+          </div>
+          <div class="slide">
+            <img src="pictures/stMorritz.jpg" alt="stMoritz" />
+            <div class="slide-text">St.Moritz</div>
+          </div>
+          <div class="slide s5">
+            <img src="pictures/varorBilder/madesimo2.jpeg" alt="madesimo" />
+            <div class="slide-text">Madesimo</div>
+          </div>
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095; </a>
+          <div class="allDots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Avsnitt 7:Guide Presentation -->
+      <section id="section7" class="full-height-section fadeBtm">
+        <div class="guidePresentation">
+          <div class="guideDescription">
+            <h1>Guides</h1>
+            <p>
+              Varje guide hos oss är en expert på att navigera i svår terräng
+              och garanterar en oförglömlig och säker heliski-upplevelse. Klicka
+              på deras bilder nedan för att lära känna dem bättre och förstå
+              deras unika färdigheter och erfarenheter.
+            </p>
+          </div>
+          <div class="guideProfileCard">
+            <div
+              class="card card1"
+              v-for="personal in staffJesper"
+              @click="openPersonalPage(personal)"
+            >
+              <h5>{{personal.name}}</h5>
+            </div>
+            <div
+              class="card card2"
+              v-for="personal in staffAxel"
+              @click="openPersonalPage(personal)"
+            >
+              <h5>{{personal.name}}</h5>
+            </div>
+            <div
+              class="card card3"
+              v-for="personal in staffEmanuel"
+              @click="openPersonalPage(personal)"
+            >
+              <h5>{{personal.name}}</h5>
+            </div>
+            <div
+              class="card card4"
+              v-for="personal in staffLudvig"
+              @click="openPersonalPage(personal)"
+            >
+              <h5>{{personal.name}}</h5>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Avsnitt 8: footer -->
+      <footer>
+        <div class="grid-Cont">
+          <div class="grid-Item item1">
+            <h6>SnowWhite Heli</h6>
+          </div>
+
+          <div class="grid-Item item2">
+            <div class="footerCont">
+              <h4>Snabb Länk</h4>
+              <ul class="footList">
+                <li><a href="#section1" class="hLink">Hem</a></li>
+                <li>Om oss</li>
+                <li>FAQ</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grid-Item item3">
+            <div class="footerCont">
+              <h4>Kontakta oss</h4>
+              <ul class="footList">
+                <li>Tel: 0760506043</li>
+                <li>Email: snow@WhiteHeli.com</li>
+                <li>Fax: +44-20-1224-3456</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grid-Item item4">
+            <div class="footerCont">
+              <h4>Sociala medier</h4>
+              <ul class="footList">
+                <li>Instagram</li>
+                <li>Facebook</li>
+                <li>Tiktok</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grid-Item item5">
+            <p id="footText">All rights reserved. SnowWhite-Heli</p>
+          </div>
+
+          <div class="grid-Item item6">
+            <div class="footerCont">
+              <h4>Om oss</h4>
+              <p id="footP">
+                Vi är ett företag som tar din skidåkning till nya höjder. Med
+                topklassig säkerhet och professionell personal så kan vi
+                garantera en nöjesvärd upplevelse
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>

@@ -124,7 +124,7 @@ window.onclick = function(event) {
 }
 
 
-const visaSection= () =>{
+ const visaSection= () =>{
     const section = document.querySelectorAll(".full-height-section")
     for(let i = 0; i<section.length; i++){
         const windowHeight = window.innerHeight;
@@ -132,24 +132,45 @@ const visaSection= () =>{
         const elementVisable = 150;
 
         if(elementTop<windowHeight - elementVisable){
-            if(section[i].classList.contains('left')){
-                section[i].classList.add('active-left');
-            }
-            else if(section[i].classList.contains('right')){
-                section[i].classList.add('active-right');
-            }
-            else if(section[i].classList.contains('fadeTop')){
-                section[i].classList.add('fade-top');
-            }
-            else if(section[i].classList.contains('fadeBtm')){
+            if(section[i].classList.contains('fadeBtm')){
                 section[i].classList.add('fade-btm');
             }
-            
-
         }
         else{
-            section[i].classList.remove('active-left','active-right','fade-top','fade-btm');
+            section[i].classList.remove('fade-btm');
         }
     }
 }
-window.addEventListener("scroll",visaSection);
+window.addEventListener("scroll",visaSection); 
+
+let optionsscroll = {
+    root: null,
+    rootMargin: "0px 100px 0px 100px ",
+    threshold: 0.65
+  };
+
+const observerLeft = new IntersectionObserver( (entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('showLeft');
+        } else {
+            entry.target.classList.remove('showLeft');
+        }
+    });
+},optionsscroll);
+
+const hiddenElements = document.querySelectorAll('.hidLeft');
+hiddenElements.forEach((el) => observerLeft.observe(el));
+
+const observerRight = new IntersectionObserver( (entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('showRight');
+        } else {
+            entry.target.classList.remove('showRight');
+        }
+    });
+},optionsscroll);
+
+const hiddenElements2 = document.querySelectorAll('.hidRight');
+hiddenElements2.forEach((el) => observerRight.observe(el));
