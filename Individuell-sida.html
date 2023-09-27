@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="pictures/snowwhiteLogosmall.png" type="image/png">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="stylecontact.css">
+  <link rel="stylesheet" href="stylecontact.css" />
   <link rel="stylesheet" href="varukorg.css">
   <link rel="stylesheet" href="Indviduell.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,121 +21,128 @@
   <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script defer src="app.js"></script>
-  <script defer src="indi-script.js"></script>
   <script src="script.js" defer></script>
+  <script defer src="indi-script.js"></script>
+
   <title>Våra guider</title>
 </head>
 
-<body>
-
-  <div id="app">
-    <header>
-      <nav>
-        <!-- Logotyp -->
-        <h6 id="huvudTitel"><a href="index.html#section1">SnowWhite Heli</a></h6>
-        <input type="checkbox" id="menu-toggle" v-model="closeMenu" />
-        <label for="menu-toggle" id="menuIcon">
-          <span v-if="closeMenu">&#10005; <!-- Detta är Unicode för ett 'X' --></span>
-          <span v-else>&#9776; <!-- Detta är Unicode för hamburger ikon --></span>
-        </label> <!-- Navigationslänkar --> <!-- Navigationslänkar -->
-        <div class="myLinks">
-          <ul>
-            <li><a href="index.html#section2">Skidaktiviteter</a></li>
-            <!-- <li><a href="#section6">Bildspel</a></li> -->
-            <li><a href="varor.html">Boka Resa</a></li>
-            <li><a href="index.html#section7">Våra Guider</a></li>
-            <li>
-              <a href="#" @click.prevent="openCart">
-                Varukorg
-                <span v-if="totalItemsCart > 0" class="cart-item-count">
-                  {{totalItemsCart}}
-                </span>
-              </a>
-              <div v-if="showCart" class="cart-dropDown">
-                <button @click="closeCart" class="close-cart">X</button>
-                <div class="varukorgRubrik">
-                  <h3 class="VarukorgVaror">Varor</h3>
-                </div>
-                <div class="cartItems">
-                  <ul>
-                    <li v-for="product in cart" :key="product.id">
-                      <div class="image-box">
-                        <img :src="product.image" alt="varukorgImages" />
-                      </div>
-                      <div class="varukorgInfo">
-                        <h1 class="varukorgTitel">{{product.name}}</h1>
-                        <h3 class="produktPlats">{{product.location}}</h3>
-                      </div>
-                      <div class="priser">
-                        <div class="produktPris">{{product.price}} kr</div>
-                        <div class="taBortProdukter" @click="removeProductCart(product)">
-                          Remove
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <hr />
-                <div class="checkOut">
-                  <div class="total">
-                    <div class="subTotal-container">
-                      <div class="subTotal">Sub-total</div>
-                      <div class="varukorgItems">
-                        {{totalItemsCart}} Items
-                      </div>
-                    </div>
-                    <div class="totalAmount">
-                      {{ cart.reduce((acc, product) => acc + product.price, 0)
-                      }} kr
-                    </div>
-                  </div>
-                  <button class="checkOutButton" @click="handleCheckOut">
-                    Check out
-                  </button>
-                </div>
+<div id="app">
+  <header>
+    <nav>
+      <!-- Logotyp -->
+      <h6 id="huvudTitel">
+        <a href="index.html#section1">SnowWhite Heli</a>
+      </h6>
+      <input type="checkbox" id="menu-toggle" v-model="closeMenu" />
+      <label for="menu-toggle" id="menuIcon">
+        <span v-if="closeMenu">&#10005;
+          <!-- Detta är Unicode för ett 'X' --></span>
+        <span v-else>&#9776;
+          <!-- Detta är Unicode för hamburger ikon --></span>
+      </label>
+      <!-- Navigationslänkar -->
+      <div class="myLinks">
+        <ul>
+          <li><a href="index.html#section2">Skidaktiviteter</a></li>
+          <!-- <li><a href="#section6">Bildspel</a></li> -->
+          <li><a href="#section1varor">Boka Resa</a></li>
+          <li><a href="index.html#section7">Våra Guider</a></li>
+          <li>
+            <a href="#" @click.prevent="openCart">
+              Varukorg
+              <span v-if="totalItemsCart > 0" class="cart-item-count">
+                {{totalItemsCart}}
+              </span>
+            </a>
+            <div v-if="showCart" class="cart-dropDown">
+              <button @click="closeCart" class="close-cart">X</button>
+              <div class="varukorgRubrik">
+                <h3 class="VarukorgVaror">Varor</h3>
               </div>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-
-    <!-- Formulär för kontakt-->
-    <button class="material-icons" id="support-button">contact_support</button>
-    <!-- The Modal -->
-    <div id="contact-wrapper" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <h2 class="contacthead">Kontaktformulär</h2>
-        <h5>Undrar du något eller vill komma i kontakt med oss är det bara att skriva här så kontaktar vi dig med ett
-          svar
-          på dina frågor.</h5>
-        <form id="contactform">
-          <div class="input-group" id="name-div">
-            <input type="text" id="name" placeholder="Ditt namn" onkeyup="validateName()">
-            <span id="name-error"></span>
-          </div>
-
-          <div class="input-group" id="tele-div">
-            <input type="text" id="tele" placeholder="Telefonnummer" onkeyup="validatePhone()">
-            <span id="tele-error"></span>
-          </div>
-
-          <div class="input-group" id="email-div">
-            <input type="text" id="email" placeholder="Email" onkeyup="validateEmail()">
-            <span id="email-error"></span>
-          </div>
-
-          <div class="input-group" id="message-div">
-            <textarea id="message" rows="4" placeholder="Skriv ditt meddelande här"
-              onkeyup="validateMessage()"></textarea>
-            <span id="message-error"></span>
-          </div>
-          <button onclick="return validateForm()" type="submit">Skicka meddelande</button>
-        </form>
-        <span class="close">&times;</span>
+              <div class="cartItems">
+                <ul>
+                  <li v-for="product in cart" :key="product.id">
+                    <div class="image-box">
+                      <img :src="product.image" alt="varukorgImages" />
+                    </div>
+                    <div class="varukorgInfo">
+                      <h1 class="varukorgTitel">{{product.name}}</h1>
+                      <h3 class="produktPlats">{{product.location}}</h3>
+                    </div>
+                    <div class="priser">
+                      <div class="produktPris">{{product.price}} kr</div>
+                      <div class="taBortProdukter" @click="removeProductCart(product)">
+                        Remove
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <hr />
+              <div class="checkOut">
+                <div class="total">
+                  <div class="subTotal-container">
+                    <div class="subTotal">Sub-total</div>
+                    <div class="items">{{totalItemsCart}} Items</div>
+                  </div>
+                  <div class="totalAmount">
+                    {{ cart.reduce((acc, product) => acc + product.price, 0)
+                    }} kr
+                  </div>
+                </div>
+                <button class="checkOutButton" @click="handleCheckOut">
+                  Check out
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
+    </nav>
+  </header>
+
+  <!-- Formulär för kontakt-->
+  <button class="material-icons" id="support-button">
+    contact_support
+  </button>
+  <!-- The Modal -->
+  <div id="contact-wrapper" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <h2 class="contacthead">Kontaktformulär</h2>
+      <h5>
+        Undrar du något eller vill komma i kontakt med oss är det bara att
+        skriva här så kontaktar vi dig med ett svar på dina frågor.
+      </h5>
+      <form id="contactform">
+        <div class="input-group" id="name-div">
+          <input type="text" id="name" placeholder="Ditt namn" onkeyup="validateName()" />
+          <span id="name-error"></span>
+        </div>
+
+        <div class="input-group" id="tele-div">
+          <input type="text" id="tele" placeholder="Telefonnummer" onkeyup="validatePhone()" />
+          <span id="tele-error"></span>
+        </div>
+
+        <div class="input-group" id="email-div">
+          <input type="text" id="email" placeholder="Email" onkeyup="validateEmail()" />
+          <span id="email-error"></span>
+        </div>
+
+        <div class="input-group" id="message-div">
+          <textarea id="message" rows="4" placeholder="Skriv ditt meddelande här"
+            onkeyup="validateMessage()"></textarea>
+          <span id="message-error"></span>
+        </div>
+        <button onclick="return validateForm()" type="submit">
+          Skicka meddelande
+        </button>
+      </form>
+      <span class="close">&times;</span>
     </div>
+  </div>
 
     <div class="box-cont">
       <div class="box-part part1">

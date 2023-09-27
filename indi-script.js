@@ -1,10 +1,10 @@
-let options = {
+let optionsIndi = {
     root: null,
     rootMargin: "100px 60px -120px 60px",
     threshold: 0.7
   };
 
-const observer = new IntersectionObserver( (entries) => {
+const observerIndi = new IntersectionObserver( (entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visa');
@@ -12,7 +12,7 @@ const observer = new IntersectionObserver( (entries) => {
             entry.target.classList.remove('visa');
         }
     });
-},options);
+},optionsIndi);
 
-const hiddenElements = document.querySelectorAll('.dold');
-hiddenElements.forEach((el) => observer.observe(el));
+const hiddenElementsIndi = document.querySelectorAll('.dold');
+hiddenElementsIndi.forEach((el) => observerIndi.observe(el));
