@@ -49,13 +49,16 @@ h4 {
   position: absolute;
   top: 3%;
   left: 3%;
-  font-size: 3.3rem;
+  font-size: 2.5rem;
+  color: #0c1c3c;
+  border-left: 8px solid #ff570a;
+  background-color: #f0eff4;
 }
 
 .secondText {
   font-family: "Montserrat", sans-serif;
   position: absolute;
-  top: 20%;
+  top: 15%;
   left: 3%;
   font-size: 2rem;
   color: #0c1c3c;
