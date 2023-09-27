@@ -262,6 +262,10 @@ h3, h4 {
         margin-top: 30px;
     }
 
+    .part4{
+        overflow-y: hidden;
+    }
+
     .project {
         min-width: 40vw;
     }

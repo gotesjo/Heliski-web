@@ -22,7 +22,7 @@ const app = Vue.createApp({
       items: [
         {
           id: 0,
-          name: "En äventyrlig Helikopterresa: Utforska Otillgängliga Skidparadis i Zermatt!",
+          name: "En äventyrlig Helikopterresa Zermatt",
           description:
             'Njut av en oförglömlig dag i bergen med vår exklusiva "Helikopter Drop"-upplevelse! Färdas i en toppmodern helikopter till otrampade skidområden och upplev den ultimata friheten på snön.',
           price: 10000,
@@ -32,7 +32,7 @@ const app = Vue.createApp({
         },
         {
           id: 1,
-          name: "Lyxigt Äventyr i Alperna: Exklusivt Hotell och Helikopter-paket i Förtrollande Zermatt!",
+          name: "Exklusivt Hotell och Helikopter-paket i Zermatt!",
           description:
             "Upplev lyx och äventyr på högsta nivå med vår Hotell och Helikopter-paket i det förtrollande Zermatt. Bo en hel vecka på ett exklusivt femstjärnigt hotell med alla tänkbara bekvämligheter, från gourmetmåltider till spa-behandlingar. Men det som verkligen sätter guldkant på din vistelse är vårt spektakulära helikopterlyft på onsdagen. Stig ombord på en toppmodern helikopter och låt dig föras till orörda skidområden som få någonsin har sett. Känn friheten i pulversnö och klar alpluft som du svävar nerför bergsidan. Detta är mer än en skidresa; det är en oöverträffad upplevelse av lyx och äventyr",
           price: 35000,
@@ -42,7 +42,7 @@ const app = Vue.createApp({
         },
         {
           id: 2,
-          name: "Ultimat Resepaket: Komplett Resa till Zermatt – Flyg, Helikopteräventyr & Lyxhotell!",
+          name: "Ultimat Resepaket i Zermatt!",
           description:
             'Dyk djupt in i alpernas hjärta med vårt "Ultimat Resepaket". Från det ögonblick du lyfter från hemmaflygplatsen till ditt ögonblick av avfärd garanterar vi en upplevelse fylld med spänning och lyx. Landning i de majestätiska alperna, du kommer att inkvarteras på ett prestigefyllt femstjärnigt hotell där varje önskan tas om hand, från läcker mat till avkopplande spafaciliteter. Men hjärtat i detta paket är det exklusiva helikopterlyftet, som tar dig till skidområden där naturen regerar och där spåren du lämnar är de enda. Med snö under fötterna och en oändlig himmel ovanför, kommer du att förstå vad äkta skidglädje betyder. Vår service fortsätter ända till din hemresa, där du kan reflektera över en vecka av oförglömliga minnen. Med SnowWhile Heli blir varje resa inte bara en semester, utan en saga av äventyr och förstklassig behandling',
           price: 40000,
@@ -52,7 +52,7 @@ const app = Vue.createApp({
         },
         {
           id: 3,
-          name: "En Majestätisk Helikopterfärd: Upptäck Gömda Skidskatter i Madesimo!",
+          name: "En äventyrlig Helikopterresa Madesimo",
           description:
             "Ta del av den fantastiska skidåkningen i Madesimo genom vår unika Helikopter Drop-erfarenhet. Res med en högteknologisk helikopter till outforskade områden för att känna pulsen av äkta frihet på snöklädda backar. Det är inte bara en dag i bergen, det är en dag du aldrig kommer att glömma.",
           price: 12000,
@@ -62,7 +62,7 @@ const app = Vue.createApp({
         },
         {
           id: 4,
-          name: "Dolda Pärlan i Alperna: Exklusivt Hotell och Helikopter-paket i Mysteriska Madesimo!",
+          name: "Exklusivt Hotell och Helikopter-paket i Madesimo",
           description:
             "Njut av den ultimata kombinationen av lyx och adrenalin med vårt unika Hotell och Helikopter-paket i det idylliska Madesimo. Bo en hel vecka på ett av ortens finaste femstjärniga hotell där ingenting saknas när det kommer till komfort och elegans. Som kronan på verket får du på onsdagen möjligheten att delta i en fantastisk helikopterupplevelse. Kliv in i en toppmodern helikopter och lyft till orörda delar av Alperna som få har privilegiet att utforska. Upplev skidåkning på en helt ny nivå i detta snöparadis, långt borta från trängsel och liftköer. Detta är inte bara en semester; det är en drömvecka för den som söker både avkoppling och spänning.",
           price: 37000,
@@ -72,7 +72,7 @@ const app = Vue.createApp({
         },
         {
           id: 5,
-          name: "Ultimat Resepaket: Madesimos Magiska Bergsmiljö – Flyg in, Helikopterutforskning & Italiensk Lyxovernattning!",
+          name: "Ultimat Resepaket i Madesimo!",
           description:
             'Dyk djupt in i alpernas hjärta med vårt "Ultimat Resepaket". Från det ögonblick du lyfter från hemmaflygplatsen till ditt ögonblick av avfärd garanterar vi en upplevelse fylld med spänning och lyx. Landning i de majestätiska alperna, du kommer att inkvarteras på ett prestigefyllt femstjärnigt hotell där varje önskan tas om hand, från läcker mat till avkopplande spafaciliteter. Men hjärtat i detta paket är det exklusiva helikopterlyftet, som tar dig till skidområden där naturen regerar och där spåren du lämnar är de enda. Med snö under fötterna och en oändlig himmel ovanför, kommer du att förstå vad äkta skidglädje betyder. Vår service fortsätter ända till din hemresa, där du kan reflektera över en vecka av oförglömliga minnen. Med SnowWhile Heli blir varje resa inte bara en semester, utan en saga av äventyr och förstklassig behandling',
           price: 42000,
@@ -82,7 +82,7 @@ const app = Vue.createApp({
         },
         {
           id: 6,
-          name: "En Exklusiv Helikoptertur: Njut av Skidåknings Underverk i St. Moritz",
+          name: "En äventyrlig Helikopterresa i St. Moritz",
           description:
             "Upplev en extraordinär dag i de schweiziska alperna med vår unika Helikopter Drop-tjänst, lokaliserad i det exklusiva skidresmålet Moritz. Flyg i en toppmodern helikopter till oskiftade terränger och njut av en oförglömlig frihet på de pudriga backarna.",
           price: 15000,
@@ -92,7 +92,7 @@ const app = Vue.createApp({
         },
         {
           id: 7,
-          name: "Elegans bland Snötäckta Toppmöten: Exklusivt Hotell och Helikopter-paket i Stilfulla St. Moritz!",
+          name: "Exklusivt Hotell och Helikopter-paket i St. Moritz!",
           description:
             'Förverkliga ditt drömsemester med vårt exceptionella "Hotell och Helikopter"-paket i den glamorösa alpdestinationen St. Moritz. Få en smak av lyx genom att bo på ett exklusivt femstjärnigt hotell, där varenda detalj är noggrant utvald för din komfort och njutning. Förutom att uppleva den alpina elegansen, får du också chansen att delta i en oslagbar helikopterupplevelse. På onsdagen, gör dig redo för en adrenalinfylld dag då du lyfts upp av en toppmodern helikopter till de orörda skidområdena i Engadin-regionen. Här får du friheten att carva dina egna spår i den orörda snön, långt från liftköer och folkmassor. Detta paket är inte bara en resa, det är en upplevelse av livstid som kombinerar det bästa av lyx och äventyr.',
           price: 40000,
@@ -102,7 +102,7 @@ const app = Vue.createApp({
         },
         {
           id: 8,
-          name: "Ultimat Resepaket: Airlift till St. Moritz’s Glittrande Snötoppar – Helikopterdyk & Boende vid Sjön!",
+          name: "Ultimat Resepaket i St. Moritz!",
           description:
             'Dyk djupt in i alpernas hjärta med vårt "Ultimat Resepaket". Från det ögonblick du lyfter från hemmaflygplatsen till ditt ögonblick av avfärd garanterar vi en upplevelse fylld med spänning och lyx. Landning i de majestätiska alperna, du kommer att inkvarteras på ett prestigefyllt femstjärnigt hotell där varje önskan tas om hand, från läcker mat till avkopplande spafaciliteter. Men hjärtat i detta paket är det exklusiva helikopterlyftet, som tar dig till skidområden där naturen regerar och där spåren du lämnar är de enda. Med snö under fötterna och en oändlig himmel ovanför, kommer du att förstå vad äkta skidglädje betyder. Vår service fortsätter ända till din hemresa, där du kan reflektera över en vecka av oförglömliga minnen. Med SnowWhile Heli blir varje resa inte bara en semester, utan en saga av äventyr och förstklassig behandling',
           price: 47000,
@@ -112,7 +112,7 @@ const app = Vue.createApp({
         },
         {
           id: 9,
-          name: "Höghöjdsäventyret Väntar: Upptäck Orörda Snölandskap i Val Thorens med Helikopter!",
+          name: "En äventyrlig Helikopterresa i Val-Thorens",
           description:
             'Njut av en oförglömlig dag i bergen med vår exklusiva "Helikopter Drop"-upplevelse! Färdas i en toppmodern helikopter till otrampade skidområden och upplev den ultimata friheten på snön.',
           price: 15000,
@@ -122,7 +122,7 @@ const app = Vue.createApp({
         },
         {
           id: 10,
-          name: "Höghöjdens Hemligheter: Lyxigt Hotell och Helikopter-paket i Magnifika Val Thorens!",
+          name: "Exklusivt Hotell och Helikopter-paket i Magnifika Val Thorens!",
           description:
             "Upplev alpernas magi på ett helt nytt sätt med vårt enastående Hotell och Helikopter-paket i det snörika Val Thorens. Bo på ett lyxigt femstjärnigt hotell, där varje detalj har skapats för att maximera din komfort och välbefinnande. Men detta är bara början; höjdpunkten i din vecka kommer på onsdag, när du får chansen att ta del av en extraordinär helikopterupplevelse. Färdas med en toppmodern helikopter till avlägsna skidområden och lämna ditt avtryck på orörd snö, bortom de trånga liftköerna och de vanliga pister. Detta paket i Val Thorens kombinerar lyxig logi med en hisnande helikopterresa, och ger dig en oförglömlig vecka fylld med äventyr och exklusivitet.",
           price: 40000,
@@ -132,7 +132,7 @@ const app = Vue.createApp({
         },
         {
           id: 11,
-          name: "Ultimat Resepaket: Skidhimlen Kallar i Val Thorens – Direktflyg, Helikopterupptäcktsfärd & Alpin Lyx!",
+          name: "Ultimat Resepaket i Val Thorens!",
           description:
             'Dyk djupt in i alpernas hjärta med vårt "Ultimat Resepaket". Från det ögonblick du lyfter från hemmaflygplatsen till ditt ögonblick av avfärd garanterar vi en upplevelse fylld med spänning och lyx. Landning i de majestätiska alperna, du kommer att inkvarteras på ett prestigefyllt femstjärnigt hotell där varje önskan tas om hand, från läcker mat till avkopplande spafaciliteter. Men hjärtat i detta paket är det exklusiva helikopterlyftet, som tar dig till skidområden där naturen regerar och där spåren du lämnar är de enda. Med snö under fötterna och en oändlig himmel ovanför, kommer du att förstå vad äkta skidglädje betyder. Vår service fortsätter ända till din hemresa, där du kan reflektera över en vecka av oförglömliga minnen. Med SnowWhile Heli blir varje resa inte bara en semester, utan en saga av äventyr och förstklassig behandling',
           price: 47000,
