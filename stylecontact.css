@@ -72,7 +72,7 @@ form textarea {
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 2; /* Sit on top */
     left: 0;
     top: 0;
     width: 100%;
@@ -90,7 +90,7 @@ form textarea {
     padding: 0.5rem;
     border-radius: 50px;
     width: 60vw;
-    margin-top: 15%;
+    margin-top: 10%;
   }
   
 

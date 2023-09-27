@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Boka resa</title>
     <link rel="stylesheet" href="varukorg.css" />
     <link rel="stylesheet" href="stylevaror.css" />
     <link rel="stylesheet" href="style.css" />
@@ -21,6 +21,7 @@
     <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script defer src="app.js"></script>
+    <script src="script.js" defer></script>
   </head>
 
   <body>
@@ -105,6 +106,67 @@
           </div>
         </nav>
       </header>
+
+      <!-- Formulär för kontakt-->
+      <button class="material-icons" id="support-button">
+        contact_support
+      </button>
+      <!-- The Modal -->
+      <div id="contact-wrapper" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <h2 class="contacthead">Kontaktformulär</h2>
+          <h5>
+            Undrar du något eller vill komma i kontakt med oss är det bara att
+            skriva här så kontaktar vi dig med ett svar på dina frågor.
+          </h5>
+          <form id="contactform">
+            <div class="input-group" id="name-div">
+              <input
+                type="text"
+                id="name"
+                placeholder="Ditt namn"
+                onkeyup="validateName()"
+              />
+              <span id="name-error"></span>
+            </div>
+
+            <div class="input-group" id="tele-div">
+              <input
+                type="text"
+                id="tele"
+                placeholder="Telefonnummer"
+                onkeyup="validatePhone()"
+              />
+              <span id="tele-error"></span>
+            </div>
+
+            <div class="input-group" id="email-div">
+              <input
+                type="text"
+                id="email"
+                placeholder="Email"
+                onkeyup="validateEmail()"
+              />
+              <span id="email-error"></span>
+            </div>
+
+            <div class="input-group" id="message-div">
+              <textarea
+                id="message"
+                rows="4"
+                placeholder="Skriv ditt meddelande här"
+                onkeyup="validateMessage()"
+              ></textarea>
+              <span id="message-error"></span>
+            </div>
+            <button onclick="return validateForm()" type="submit">
+              Skicka meddelande
+            </button>
+          </form>
+          <span class="close">&times;</span>
+        </div>
+      </div>
 
       <section id="section1Varor">
         <div class="bakgrundsBildVaror">
@@ -196,7 +258,7 @@
 
       <section id="section5Varor">
         <div class="bakgrundsBildVaror">
-          <h1>st. Moritz</h1>
+          <h1>St. Moritz</h1>
           <p>
             Madesimo är en charmig skidort belägen i de italienska Alperna, i
             regionen Lombardiet. Känd för sin intima atmosfär och fantastiska
