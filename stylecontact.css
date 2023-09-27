@@ -89,13 +89,17 @@ form textarea {
     margin: 9% auto; /* 9% from the top and centered */
     padding: 0.5rem;
     border-radius: 50px;
-    width: 35vw;
+    width: 60vw;
+    margin-top: 15%;
   }
   
 
   .close {
     color: #FF570A;
-    float: right;
+    /* float: right; */
+    top: 110px;
+    right: 60px;
+    position: absolute;
     font-size: 50px;
     font-weight: bold;
   }
@@ -110,8 +114,25 @@ form textarea {
   /* För mobilskärmar */
 @media only screen and (max-width: 905px) {
     .modal-content {
-        margin-top: 22%;
+        height: 75vh;
+        margin-top: 6em;
         width: 90vw;
-        height: 67vh;
+    }
+
+    .close {
+        top: 13%;
+        right: 8%;
+    }
+}
+
+@media only screen and (max-width:400px) {
+    .modal-content {
+        height: 85vh;
+        margin-top: 5em;
+        width: 90vw;
+    }
+
+    h5 {
+        margin: 0;
     }
 }
