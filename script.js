@@ -11,7 +11,7 @@ const validateName = () => {
         nameError.innerHTML = 'Måste ha ett namn';
         return false;
     }
-    if(!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)){
+    if(!name.match(/^[A-Öa-ö]*\s{1}[A-Öa-ö]*$/)){
         nameError.innerHTML = 'Måste innehålla för och efternamn';
         return false;
     }
