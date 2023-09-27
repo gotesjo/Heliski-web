@@ -198,15 +198,13 @@
 
       <section id="section2Varor">
         <div class="productCard">
-          <div class="cardVaror" v-for="item in ZermattItems">
+          <div
+            class="cardVaror"
+            v-for="item in ZermattItems"
+            @click="openModal(item)"
+          >
             <h5>{{ item.name }}</h5>
-            <img
-              :src="item.image"
-              alt="enBild"
-              class="product-image"
-              @click="openModal(item)"
-            />
-
+            <img :src="item.image" alt="enBild" class="product-image" />
             <div>{{ item.price }} SEK</div>
           </div>
         </div>
@@ -244,14 +242,13 @@
 
       <section id="section4Varor">
         <div class="productCard">
-          <div class="cardVaror" v-for="item in MadesimoItems">
+          <div
+            class="cardVaror"
+            v-for="item in MadesimoItems"
+            @click="openModal(item)"
+          >
             <h5>{{ item.name }}</h5>
-            <img
-              :src="item.image"
-              alt="enBild"
-              class="product-image"
-              @click="openModal(item)"
-            />
+            <img :src="item.image" alt="enBild" class="product-image" />
             <div>{{ item.price }} SEK</div>
           </div>
         </div>
@@ -289,14 +286,13 @@
 
       <section id="section6Varor">
         <div class="productCard">
-          <div class="cardVaror" v-for="item in StMoritzItems">
+          <div
+            class="cardVaror"
+            v-for="item in StMoritzItems"
+            @click="openModal(item)"
+          >
             <h5>{{ item.name }}</h5>
-            <img
-              :src="item.image"
-              alt="enBild"
-              class="product-image"
-              @click="openModal(item)"
-            />
+            <img :src="item.image" alt="enBild" class="product-image" />
             <div>{{ item.price }} SEK</div>
           </div>
         </div>
@@ -334,14 +330,13 @@
 
       <section id="section8Varor">
         <div class="productCard">
-          <div class="cardVaror" v-for="item in ValThorensItems">
+          <div
+            class="cardVaror"
+            v-for="item in ValThorensItems"
+            @click="openModal(item)"
+          >
             <h5>{{ item.name }}</h5>
-            <img
-              :src="item.image"
-              alt="enBild"
-              class="product-image"
-              @click="openModal(item)"
-            />
+            <img :src="item.image" alt="enBild" class="product-image" />
             <div>{{ item.price }} SEK</div>
           </div>
         </div>
