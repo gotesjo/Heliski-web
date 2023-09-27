@@ -1,73 +1,72 @@
-h3, h4 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3.2rem;
-    color: #F0EFF4;
-    margin: 0;
+h3,
+h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.2rem;
+  color: #f0eff4;
+  margin: 0;
 }
-.text-text{
-    margin-top: 1.5em;
-    color: #0C1C3C;
-    margin-left: 0.5em;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: type 4s steps(40, end);
+.text-text {
+  margin-top: 1.5em;
+  color: #0c1c3c;
+  margin-left: 0.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: type 4s steps(40, end);
 }
 
-@keyframes type{
-    from { 
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
+@keyframes type {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 .box-cont {
-    display: grid;
-    grid-template-columns: repeat(3, 2fr);
-    height: 100%;
-    margin: 7em 0 0 0;
-    column-gap: 0.5em;
-    padding-top: 0.5em;
-    background-color: #F0EFF4;
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  height: 100%;
+  margin: 7em 0 0 0;
+  column-gap: 0.5em;
+  padding-top: 0.5em;
+  background-color: #f0eff4;
 }
 
 .part1 {
-    object-fit: fill;
-    position: relative;
+  object-fit: fill;
+  position: relative;
 }
 
 .part1 img {
-    border-radius: 10px;
-    max-width: 95%;
-    max-height: 100%;
-    margin: 0 10px;
+  border-radius: 10px;
+  max-width: 95%;
+  max-height: 100%;
+  margin: 0 10px;
 }
 
 .firstText {
-    position: absolute;
-    top: 3%;
-    left: 3%;
-    font-size: 3.3rem;
-
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  font-size: 3.3rem;
 }
 
 .secondText {
-    font-family: 'Montserrat', sans-serif;
-    position: absolute;
-    top: 20%;
-    left: 3%;
-    font-size: 2rem;
-    color: #0C1C3C;
-    padding-left: 2%;
-    border-left: 8px solid #FF570A;
-    background-color: #F0EFF4;
-
+  font-family: "Montserrat", sans-serif;
+  position: absolute;
+  top: 20%;
+  left: 3%;
+  font-size: 2rem;
+  color: #0c1c3c;
+  padding-left: 2%;
+  border-left: 8px solid #ff570a;
+  background-color: #f0eff4;
 }
 
 .part2 {
   margin: 3% 2% 0 2%;
-  color: #0C1C3C;
+  color: #0c1c3c;
   vertical-align: middle;
   display: flex;
   flex-direction: column;
@@ -75,198 +74,186 @@ h3, h4 {
 }
 
 .part2 h4 {
-    color: #0C1C3C;
-    border-bottom: 8px solid #FF570A;
-    margin: 0 0 0.5em 0;
-    padding: 0 0 0.3em 0;
-
+  color: #0c1c3c;
+  border-bottom: 8px solid #ff570a;
+  margin: 0 0 0.5em 0;
+  padding: 0 0 0.3em 0;
 }
 
 .part2 h5 {
-    font-size: 1.5em;
-    margin: 0.2em 0 1em 0;
-
+  font-size: 1.5em;
+  margin: 0.2em 0 1em 0;
 }
 
 .part3 {
-    align-self: center;
-    width: 100%;
+  align-self: center;
+  width: 100%;
 }
 
 .part3 h4 {
-    color: #0C1C3C;
+  color: #0c1c3c;
 }
 
 .part4 {
-    grid-column: 1 / span 3;
-    grid-row: 3 / span 3;
-    width: 100%;
-    background-color: #577371;
-    margin-top: 0.5em;
-    text-align: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0,0,0,0.5)), url(pictures/mountainproj.jpg);
-    background-size:cover;
-    background-position:center;
+  grid-column: 1 / span 3;
+  grid-row: 3 / span 3;
+  width: 100%;
+  background-color: #577371;
+  margin-top: 0.5em;
+  text-align: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(pictures/mountainproj.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .personal-projects {
-    display: flex;
-    flex-direction: row;
-    margin: 1em;
-    height: auto;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
+  display: flex;
+  flex-direction: row;
+  margin: 1em;
+  height: auto;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 .project {
-    margin: 1em;
-    padding: 1em;
-    border: 2px solid #FF570A;
-    border-radius: 10px;
-    color: #0C1C3C;
-    min-width: 20vw;
-    height: auto;
-    word-wrap: break-word;
+  margin: 1em;
+  padding: 1em;
+  border: 2px solid #ff570a;
+  border-radius: 10px;
+  color: #0c1c3c;
+  min-width: 20vw;
+  height: auto;
+  word-wrap: break-word;
 
-    transform: scale(1);
-    transition: all 0.5s ease-in-out;
+  transform: scale(1);
+  transition: all 0.5s ease-in-out;
 }
 
 .project:hover {
-    transform: scale(1.06);
+  transform: scale(1.06);
 }
 
 .project h3 {
-
-    font-size: 1.5em;
-    font-weight:bold;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 .project p {
-    margin-top: 10px;
-    color: white;
+  margin-top: 10px;
+  color: white;
 }
 
 .project .category-icon {
-    text-align: center;
-    display: block;
-    font-size: 4em;
-    color: #FF570A;
-    margin: 0.4em;
+  text-align: center;
+  display: block;
+  font-size: 4em;
+  color: #ff570a;
+  margin: 0.4em;
 }
 
 .part4 h4 {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .part4 h5 {
-    color: white;
-    font-size: 1em;
-    text-transform: uppercase;
+  color: white;
+  font-size: 1em;
+  text-transform: uppercase;
 }
 
 .dold {
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateX(-50%);
-    transition: all 1s;
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-50%);
+  transition: all 1s;
 }
 
 .visa {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
 }
 
 .skill {
-    margin: 2em;
-    width: 80%;
-    height: 23px;
-    background-color: #d5d5dd;
-    border-radius: 15px;
-    margin: 2.5vh;
-    border: 1px #0C1C3C solid;
+  margin: 2em;
+  width: 80%;
+  height: 23px;
+  background-color: #d5d5dd;
+  border-radius: 15px;
+  margin: 2.5vh;
+  border: 1px #0c1c3c solid;
 }
 
 .bars {
-    height: 23px;
-    border-radius: 15px;
-    border: none;
-    /* margin-top: -20px; */
-    margin-top: -1.26em;
-    margin-left: 0;
+  height: 23px;
+  border-radius: 15px;
+  border: none;
+  /* margin-top: -20px; */
+  margin-top: -1.26em;
+  margin-left: 0;
 }
 
 @keyframes anim {
-    0% {
-        width: 0;
-    }
+  0% {
+    width: 0;
+  }
 }
 
 .p1 {
-
-    /* background-color: #FF570A; */
-    background: linear-gradient(to right,  #FF570A, #8b4038);
-    animation: anim 2s linear forwards;
-} 
+  background: linear-gradient(to right, #ff570a, #8b4038);
+  animation: anim 2s linear forwards;
+}
 
 .p2 {
-
-    /* background-color: #FF570A; */
-    background: linear-gradient(to right,  #FF570A, #8b4038);
-    animation: anim 2s linear forwards;
+  background: linear-gradient(to right, #ff570a, #8b4038);
+  animation: anim 2s linear forwards;
 }
 .p3 {
-
-    /* background-color: #FF570A; */
-    background: linear-gradient(to right,  #FF570A, #8b4038);
-    animation: anim 2s linear forwards;
-} 
+  background: linear-gradient(to right, #ff570a, #8b4038);
+  animation: anim 2s linear forwards;
+}
 
 .p4 {
-
-    /* background-color: #FF570A; */
-    background: linear-gradient(to right,  #FF570A, #8b4038);
-    animation: anim 2s linear forwards;
-} 
-
-
+  background: linear-gradient(to right, #ff570a, #8b4038);
+  animation: anim 2s linear forwards;
+}
 
 .number {
-    text-align: center;
+  text-align: center;
 }
 
 .number::after {
-    content: '%';
+  content: "%";
 }
 
 @media only screen and (max-width: 905px) {
-    .box-cont {
-        display: flex;
-        flex-direction: column;
-        margin: 1em;
-    }
+  .box-cont {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+  }
 
-    .part1 {
-        object-fit: fill;
-        margin-top: 6rem;
-        align-self: center;
-    }
+  .part1 {
+    object-fit: fill;
+    margin-top: 6rem;
+    align-self: center;
+  }
 
-    .part1 img {
-        border-radius: 10px;
-        max-height: 70vh;
-        margin: 0 10px;
-    }
+  .part1 img {
+    border-radius: 10px;
+    max-height: 70vh;
+    margin: 0 10px;
+  }
 
-    .part3 {
-        margin-top: 30px;
-    }
+  .part3 {
+    margin-top: 30px;
+  }
 
-    .part4{
-        overflow-y: hidden;
-    }
+  .part4 {
+    overflow-y: hidden;
+  }
 
-    .project {
-        min-width: 40vw;
-    }
+  .project {
+    min-width: 40vw;
+  }
 }

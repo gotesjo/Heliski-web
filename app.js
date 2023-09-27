@@ -1,21 +1,16 @@
 const app = Vue.createApp({
   data() {
     return {
-      cart: [],
       showCart: false,
-
-      valdProduktIndex: 100,
-
-      valdProdukt: "",
-
       showModal: false,
       cartHasItems: false,
       closeMenu: false,
-
+      valdProdukt: "",
+      cart: [],
       staff: [],
       projects: [],
       selectedProjects:
-        JSON.parse(localStorage.getItem("selectedprojects")) || {},
+      JSON.parse(localStorage.getItem("selectedprojects")) || {},
       selectedStaff: JSON.parse(localStorage.getItem("selectedstaff")) || {},
 
       items: [
@@ -154,7 +149,6 @@ const app = Vue.createApp({
       let index = this.cart.indexOf(product);
       if (index !== -1) {
         this.cart.splice(index, 1);
-
         localStorage.setItem("varukorg", JSON.stringify(this.cart));
       }
     },
@@ -172,10 +166,9 @@ const app = Vue.createApp({
     },
 
     checkout() {
-      console.log("Checkout button clicked!"); // loggar när knappen klickas
-      console.log("Current cart:", this.cart); // loggar nuvarande varukorg
+      console.log("Checkout button clicked!"); 
+      console.log("Current cart:", this.cart); 
       this.cart = [];
-      console.log("Cart after emptying:", this.cart); // loggar varukorgen efter tömning
       localStorage.setItem("varukorg", JSON.stringify(this.cart));
     },
 
@@ -209,7 +202,7 @@ const app = Vue.createApp({
       localStorage.setItem("selectedstaff", JSON.stringify(this.selectedStaff));
       window.location.href = "individuell-sida.html";
     },
-    
+
     getProjectByName(name) {
       let array = [];
       for (let i = 0; i < this.projects.length; i++) {
@@ -218,17 +211,17 @@ const app = Vue.createApp({
         }
       }
       localStorage.setItem("selectedprojects", JSON.stringify(array));
-    }, 
+    },
   },
 
   computed: {
     totalItemsCart() {
       return this.cart.length;
-    }, 
-     
+    },
+
     updated() {
       let total = 0;
-      for(let i = 0; i < this.cart.length; i++) {
+      for (let i = 0; i < this.cart.length; i++) {
         total += this.cart[i].price;
       }
       return total;
@@ -282,16 +275,3 @@ const app = Vue.createApp({
 
 app.mount("#app");
 
-// Animation personlig sida personliga bars
-const textElement = document.querySelectorAll(".text-text");
-
-textElement.forEach((textElement) => {
-  const textContent = textElement.textContent;
-  textElement.textContent = "";
-
-  for (let i = 0; i < textContent.length; i++) {
-    setTimeout(() => {
-      textElement.textContent += textContent[i];
-    }, i * 200);
-  }
-});

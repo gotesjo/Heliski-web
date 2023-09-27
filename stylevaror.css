@@ -1,269 +1,242 @@
-/* Bakgrundsbild första sidan */
 #section1Varor {
-    position: relative;
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0, 0, 0, 0.758)), url(pictures/winterlandscape.jpg);
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.758)),
+    url(pictures/winterlandscape.jpg);
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.bakgrundsBildVaror{
-    color: white;
-    font-size: 1.1em;
-    text-shadow: 2px 2px 4px black;
+.bakgrundsBildVaror {
+  color: white;
+  font-size: 1.1em;
+  text-shadow: 2px 2px 4px black;
 }
 
-.bakgrundsBildVaror h1{
-
-    /* font-family: 'Montserrat', sans-serif;
-    font-size: 40px;
-    font-weight: bold;
-    text-transform: uppercase; */
-    text-align: center;
-    font-size: 2rem;
-   
-    
+.bakgrundsBildVaror h1 {
+  text-align: center;
+  font-size: 2rem;
 }
 
-.firstTitle{
-margin-top: 2.5em;
+.firstTitle {
+  margin-top: 2.5em;
 }
 
-.bakgrundsBildVaror p{
-
-    /* font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-    font-weight: bold; */
-    padding: 10%;
+.bakgrundsBildVaror p {
+  padding: 10%;
 }
 
 .overlap-container {
-    position: relative;
-    height: 0;  /* Tar inte upp något utrymme */
+  position: relative;
+  height: 0;
 }
 
 .overlap-image {
-    position: absolute;  /* Absolut positionering */
-    left: 50%;  /* Centrerar bilden horisontellt */
-    bottom: 50%;  /* Placerar bilden så att den överlappar mellan section1 och section2 */
-    transform: translate(-50%, 50%);  /* Justering för att centrera bilden */
-    z-index: 1;  /* Lägger bilden ovanpå andra element */
-    width: 40%;
-    border-radius: 10%;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%, 50%);
+  z-index: 1; 
+  width: 40%;
+  border-radius: 10%;
 }
 
-
-#section2Varor,#section4Varor,#section6Varor, #section8Varor{
-    height: auto;
-    margin-bottom: 3em;
-    background-color: #F0EFF4;
+#section2Varor,
+#section4Varor,
+#section6Varor,
+#section8Varor {
+  height: auto;
+  margin-bottom: 3em;
+  background-color: #f0eff4;
 }
 
 .productCard {
-    margin-top: 10%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;  /* centrerar korten horisontellt */
-    align-items: center;  /* valfritt: centrerar korten vertikalt */
-    width: 100%;  /* valfritt: full bredd på förälderelementet */ 
+  margin-top: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .cardVaror {
-    flex: 0 1 calc(25% - 2em);
-    height: auto;
-    border-radius: 1rem;
-    padding: 2.5rem;
-    box-sizing: border-box;
-    cursor: pointer;
-    margin: 1em;  /* jämn marginal runt varje kort */
-    background-position: center;
-    background-size: cover;
-    transition: transform 0.5s;
-    margin-top: 5%;
-    border-radius: 12px;
-    background-color: #dddddd;
-    transition: 0.5s ease-in-out;
-
+  flex: 0 1 calc(25% - 2em);
+  height: auto;
+  border-radius: 1rem;
+  padding: 2.5rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 1em;
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.5s;
+  margin-top: 5%;
+  border-radius: 12px;
+  background-color: #dddddd;
+  transition: 0.5s ease-in-out;
 }
 
 .product-image {
-    width: 350px; /* eller den bredd du önskar */
-    height: 175px; /* eller den höjd du önskar */
-    object-fit: cover;
-    margin: 0;
+  width: 350px;
+  height: 175px;
+  object-fit: cover;
+  margin: 0;
 }
-
 
 .cardVaror h5 {
-    color: black;
-    text-shadow: 0 0 5px #999;
+  color: black;
+  text-shadow: 0 0 5px #999;
 }
-
 
 .cardVaror:hover {
-    transform: translateY(-15px);
-    box-shadow: 0px 0px 100px 0px #d1d1d1;
+  transform: translateY(-15px);
+  box-shadow: 0px 0px 100px 0px #d1d1d1;
 }
-
 
 #section3Varor {
-    position: relative;
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0, 0, 0, 0.758)), url(pictures/varorBilder/madesimo2.jpeg);
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.758)),
+    url(pictures/varorBilder/madesimo2.jpeg);
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#section5Varor{
-    position: relative;
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0, 0, 0, 0.758)), url(pictures/stMorritz.jpg);
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#section5Varor {
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.758)),
+    url(pictures/stMorritz.jpg);
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#section7Varor{
-    position: relative;
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0, 0, 0, 0.758)), url(pictures/valthorens.jpg);
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#section7Varor {
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.758)),
+    url(pictures/valthorens.jpg);
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #section1ProductInfo {
-    background-color: white;
-    font-size: 1em;
-    height: 98vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: white;
+  font-size: 1em;
+  height: 98vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .productInfo-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-      "item1 item2"
-      "item3 item2";
-    gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "item1 item2"
+    "item3 item2";
+  gap: 20px;
 }
 
 .productInfo-item-item1 {
-    grid-area: item1;
+  grid-area: item1;
 }
 
 .productInfo-item-item2 {
-    grid-area: item2;
+  grid-area: item2;
 }
 
 .productInfo-item-item2 img {
-    margin-left: 8em;
-    width: 500px; 
-    height: 300px; 
-    max-width: 100%;
-    height: fit-content;
-    border-radius: 15px 20px 25px 30px; 
+  margin-left: 8em;
+  width: 500px;
+  height: 300px;
+  max-width: 100%;
+  height: fit-content;
+  border-radius: 15px 20px 25px 30px;
 }
 
 .productInfo-item-item3 {
-    grid-area: item3;
-    margin-top: 3em;
-    margin-left: 2em;
+  grid-area: item3;
+  margin-top: 3em;
+  margin-left: 2em;
 }
 
-
-
-/* .productText-container {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    margin: 0 30px 0 30px;
-}
-
-.productText-container h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
-} */
-
-.productText-container li{
-    list-style-type: none;
+.productText-container li {
+  list-style-type: none;
 }
 
 .productInfoTitel {
-    font-weight: bold;
-  }
+  font-weight: bold;
+}
 
 .productBuyButton {
-    background-color: #0C1C3C;
-    color: white;
-    padding: 0.75em 1em;  /* Ökad padding för att göra knappen större */
-    border: none;
-    border-radius: 8px;  /* Ökad radie för att matcha den större knappen */
-    font-size: 24px;  /* Ökad textstorlek */
-    cursor: pointer;
-    margin-top: 20px;
+  background-color: #0c1c3c;
+  color: white;
+  padding: 0.75em 1em;
+  border: none;
+  border-radius: 8px;
+  font-size: 24px;
+  cursor: pointer;
+  margin-top: 20px;
 }
-  
+
 .productBuyButton:hover {
-    background-color: #FF570A;
+  background-color: #ff570a;
 }
 
 .productButtonText {
-    font-size: 30px;  /* Matchar knappens textstorlek */
-    padding: 0;
-    margin: 0;
+  font-size: 30px;
+  padding: 0;
+  margin: 0;
 }
 
 .product-modal {
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%; /* Full height */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    backdrop-filter: blur(15px);
-    
-  }
-  
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(15px);
+}
 
+.product-modal-content {
+  background-color: #f0eff4;
+  margin: 9% auto;
+  padding: 3rem;
+  border-radius: 50px;
+  width: 60vw;
+  height: auto;
+}
+
+@media only screen and (max-width: 905px) {
   .product-modal-content {
-    background-color: #F0EFF4;
-    margin: 9% auto; /* 9% from the top and centered */
-    padding: 3rem;
-    border-radius: 50px;
-    width: 60vw;
-    height: auto;
+    width: 80vw;
+    padding: 2rem;
+    border-radius: 30px;
+    margin-top: 25%;
+    overflow-y: auto;
+    height: 600px;
+  }
+  .cardVaror:hover {
+    transform: translateY(0px);
+  }
+  .overlap-image {
+    width: 65%;
   }
 
-  @media only screen and (max-width: 905px) {
-    .product-modal-content {
-        width: 80vw;
-        padding: 2rem;
-        border-radius: 30px;
-        margin-top: 25%;
-        overflow-y: auto;
-        height: 600px;
-        
-
-    }
-    .cardVaror:hover {
-        transform: translateY(0px);
-    }
-    .overlap-image {
-        width: 65%;
-    }
-
-    .productCard{
-        margin-top: 20%;
-    }
-    }
+  .productCard {
+    margin-top: 20%;
+  }
+}

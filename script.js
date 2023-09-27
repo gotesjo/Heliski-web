@@ -95,35 +95,35 @@ clearFormError = () => {
 //Hämta formuläret
 let form = document.getElementById("contactform");
 
-// Get the modal
+// Hämta modal
 let modal = document.getElementById("contact-wrapper");
 
-// Get the button that opens the modal
+// Hämta knapp
 let btn = document.getElementById("support-button");
 
-// Get the <span> element that closes the modal
+// GÖr spanknapp till kryss
 let span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal
+// När man klickar på ? för öppna modal 
 btn.onclick = function() {
   modal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
+// När man klickar på X för stänga modal 
 span.onclick = function() {
   modal.style.display = "none";
   form.reset();
   clearFormError();
 }
 
-// When the user clicks anywhere outside of the modal, close it
+// När man klickar utanför modal för stänga modal 
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
 }
 
-
+/* Animation för Gudie section  */
  const visaSection= () =>{
     const section = document.querySelectorAll(".full-height-section")
     for(let i = 0; i<section.length; i++){
@@ -143,6 +143,7 @@ window.onclick = function(event) {
 }
 window.addEventListener("scroll",visaSection); 
 
+/* Animation för section 2 - section 5 */
 let optionsscroll = {
     root: null,
     rootMargin: "0px 100px 0px 100px ",

@@ -42,20 +42,13 @@
           </h6>
           <input type="checkbox" id="menu-toggle" v-model="closeMenu" />
           <label for="menu-toggle" id="menuIcon">
-            <span v-if="closeMenu"
-              >&#10005;
-              <!-- Detta är Unicode för ett 'X' --></span
-            >
-            <span v-else
-              >&#9776;
-              <!-- Detta är Unicode för hamburger ikon --></span
-            >
+            <span v-if="closeMenu">&#10005;</span>
+            <span v-else>&#9776;</span>
           </label>
           <!-- Navigationslänkar -->
           <div class="myLinks">
             <ul>
               <li><a href="index.html#section2">Skidaktiviteter</a></li>
-              <!-- <li><a href="#section6">Bildspel</a></li> -->
               <li><a href="varor.html">Boka Resa</a></li>
               <li><a href="index.html#section7">Våra Guider</a></li>
               <li>
@@ -81,12 +74,14 @@
                           <h3 class="produktPlats">{{product.location}}</h3>
                         </div>
                         <div class="priser">
-                          <div class="produktPris">{{product.price}} kr</div>
+                          <div class="produktPris">
+                            <p>{{product.price}} kr</p>
+                          </div>
                           <div
                             class="taBortProdukter"
                             @click="removeProductCart(product)"
                           >
-                            Ta Bort
+                            <p>Ta bort</p>
                           </div>
                         </div>
                       </li>
@@ -96,12 +91,14 @@
                   <div class="checkOut">
                     <div class="total">
                       <div class="subTotal-container">
-                        <div class="subTotal">Total Belopp</div>
+                        <div class="subTotal"><p>Total Belopp</p></div>
                         <div class="varukorgItems">
-                          {{totalItemsCart}} Varor
+                          <p>{{totalItemsCart}} Varor</p>
                         </div>
                       </div>
-                      <div class="totalAmount">{{ updated }} kr</div>
+                      <div class="totalAmount">
+                        <p>{{ updated }} kr</p>
+                      </div>
                     </div>
                     <button class="checkOutButton" @click="handleCheckOut">
                       Beställ
@@ -118,9 +115,7 @@
       <button class="material-icons" id="support-button">
         contact_support
       </button>
-      <!-- The Modal -->
       <div id="contact-wrapper" class="modal">
-        <!-- Modal content -->
         <div class="modal-content">
           <h2 class="contacthead">Kontaktformulär</h2>
           <h5>
@@ -190,8 +185,6 @@
           <p><br />Email: {{selectedStaff.email}}</p>
         </div>
         <div class="box-part part3">
-          <!-- <h4>Förmågor</h4> -->
-
           <p class="text-text">Trädklättring</p>
           <div class="skill">
             <div class="number">{{selectedStaff.skill1}}</div>
@@ -245,7 +238,7 @@
         </div>
       </div>
     </div>
-    <!-- Avsluta app div-->
+
     <!-- Avsnitt 8: footer -->
     <footer>
       <div class="grid-Cont">
