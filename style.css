@@ -782,23 +782,33 @@ nav h6 a {
 
 
     .hidLeft {
-        transform:rotate(-180deg);
+        transform:translateX(-50%);
+        opacity: 0;
+        filter: blur(4px);
         transition: all 1s;
 
     }
     .showLeft {
-        transform: translateX(0);
+        transform:translateX(0);
+        opacity: 1;
+        filter: blur(0);
+        transition: all 1s;
 
     }
 
     .hidRight {
-        transform:rotate(-180deg);
+        transform:translateX(50%);
+        opacity: 0;
+        filter: blur(4px);
         transition: all 1s;
+
 
 
     } 
 
     .showRight {
-        transform:rotate(0);
+        transform:translateX(0);
+        opacity: 1;
+        filter: blur(0);
 
     }

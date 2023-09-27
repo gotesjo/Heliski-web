@@ -161,8 +161,8 @@ window.onclick = function(event) {
 
 let optionsscroll = {
     root: null,
-    rootMargin: "-20px",
-    threshold: 0.8
+    rootMargin: "0px 100px 0px 100px ",
+    threshold: 0.5
   };
 
 const observerLeft = new IntersectionObserver( (entries) => {
