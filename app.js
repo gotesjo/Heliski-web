@@ -7,7 +7,6 @@ const app = Vue.createApp({
       valdProduktIndex: 100,
 
       valdProdukt: "",
-      calculatedPrice: 0,
 
       showModal: false,
       cartHasItems: false,
@@ -168,28 +167,6 @@ const app = Vue.createApp({
       this.showCart = false;
     },
 
-    onChange(event, productPrice) {
-      const selectedQuantity = parseInt(event.target.value);
-      this.updatedPrice();
-
-      this.calculatedPrice = selectedQuantity * productPrice;
-      if (selectedQuantity === "1") {
-        this.calculatedPrice = this.valdProdukt.price;
-      } else if (selectedQuantity === "2") {
-        this.calculatedPrice = this.valdProdukt.price * 2;
-      } else if (selectedQuantity === "3") {
-        this.calculatedPrice = this.valdProdukt.price * 3;
-      } else if (selectedQuantity === "4") {
-        this.calculatedPrice = this.valdProdukt.price * 4;
-      }
-    },
-
-    updatedPrice() {
-      this.totalPrice = this.cart.reduce(
-        (sum, product) => sum + product.price * product.quantity
-      );
-    },
-
     showAlert() {
       alert("Din order har skickats!");
     },
@@ -241,12 +218,20 @@ const app = Vue.createApp({
         }
       }
       localStorage.setItem("selectedprojects", JSON.stringify(array));
-    },
+    }, 
   },
 
   computed: {
     totalItemsCart() {
       return this.cart.length;
+    }, 
+     
+    updated() {
+      let total = 0;
+      for(let i = 0; i < this.cart.length; i++) {
+        total += this.cart[i].price;
+      }
+      return total;
     },
 
     ZermattItems() {
@@ -297,6 +282,7 @@ const app = Vue.createApp({
 
 app.mount("#app");
 
+// Animation personlig sida personliga bars
 const textElement = document.querySelectorAll(".text-text");
 
 textElement.forEach((textElement) => {

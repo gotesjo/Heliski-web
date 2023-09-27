@@ -26,8 +26,8 @@ function showSlide(valdSlide){
 let index = 1;
 showSlide(index);
 
-function plusSlides(nästaSida) {
-    showSlide(index + nästaSida)
+function plusSlides(nextSlide) {
+    showSlide(index + nextSlide)
 }
 
 function currentSlide(nuvarandeSida) {

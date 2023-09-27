@@ -31,23 +31,16 @@
         <nav>
           <!-- Logotyp -->
           <h6 id="huvudTitel"><a href="#section1">SnowWhite Heli</a></h6>
+          <!-- Hamburgar meny -->
           <input type="checkbox" id="menu-toggle" v-model="closeMenu" />
           <label for="menu-toggle" id="menuIcon" @click="closeCart">
-            <span v-if="closeMenu"
-              >&#10005;
-              <!-- Detta är Unicode för ett 'X' --></span
-            >
-            <span v-else
-              >&#9776;
-              <!-- Detta är Unicode för hamburger ikon --></span
-            >
+            <span v-if="closeMenu">&#10005;</span>
+            <span v-else>&#9776;</span>
           </label>
-          <!-- Navigationslänkar -->
           <!-- Navigationslänkar -->
           <div class="myLinks">
             <ul>
               <li><a href="#section2">Skidaktiviteter</a></li>
-              <!-- <li><a href="#section6">Bildspel</a></li> -->
               <li><a href="varor.html">Boka Resa</a></li>
               <li><a href="#section7">Våra Guider</a></li>
               <li>
@@ -73,12 +66,14 @@
                           <h3 class="produktPlats">{{product.location}}</h3>
                         </div>
                         <div class="priser">
-                          <div class="produktPris">{{product.price}} kr</div>
+                          <div class="produktPris">
+                            <p>{{product.price}} kr</p>
+                          </div>
                           <div
                             class="taBortProdukter"
                             @click="removeProductCart(product)"
                           >
-                            Remove
+                            <p>Ta bort</p>
                           </div>
                         </div>
                       </li>
@@ -88,18 +83,17 @@
                   <div class="checkOut">
                     <div class="total">
                       <div class="subTotal-container">
-                        <div class="subTotal">Sub-total</div>
+                        <div class="subTotal"><p>Total Belopp</p></div>
                         <div class="varukorgItems">
-                          {{totalItemsCart}} Items
+                          <p>{{totalItemsCart}} Varor</p>
                         </div>
                       </div>
                       <div class="totalAmount">
-                        {{ cart.reduce((acc, product) => acc + product.price, 0)
-                        }} kr
+                        <p>{{ updated }} kr</p>
                       </div>
                     </div>
                     <button class="checkOutButton" @click="handleCheckOut">
-                      Check out
+                      Beställ
                     </button>
                   </div>
                 </div>
@@ -109,13 +103,11 @@
         </nav>
       </header>
 
-      <!-- Formulär för kontakt-->
+      <!-- Modal för kontakt som valideras via JavaScript-->
       <button class="material-icons" id="support-button">
         contact_support
       </button>
-      <!-- The Modal -->
       <div id="contact-wrapper" class="modal">
-        <!-- Modal content -->
         <div class="modal-content">
           <h2 class="contacthead">Kontaktformulär</h2>
           <h5>
@@ -295,23 +287,23 @@
         <div class="slideShow-container">
           <div class="slide">
             <img src="pictures/zermatt.jpg" alt="zermatt" />
-            <div class="slide-text">Zermatt</div>
+            <div class="slide-text"><p>Zermatt</p></div>
           </div>
           <div class="slide">
             <img src="pictures/valthorens.jpg" alt="valthorens" />
-            <div class="slide-text">Val-Thorens</div>
+            <div class="slide-text"><p>Val-Thorens</p></div>
           </div>
           <div class="slide">
             <img src="pictures/tignes.jpg" alt="tignes" />
-            <div class="slide-text">Tignes</div>
+            <div class="slide-text"><p>Tignes</p></div>
           </div>
           <div class="slide">
             <img src="pictures/stMorritz.jpg" alt="stMoritz" />
-            <div class="slide-text">St.Moritz</div>
+            <div class="slide-text"><p>St.Moritz</p></div>
           </div>
           <div class="slide s5">
             <img src="pictures/varorBilder/madesimo2.jpeg" alt="madesimo" />
-            <div class="slide-text">Madesimo</div>
+            <div class="slide-text"><p>Madesimo</p></div>
           </div>
           <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
           <a class="next" onclick="plusSlides(1)">&#10095; </a>

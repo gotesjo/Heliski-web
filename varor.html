@@ -79,7 +79,7 @@
                             class="taBortProdukter"
                             @click="removeProductCart(product)"
                           >
-                            Remove
+                            Ta Bort
                           </div>
                         </div>
                       </li>
@@ -89,16 +89,15 @@
                   <div class="checkOut">
                     <div class="total">
                       <div class="subTotal-container">
-                        <div class="subTotal">Sub-total</div>
-                        <div class="items">{{totalItemsCart}} Items</div>
+                        <div class="subTotal">Total Belopp</div>
+                        <div class="varukorgItems">
+                          {{totalItemsCart}} Varor
+                        </div>
                       </div>
-                      <div class="totalAmount">
-                        {{ cart.reduce((acc, product) => acc + product.price, 0)
-                        }} kr
-                      </div>
+                      <div class="totalAmount">{{ updated }} kr</div>
                     </div>
                     <button class="checkOutButton" @click="handleCheckOut">
-                      Check out
+                      Beställ
                     </button>
                   </div>
                 </div>
@@ -350,13 +349,11 @@
           <p>{{ valdProdukt.description }}</p>
           <p>{{ valdProdukt.availability }}</p>
           <br />
-          <p>
-            För att boka din plats, klicka på "Köp Nu"-knappen nedan.
-          </p>
+          <p>För att boka din plats, klicka på "Köp Nu"-knappen nedan.</p>
           <p class="productInfoTitel">Boknings Information</p>
           <p>
-            Bokningar är enbart är möjliga för grupper om
-            antingen 2 eller 4 personer.
+            Bokningar är enbart är möjliga för grupper om antingen 2 eller 4
+            personer.
           </p>
           <div class="productInfo-item-item3">
             <p class="productButtonText">{{ valdProdukt.price}} sek</p>

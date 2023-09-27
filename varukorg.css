@@ -238,8 +238,10 @@ hr {
     }
     .produktPris{
         color: black;
-        
-}
+    }
+    .total{
+        color: black;
+    }
 
 .close-cart {
     position: absolute;
