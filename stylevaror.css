@@ -120,7 +120,7 @@
 #section7Varor {
   position: relative;
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.758)),
-    url(pictures/valthorens.jpg);
+    url(pictures/valthorens.png);
   background-size: cover;
   height: 100vh;
   display: flex;
